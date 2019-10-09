@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>大工咸鱼</title>
+	<link rel="stylesheet" href="../../resources/static/dyassets/css/mainpage.css" th:href="@{/dyassets/css/mainpage.css}">
+	<link rel="stylesheet" href="../../resources/static/dyassets/css/style.css" th:href="@{/dyassets/css/style.css}">
+	<link rel="stylesheet " href="../../resources/static/dyassets/css/icon.css" th:href="@{/dyassets/css/icon.css}">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" >
+	<link rel="stylesheet" href="../../resources/static/dyassets/css/ershou.css" th:href="@{/dyassets/css/ershou.css}">
+
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+
+<body onload="load();" style="background: url(/dyassets/img/1-4.jpg) no-repeat center 0;background-size: 100% 50%;">
+
+<!-- <canvas id="background"></canvas>
+
+<script async type="text/javascript" src="../static/dyassets/js/background.js" th:src="@{/dyassets/js/background.js}"></script> -->
+
+<section class="panel home" name="home1" data-section-name="home1">
+	<div class="inner" style="padding-top:2.5%;">
+		<div><a href="#overview" id="1111" class="scroll" style="display:none"></a></div>
+
+		<div class="container" id="yeslogin" style="display:none;padding-top:10px;color:#6a6f8c;font:600 16px/18px 'Open Sans',sans-serif;">
+			<div class="login-wrap">
+				<div class="login-html">
+					<div class="login-form">
+						<p style="text-align: center;"> 欢迎</p>
+						<p id="membername" style="color:white;text-align: center;margin-top:20%;">123123</p>
+
+
+						<div class="group" style="position:fixed; width:100%;;bottom:0;">
+							<a href="person.html" style="text-decoration: none;"><input class="button" style="text-align: center;;"value="我的个人主页"></a>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="#overview" class="scroll" style="margin-top:5%;float:right;;	">
+
+		</a>
+	</div>
+
+</section>
+
+<section id="p2" class="panel overview" data-section-name="overview" style="background: url(/dyassets/img/1-4.jpg) no-repeat center 0;background-size: 100% 100%;">
+
+
+	<!--<a href="#home" class="scroll" style="margin-top:13%;float:right;margin-right:45%;	transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); ">
+        <p style="float:right;margin-top:25%;font-size: 1em;transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg);">点此登录!!</p>
+    </a>-->
+	<div class=" inner icon" >
+		<a href="#home1"  class="scroll" style="text-decoration:none;margin-top:15%;float:right;margin-right:-50px;transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg);	">
+
+			<!--				<p style="font-size:1em;transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg);">登录/注册</p>-->
+		</a>
+
+		<div style="height:200px;width:300px;"></div>
+		<div id="ershou" class="carre_couleur base_hov tubiao" style="background-color: #5e6fd3;opacity: 0.6;">
+			<a target="_blank" href="ershou.html">
+				<div class="retract" style="background-color: #ffce91;" ><img
+						src="../../resources/static/dyassets/img/jniceit/1.png" th:src="@{/dyassets/img/jniceit/1.png}" height="200" width="200"/></div>
+				<div class="acced" >
+					<div class="big_acced" style="color: #25347b;">快递服务</div>
+					<div class="middle_acced"> </div>
+				</div>
+			</a>
+		</div>
+		<div id="zulin" class="carre_couleur base_hov tubiao" style="background-color:#437085;opacity: 0.6; ">
+			<a target="_blank" href="zulin.html">
+				<div class="retract" style="background-color: #a0dcfb;"><img
+						src="../../resources/static/dyassets/img/jniceit/2.png" th:src="@{/dyassets/img/jniceit/2.png}" height="200" width="200"/></div>
+				<div class="acced">
+					<div class="big_acced" style="color:#ecebe7 ;">成立队伍</div>
+					<div class="middle_acced"></div>
+				</div>
+			</a>
+		</div>
+		<div id="ziyuan" class="carre_couleur base_hov tubiao" style="background-color: #81aad9;opacity: 0.6;">
+			<a target="_blank" href="mianfei.html">
+				<div class="retract" style="background-color: #f1ec9b;"><img
+						src="../../resources/static/dyassets/img/jniceit/3.png" th:src="@{/dyassets/img/jniceit/3.png}" height="200" width="200"/></div>
+				<div class="acced">
+					<div class="big_acced" style="color: #f2ccb1 ;">全职工作</div>
+					<div class="middle_acced"> </div>
+				</div>
+			</a>
+		</div>
+		<div id="fabu" class="carre_couleur base_hov tubiao" style="background-color:#002c73 ;opacity: 0.6;" >
+			<a target="_blank" href="qiuzuqiugou.html">
+				<div class="retract" style="background-color: #f7b6da;"><img
+						src="../../resources/static/dyassets/img/jniceit/4.png" th:src="@{/dyassets/img/jniceit/4.png}" height="200" width="200"/></div>
+				<div class="acced">
+					<div class="big_acced" style="color:#ffd009  ;">文件打印</div>
+					<div class="middle_acced"> </div>
+				</div>
+			</a>
+		</div>
+
+	</div>
+
+
+
+
+</section>
+
+<script src="../../resources/static/dyassets/js/jquery.easing.min.js" th:src="@{/dyassets/js/jquery.easing.min.js}"></script>
+<script src="../../resources/static/dyassets/js/jquery.scrollify.min.js" th:src="@{/dyassets/js/jquery.scrollify.min.js}"></script>
+<script>
+    $(function() {
+
+        $(".panel").css({
+            "height": $(window).height()
+        });
+        var timer;
+
+        $(window).resize(function() {
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+                $(".panel").css({
+                    "height": $(window).height()
+                });
+            }, 40);
+        });
+
+        $.scrollify({
+            section: ".panel"
+        });
+
+        $(".scroll").click(function(e) {
+            e.preventDefault();
+            $.scrollify("move", $(this).attr("href"));
+        });
+    });
+    function checklogin(e,login){
+        if(login==1){
+            e.style.display="none";
+            document.getElementById("yeslogin").style.display="block";
+        }
+    }
+    function load() {
+        var login=0;
+        document.getElementById("1111").click();
+        checklogin(document.getElementById("nologin"),login);
+        $("#background").fadeTo(1,0.7);
+        $("#background").fadeTo(20000,1);
+        $("#background").fadeTo(5000,0.6);
+        $("#background").fadeTo(5000,1);
+    }
+</script>
+</body>
+
+</html>

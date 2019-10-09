@@ -1,0 +1,119 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 120%;
+	font: inherit;
+	vertical-align: baseline;
+}
+ol, ul {
+	list-style: none;
+}
+
+body{
+	background:url(../images/bg.png);
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+.kuangjia{
+	height:720px;
+	width:90%;
+	margin:0 auto;
+
+}
+#left{
+	float:left;
+	width:36%;
+	height:80%;
+	margin-top:0%;
+	margin-left:2%; 
+	
+	
+}
+.headimages{
+height:110px;
+width:115px;
+margin-left:39%;
+border-radius:50%;
+overflow:hidden;
+border:4px solid #dedede;
+}
+
+.knowledge1
+{
+    padding:5%; width:90%; 
+   
+	height:70%;
+    border: 3px hidden white;
+    	
+    -moz-border-radius: 15px;      
+    -webkit-border-radius: 15px;   
+    border-radius:15px; 
+background:url(../images/board2.png);	
+background-size:cover;
+background-position: 0% 100%; 
+
+
+
+
+	}
+	
+.li_style{
+	margin-top:4px;
+}
+	
+	
+#right{
+	float:right;
+	width:58%;
+	height:80%;
+	margin-top:3%;
+	margin-right:2%;
+	
+}
+.twobuttons{
+	margin-top:0.8%;
+	font-size:1.4em;
+	text-align:center;
+}
+.passage{
+	border: 3px solid #dedede;
+	height:90%;
+	width:98%;
+	margin:1%;
+	margin-top:2%;
+	background:rgba(233,233,233,.5);
+	
+	 
+}
+.neirong{
+	min-height: 150px;;
+	width:98%;
+	border: 3px solid #565454;
+	padding:3px;
+
+}
+.neirong2{
+	margin:3px;
+	text-align:center;
+}
+.date{
+	float:left;
+	color:#565454;
+	margin-top:15%;
+}
+.wenzi{
+	margin-top:0.5%;
+}

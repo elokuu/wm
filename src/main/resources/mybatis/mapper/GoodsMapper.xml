@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.spring.mapper.GoodsMapper">
+    <select id="getHomepageGoodsInfo" resultType="io.spring.bean.BriefGoods">
+        SELECT
+            t_user.name name,
+            t_goods.id id,
+            t_goods.title title,
+            t_goods.price price,
+            t_img_goods.path pic_path,
+            t_img_goods.NAME pic_name
+        FROM
+            t_user,
+            t_goods,
+            t_img_goods
+        WHERE
+            t_goods.id_user = t_user.id
+            AND t_goods.id = t_img_goods.id_goods
+            AND t_goods.state = 1
+        ORDER BY
+            time_create DESC
+            LIMIT 8
+	</select>
+
+</mapper>

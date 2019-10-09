@@ -1,0 +1,446 @@
+/* 头部菜单栏 */
+.container{
+	margin: 0px;
+}
+.header{
+	float: left;
+	height: 35px;
+	width: 100%;
+	background-color: #F5F5F5;
+	color: #262626;
+	font-size: 0.8125rem;
+}
+.header ul{
+	list-style: none;
+	padding: 0px;
+	margin-top: 8px;
+}
+.header li{
+	float: left;
+	text-align: center;
+	width:10%;
+}
+.header li:hover{
+	color: #0A8494;
+}
+.li-1{
+	color: #101010;
+}
+.li-1:hover{
+	color: #0A8494;
+} 
+/* 头部二级菜单 */
+.header ul li:hover ul{
+	position: relative;
+	display: block;
+}
+.submenu{
+	position: relative;
+	z-index: 1;
+}
+.submenu ul{
+	position: absolute;
+	display: none;
+	text-align: center;
+	background-color: #EEEEEE;
+}
+.submenu ul li{
+	float: none;
+	background-color: #FAFAFA;
+	min-width: 90px;
+	/* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+	text-align: center;
+	display: block;
+}
+.submenu ul li a{
+	color: #444444;
+	padding: 5px 3px;
+	text-decoration: none;
+	display: block;
+}
+.submenu ul:hover{
+	display: block;
+	position: absolute;
+}
+.submenu ul li a:hover{
+	background-color: gainsboro;
+	color: #262626;
+}
+/* .submenu ul li:hover{
+    display: block;
+} */
+/* 头部显示 */
+.main{
+	clear: left;
+}
+.banner_wrap{
+    width: 100%;
+    height: 300px;
+    background-color: skyblue;
+    margin-bottom: 30px;
+	margin-top: 30PX;
+}
+.main_wrap{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    /* background-image: url(../img/001.png); */
+}
+/* 主页面图片背景 */
+.navbar_wrap{
+    width: 1040px;
+    flex-direction: row;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+	margin-top: 30px;
+    width: 150px;
+    height: 140px;
+    margin-left: 30%;
+}
+/* 登录卡片 */
+.usercard_wrap{
+    width: 310px;
+    height: 239px;
+    position: absolute;
+    right: 15%;
+    border-radius: 10px;
+    background-color: #fff;
+    bottom: 15px;
+}
+.unlogin{
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+.icon{
+    margin: 0 auto;
+    margin-top: 46px;
+    margin-bottom: 18px;
+    height: 90px;
+    width:90px;
+}
+.btn_wrap{
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+}
+.register,.login{
+    width: 108px;
+    height: 32px;
+    line-height: 32px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+.login_btn{
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 14px;
+    background: #fafafa;
+    border: 1px solid #02b5cc;
+    color: #0a8494;
+    text-align: center;
+    box-shadow: 0 0 0 transparent;
+}
+.register_btn{
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 14px;
+    border: 1px solid #02b5cc;
+    background: #02b5cc;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 0 0 transparent;
+}
+.login_btn:hover{
+    background: #FFFFFF;
+    opacity: 0.4;
+	color: #0A8494;
+}
+.register_btn:hover{
+    opacity: 0.8;
+}
+/* 闲置发布栏 */
+.slodbar_wrap{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    height: 100px;
+    width:80%;
+    box-sizing: border-box;
+    padding-left: 92px;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.slodbar_item{
+    height: 56px;
+    flex-direction: flex;
+    display: flex;
+    align-items: center;
+    padding-right: 134px;
+    padding-left: 33px;
+}
+.icon{
+    height: 56px;
+    width: 56px;
+    margin-bottom: 43px;
+}
+.desc{
+    margin-left: 12px;
+}
+.desc .name{
+    font-weight: 700;
+    color: #222;
+    font-size: 18px;
+    height: 25px;
+    line-height: 25px;
+}
+.desc .cont{
+    color: #222;
+    font-size: 12px;
+    margin-top: 2px;
+    height: 17px;
+    line-height: 17px;
+}
+.search{
+	width: 500px;
+	height: 30px;
+	border: 3px solid #EBEBEB;
+	border-radius: 10px;
+	margin-left: 15%;
+	margin-top: 8.3%;
+	padding: 1px 3px;
+}
+.search:active{
+	outline: none;
+}
+/* 菜单栏 */
+.tabbar_wrap{
+    align-items: center;
+    border-radius: 4px;
+    background-color: skyblue;
+    margin: 0 auto;
+    height: 60px;
+    width: 70%;
+    box-sizing: border-box;
+    flex-direction: row;
+    display: flex;
+    margin-bottom: 10px;
+    padding-left: 44px;
+    justify-content: space-between;
+}
+.tabbar_wrap .item{
+    padding-top: 10px;
+    margin-right: 40px;
+    height: 33px;
+    align-items: center;
+}
+.tabbar_wrap .name{
+    font-weight: 700;
+    color: #222;
+    font-size: 16px;
+    height: 25px;
+    line-height: 25px;
+}
+.tabbar_wrap .name:hover{
+    color: #FFFFFF;
+}
+/* 商品列表 */
+.item_list{
+    position: relative;
+    margin: 0 auto;
+    width: 1040px;
+    min-height: 680px;
+    margin-bottom: 20px;
+}
+.item_list .item_list_wrap{
+    position: absolute;
+    display: flex;
+    width: 1050px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.item_list .item_wrap{
+    border-radius: 4px;
+    width: 200px;
+    height: 330px;
+    margin-right: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.item_list .item_img{
+    width: 200px;
+    height: 200px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #ddd;
+    background-size: cover;
+}
+.item_list .item_info{
+    width: 170px;
+    margin: 10px 15px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding-bottom: 14px;
+    border-bottom: .5px solid #e6e6e6;
+}
+.item_list .item_title{
+    font-size: 13px;
+    color: #222;
+    height: 40px;
+    width: 170px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.item_list .item_price{
+    display: flex;
+    flex-direction: row;
+    width: 170px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.item_list .price{
+   display: flex;
+   flex-direction: row; 
+}
+.item_list .price_unit{
+    font-size: 10px;
+    color: #f44;
+    height: 14px;
+    line-height: 22px; 
+    display: inline-block;
+}
+.item_list .price_value{
+    font-size: 16px;
+    color: #f44;
+    height: 18px;
+    line-height: 18px; 
+    display: inline-block;
+}
+
+#d1:target,#d2:target{
+    z-index:1;
+}
+
+/* 分页页码 */
+/* 设置页面整体布局 */
+.page_icon{
+    margin: 20px 0 30px 0;
+    font-size: 0;
+    text-align: center;
+}
+/* a标签样式布局 */
+.page_icon a,.page_disabled,.page_next{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 4px 10px 5px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.page_icon a{
+    color: #0a8494;
+}
+.page_current{
+    color: #0a8494;
+    padding: 4px 10px 5px;
+    font-size: 14px;
+}
+.page_disabled{
+    color: #ccc;
+}
+.page_icon a:hover,.page_next:hover{
+    background-color: #0a8494;
+    color: #fff;
+}
+/* 商品页 */
+.good_page{
+	width: 70%;
+	height: auto;
+	padding-top: 30px;
+	background-color: #F7F7F7;
+	margin: auto;
+}
+.box{
+	width: 18%;
+	height: 360px;
+	border-radius: 7px;
+	border: #D5D5D5;
+	background-color: #EEEEEE;
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.box img{
+	width: 100%;
+	height: 240px;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	background-color: #ddd;
+	background-size: cover;
+}
+.box_introduction{
+	color: #000000;
+	font-size: 14px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.box_price{
+	color: firebrick;
+	font-size: 16px;
+	margin-top: 13px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+.user_line{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 200px;
+    height: 43px;
+    justify-content: center;
+}
+.user_line .user_info{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 170px;
+    height: 20px;
+	margin-top: 10px;
+}
+.user_line .usericon{
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 100%;
+	margin-bottom: 20px;
+}
+.user_line .user_name{
+    font-size: 13px;
+    color: #222;
+    height: 17px;
+    width: 80px;
+    line-height: 17px;
+}
+/* 底部 */
+.page_bottom{
+	width: 100%;
+	height: 200px;
+	float: left;
+	color: #101010;
+	font-size: 13px;
+	background-color: #FAFAFA;
+}
+.page_bottom img{
+	margin-right: 15%;
+	width: auto;
+	float: right;
+	height: 140px;
+	margin-top: 30px;
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>mall</title>
+		<link rel="stylesheet" href="zero/css/public.css" th:href="@{/zero/css/public.css}" />
+		<link rel="stylesheet" href="zero/css/index.css" th:href="@{/zero/css/index.css}"/>
+		<script src="assets/js/core/bootstrap.min.js" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.css}" type="text/javascript"></script>
+		<!-- <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+ 	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<ul style="margin-left: 13%;">
+					<li style="width: 4%; margin-left: 10px;" ><a href="#" th:href="${ #strings.isEmpty(session.name)? '/sign_in.html': '/personalCenter.html'}" class="li-1" th:text="${ #strings.isEmpty(session.name)?'登录': session.name}" style="text-decoration: none;"></a></li>
+					<li style="width: 4%; margin-left: -10px;" ><a href="#" th:href="${ #strings.isEmpty(session.name)? '/sign_up.html': '#'}"  th:text="${ #strings.isEmpty(session.name)?'注册': ''}" class="li-1" style="text-decoration: none;"></a></li>
+				</ul>
+				<ul style="margin-left:57%;">
+					<li>首页</li>
+					<li>购物车</li>
+					<li>消息</li>
+					<li class="submenu">
+						<span>收藏夹</span>
+						<ul>
+							<li><a href="#">收藏的宝贝</a></li>
+							<li><a href="#">收藏的店铺</a></li>
+						</ul>
+					</li>
+					<li>商品分类</li>
+					<li class="submenu">
+						<span>个人中心</span>
+						<ul>
+							<li><a href="#">我的信息</a></li>
+							<li><a href="#">出售中的宝贝</a></li>
+							<li><a href="#">售后</a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<span>联系客服</span>
+						<ul>
+							<li><a href="#">消费者客服</a></li>
+							<li><a href="#">卖家客服</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="banner_wrap">
+			    <div class="main_wrap">
+					<div class="navbar_wrap">
+					    <img class="logo" src="img/001.png" th:src="@{/zero/img/001.png}" alt="">
+					</div>
+			        <div class="usercard_wrap">
+			            <div class="unlogin">
+			                <img class="icon" src="img/002.png" th:src="@{/zero/img/002.png}" alt="">
+			                <div class="btn_wrap">  
+			                    <a href="#" class="login_btn login" th:href="@{/sign_in.html}">登录</a>
+			                    <a href="#" class="register_btn register" th:href="@{/sign_up.html}">免费注册</a>
+			                </div>
+			            </div>
+			        </div>
+					<div >
+					  <input type="text"placeholder="搜索..." class="search">
+					</div>
+			    </div>
+			</div>
+		</div>
+		<div class="slodbar_wrap">
+		    <div class="slodbar_item">
+		        <img src="img/item1.png" th:src="@{/zero/img/item1.png}" alt="" class="icon">
+		        <div class="desc">
+		            <p class="name">多余宝贝挂卖</p>
+		            <p class="cont">有多余的宝贝挂卖，反正闲着也是闲着~</p>
+		        </div>
+		    </div>
+		    <div class="slodbar_item">
+		        <img src="img/item2.png" th:src="@{/zero/img/item2.png}" alt="" class="icon">
+		        <div class="desc">
+		            <p class="name">发布多余宝贝</p>
+		            <p class="cont">隔壁的同学也在用有鱼，快速出手先卖先得~</p>
+		        </div>
+		    </div>
+			<div class="slodbar_item">
+			    <img src="img/item2.png" th:src="@{/zero/img/item2.png}" alt="" class="icon">
+			    <div class="desc">
+			        <p class="name">发布多余宝贝</p>
+			        <p class="cont">隔壁的同学也在用有鱼，快速出手先卖先得~</p>
+			    </div>
+			</div>
+		</div>
+		<div class="tabbar_wrap" >
+		    <div class="item">
+		        <a href="#d1" class="name" id="newgood">新发宝贝</a>
+		    </div>
+		    <div class="item" >
+		        <a href="#d2" class="name" id="neargood">附近宝贝</a>
+		    </div>
+		    <div class="item">
+		        <a href="#d3" class="name" id="attention">关注动态</a>
+		    </div>
+		    <div class="item">
+		        <a href="#d3" class="name">周围出租</a>
+		    </div>
+		    <div class="item">
+		        <a href="#d3" class="name">周边美食</a>
+		    </div>
+		    <div class="item">
+		        <a href="#d3" class="name">电子宝贝</a>
+		    </div>
+		    <div class="item">
+		        <a href="#d3" class="name">猜你需要</a>
+		    </div>
+		    <div class="item">
+		        <a href="#d3" class="name">宝贝推荐</a>
+		    </div>
+		    <div class="item">
+		        <a href="#d3" class="name">校园动态</a>
+		    </div>
+		</div>
+		
+		<!-- 新发宝贝 -->
+		<div class="good_page" id="container" style="display: block;">
+				<div class="box">
+					<div>
+						<img src="img/good1.jpg" th:src="@{/zero/img/good1.jpg}" />
+					</div>
+					<div class="box_introduction">
+						<a>不卖，就是让你们看看她有多好看</a>
+					</div>
+					<div class="box_price">
+						<a>￥9999</a>
+					</div>
+					<div class="user_line">
+					    <div class="user_info">
+					        <img src="img/pic1.jpg" th:src="@{/zero/img/pic1.jpg}" alt="" class="usericon">
+					        <p class="user_name">大师傅打发的</p>
+					    </div>
+					</div>
+				</div>
+		</div>
+		
+		<!-- 附近宝贝 -->
+		<div class="good_page" id="container1" style="display: none;">
+				<div class="box">
+					<div>
+						<img src="img/001.png" th:src="@{/zero/img/001.png}" />
+					</div>
+					<div class="box_introduction">
+						<a>不卖，就是让你们看看她有多好看</a>
+					</div>
+					<div class="box_price">
+						<a>￥9999</a>
+					</div>
+					<div class="user_line">
+					    <div class="user_info">
+					        <img src="img/pic1.jpg" th:src="@{/zero/img/pic1.jpg}" alt="" class="usericon">
+					        <p class="user_name">大师傅打发的</p>
+					    </div>
+					</div>
+				</div>
+		</div>
+		
+		<!-- 关注动态 -->
+		<div class="good_page" id="container2" style="display: none;">
+				<div class="box">
+					<div>
+						<img src="img/good2.jpg" th:src="@{/zero/img/good2.jpg}" />
+					</div>
+					<div class="box_introduction">
+						<a>不卖，就是让你们看看她有多好看</a>
+					</div>
+					<div class="box_price">
+						<a>￥9999</a>
+					</div>
+					<div class="user_line">
+					    <div class="user_info">
+					        <img src="img/pic1.jpg" th:src="@{/zero/img/pic1.jpg}" alt="" class="usericon">
+					        <p class="user_name">大师傅打发的</p>
+					    </div>
+					</div>
+				</div>
+		</div>
+		
+		
+		<div class="page_bottom">
+			<img src="img/003.png" th:src="@{/zero/img/003.png}" />
+		</div>
+		<script>
+			$(function(){
+				$("#newgood").click(function(){
+					$("#container").css('display','block');
+					$("#container1").css('display','none');
+				})
+				$("#neargood").click(function(){
+					$("#container").css('display','none');
+					$("#container2").css('display','none');
+					$("#container1").css('display','block');
+				})
+				$("#attention").click(function(){
+					$("#container").css('display','none');
+					$("#container1").css('display','none');
+					$("#container2").css('display','block');
+				})
+			})
+		</script> 
+	</body>
+</html>

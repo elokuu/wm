@@ -1,0 +1,54 @@
+.carre_couleur{
+	width:200px;
+	height:200px;
+	display:inline-block;
+	position:relative;
+	margin-top:0px;
+}
+.base_hov .retract{
+	-webkit-transition:all 200ms ease-in;
+	-webkit-transform-origin:50% 20%;
+	-webkit-transform:scale(1);
+	-moz-transition:all 200ms ease-in;
+	-moz-transform-origin:50% 20%;
+	-moz-transform:scale(1);
+	-ms-transition:all 200ms ease-in;
+	-ms-transform-origin:50% 20%;
+	-ms-transform:scale(1);
+	transition:all 200ms ease-in;
+	transform-origin:50% 20%;
+	transform:scale(1);
+	width:200px;
+	height:200px;
+	position:absolute;
+	z-index:2;
+	left:0;
+}
+.base_hov:hover .retract{
+	-webkit-transition:all 200ms ease-in;
+	-webkit-transform:scale(0.6);
+	-moz-transition:all 200ms ease-in;
+	-moz-transform:scale(0.6);
+	-ms-transition:all 200ms ease-in;
+	-ms-transform:scale(0.6);
+	transition:all 200ms ease-in;
+	transform:scale(0.6);
+}
+.acced{
+	width:180px;
+	padding:10px;
+	bottom:0;
+	position:absolute;
+	z-index:1;
+	text-align:left;
+}
+.big_acced{
+	color:#ffffff;
+	font-size:25px;
+	font-weight:400;
+}
+.middle_acced{
+	color:#ffffff;
+	font-size:15px;
+	font-weight:400;
+}
