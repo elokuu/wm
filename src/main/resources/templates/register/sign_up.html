@@ -92,6 +92,7 @@
 									<img src="assets/img/now-logo.png" alt="">
 								</div>
 							</div>
+							<p style="color: white;" th:if="${not #strings.isEmpty(session.msg)}" th:text="${session.msg}"></p>
 							<div class="content">
 								<div class="input-group form-group-no-border input-lg" style="border:  solid 2px #ebebeb; margin-bottom: 30px; ">
 									<span class="input-group-addon">

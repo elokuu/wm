@@ -42,12 +42,12 @@ public class LoginController {
 
 
     @PostMapping("/logup")
-    public String logup(User user ,Model model) {
+    public String logup(User user ,HttpSession session) {
         String username = user.getName();
         List<User> all = userMapper.getAll();
         for (User item : all) {
             if (username.equals(item.getName())) {
-                model.addAttribute("msg", "用户名已存在");
+                session.setAttribute("msg", "用户名已存在");
                 return "redirect:/sign_up.html";
             }
         }
