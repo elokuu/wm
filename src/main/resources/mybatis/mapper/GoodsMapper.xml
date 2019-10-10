@@ -19,6 +19,7 @@
             t_goods.id_user = t_user.id
             AND t_goods.id = t_img_goods.id_goods
             AND t_goods.state = 1
+            AND t_img_goods.NAME LIKE 'timg%'
         ORDER BY
             time_create DESC
             LIMIT 8
