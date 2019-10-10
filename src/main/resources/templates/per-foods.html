@@ -3,9 +3,12 @@
 <head>
     <script type="text/javascript"  th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
     <meta charset="UTF-8">
-    <title>个人中心</title>
+    <title>我的商品</title>
     <script type="text/javascript" src="ncassets/js/index.js" th:src="@{/ncassets/js/index.js}"></script>
     <script type="text/javascript" src="ncassets/js/bootstrap.js" th:src="@{/ncassets/js/bootstrap.js}"></script>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link rel="stylesheet" href="ncassets/dist/css/bootstrap.min.css" th:href="@{/ncassets/dist/css/bootstrap.min.css}">
     <link rel="stylesheet" href="ncassets/css/reset.css" th:href="@{/ncassets/css/reset.css}">
     <link rel="stylesheet" href="ncassets/css/style.css" th:href="@{/ncassets/css/style.css}">
@@ -14,16 +17,15 @@
 <body>
 <div th:include="pc-model :: site-topbar"></div>
 <div th:include="pc-model :: site-header"></div>
-<div th:include="pc-model :: breadcrumb"></div>
+<div th:include="pc-model :: breadcrumb-goods"></div>
 <div class="page-main user-main">
     <div class="container clearfix">
         <div class="row">
             <div th:include="pc-model :: span4"></div>
-            <div th:include="pc-model :: span6-content"></div>
+            <div th:include="pc-model :: span6-goods"></div>
         </div>
     </div>
 </div>
 <div th:include="pc-model :: footer"></div>
 </body>
-
 </html>

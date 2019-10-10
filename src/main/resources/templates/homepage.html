@@ -17,7 +17,7 @@
 		<div class="headmenu">
 			<div class="head">
 				<ul style="margin-left: 11.5%">
-					<li style="width: 4%; margin-left: 10px;" ><a href="#" th:href="${ #strings.isEmpty(session.name)? '/sign_in.html': '/personalCenter.html'}" class="li-1" th:text="${ #strings.isEmpty(session.name)?'登录': session.name}" style="text-decoration: none;"></a></li>
+					<li style="width: 4%; margin-left: 10px;" ><a href="#" th:href="${ #strings.isEmpty(session.name)? '/sign_in.html': '/personal'}" class="li-1" th:text="${ #strings.isEmpty(session.name)?'登录': session.name}" style="text-decoration: none;"></a></li>
 					<li style="width: 4%; margin-left: -10px;" ><a href="#" th:href="${ #strings.isEmpty(session.name)? '/sign_up.html': '#'}"  th:text="${ #strings.isEmpty(session.name)?'注册': ''}" class="li-1" style="text-decoration: none;"></a></li>
 				</ul>
 				<div class="searchbar">

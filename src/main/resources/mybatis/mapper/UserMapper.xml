@@ -14,4 +14,12 @@
     <select id="insertUser">
         insert into t_user(name, password, email) values(#{name}, #{password}, #{email})
     </select>
+
+    <select id="getUser" resultType="io.spring.bean.User">
+        select * from t_user where name=#{name}
+    </select>
+
+    <select id="updateUser">
+        update t_user set password=#{password},email=#{email} where name=#{name}
+    </select>
 </mapper>

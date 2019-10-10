@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript"  th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <script type="text/javascript" src="ncassets/js/index.js" th:src="@{/ncassets/js/index.js}"></script>
+    <script type="text/javascript" src="ncassets/js/bootstrap.js" th:src="@{/ncassets/js/bootstrap.js}"></script>
+
+    <!-- bootbox code -->
+    <script type="text/javascript" th:src="@{/ncassets/bootbox/bootbox.min.js}"></script>
+    <script type="text/javascript" th:src="@{/ncassets/bootbox/bootbox.locales.min.js}"></script>
+    <link rel="stylesheet" href="ncassets/dist/css/bootstrap.min.css" th:href="@{/ncassets/dist/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="ncassets/css/reset.css" th:href="@{/ncassets/css/reset.css}">
+    <link rel="stylesheet" href="ncassets/css/style.css" th:href="@{/ncassets/css/style.css}">
+    <link rel="stylesheet" type="text/css" href="ncassets/css/user.css" th:href="@{/ncassets/css/user.css}"/>
+
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+</head>
+<body>
+<div th:include="pc-model :: site-topbar"></div>
+<div th:include="pc-model :: site-header"></div>
+<div th:include="pc-model :: breadcrumb-info"></div>
+<div class="page-main user-main">
+    <div class="container clearfix">
+        <div class="row">
+            <div th:include="pc-model :: span4"></div>
+            <div th:include="pc-model :: span6-perInfo"></div>
+
+        </div>
+    </div>
+</div>
+<div th:include="pc-model :: footer"></div>
+</body>
+<script type="text/javascript">
+    function edit() {
+        var input = document.getElementsByTagName("input");
+        // input[0].disabled=false;
+        input[1].disabled=false;
+        input[2].disabled=false;
+        input[3].disabled=false;
+        input[4].disabled=false;
+    }
+    $(".reset").click("on",function () {
+        var input = document.getElementsByTagName("input");
+        // input[0].setAttribute("value","");
+        input[1].setAttribute("value","");
+        input[2].setAttribute("value","");
+    })
+    function tijiao_info() {
+        var flag;
+        bootbox.confirm({
+            size: "small",
+            message: "Are you sure?",
+            callback: function(result){
+                flag = result;
+            }
+
+        })
+        return flag;
+    }
+</script>
+</html>
