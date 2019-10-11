@@ -50,17 +50,18 @@
         input[1].setAttribute("value","");
         input[2].setAttribute("value","");
     })
-    function tijiao_info() {
-        var flag;
-        bootbox.confirm({
-            size: "small",
-            message: "Are you sure?",
-            callback: function(result){
-                flag = result;
-            }
+    function submit_info() {
+        var flag = false;
+        var pwd = document.getElementById("pwd").value;
+        if(pwd.length>=8 && pwd.length<=16){
+            flag = confirm("Are you sure?")
+        }else {
+            bootbox.alert("密码长度必须在8~16之间！");
+        }
 
-        })
         return flag;
     }
+
 </script>
 </html>
+
