@@ -25,4 +25,49 @@
             LIMIT 8
 	</select>
 
+    <select id="getGoodsByType" parameterType="String" resultType="io.spring.bean.SecGoods">
+       SELECT
+            t_goods.id id,
+            t_goods.price price,
+            t_goods.title title,
+            t_goods.type field01,
+            t_goods.DESCRIBE field02,
+            t_img_goods.NAME pic_name,
+            t_img_goods.path pic_path
+        FROM
+            t_goods,
+            t_img_goods
+        WHERE
+            t_goods.type = '电子产品'
+            AND t_goods.id = t_img_goods.id_goods
+            AND t_goods.state = 1
+            AND t_img_goods.NAME LIKE 'timg%'
+        ORDER BY
+            time_create DESC
+            LIMIT 8
+    </select>
+    
+    <select id="getSpecGoods" resultType="io.spring.bean.SecGoods">
+        SELECT
+            t_goods.id id,
+            t_goods.price price,
+            t_goods.title title,
+            t_user.NAME field01,
+            t_user.icon field02,
+            t_img_goods.NAME pic_name,
+            t_img_goods.path pic_path
+        FROM
+            t_user,
+            t_goods,
+            t_img_goods
+        WHERE
+            t_goods.id_user = t_user.id
+            AND t_goods.id = t_img_goods.id_goods
+            AND t_goods.state = 1
+            AND t_img_goods.NAME LIKE 'timg%'
+        ORDER BY
+            time_create DESC
+            LIMIT 8
+    </select>
+
 </mapper>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>二手首页</title>
+		<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="secmarket/css/index.css" th:href="@{/secmarket/css/index.css}"/>
+		<link rel="stylesheet" href="secmarket/css/public.css" th:href="@{/secmarket/css/public.css}"/>
+		<link rel="stylesheet" href="secmarket/css/js.css"  th:href="@{/secmarket/css/js.css}"/>
+		<link rel="stylesheet" href="secmarket/css/reset.css" th:href="@{/secmarket/css/reset.css}"/>
+		<link rel="stylesheet" href="secmarket/css/style.css" th:href="@{/secmarket/css/style.css}"/>
+		<script src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="secmarket/js/index.js"></script>
+		<script src="//cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body style="min-width: 1800px;">
+		<!-- 菜单栏 -->
+		<div class="headmenu">
+			<div class="head">
+				<ul style="margin-left: 11.5%">
+					<li style="width: 4%;"><a href="#" class="li-1">登陆</a></li>
+					<li style="width: 4%;"><a href="#" class="li-1">注册</a></li>
+				</ul>
+				<div class="searchbar">
+					<input type="text" placeholder="搜索..."/>
+				</div>
+				<ul style="margin-left:65%;">
+					<li>二手</li>
+					<li>跑腿</li>
+					<li class="submenu">
+						<span>收藏夹</span>
+						<ul>
+							<li><a href="#">收藏的宝贝</a></li>
+							<li><a href="#">收藏的店家</a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<span>联系客服</span>
+						<ul>
+							<li><a href="#">消费者客服</a></li>
+							<li><a href="#">卖家客服</a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<span>更多</span>
+						<ul>
+							<li><a href="#">服务中心</a></li>
+							<li><a href="#">问题反馈</a></li>
+							<li><a href="#">退出</a></li>
+						</ul>
+					</li>
+					<li>消息</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 头部 -->
+		<div class="header">
+			<div class="header-bac">
+				<img src="secmarket/img/head-2.png"/>
+				<div class="header-bac-card">
+					<img src="secmarket/img/002.png" />
+					<!-- <p class="header-bac-card_username">如果我是一只猫</p> -->
+					<div class="header-bac-card-button">
+						<button class="header-bac-card-button-login"><a>登陆</a></button>
+						<button class="header-bac-card-button-register">注册</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 分割区 -->
+		<div class="devede">
+			<div style="margin-left: 24%;">
+				<a id="text1"><span>电子产品&nbsp;</span></a>
+				<p>/</p>
+				<a id="text2"><span>校园动态&nbsp;</span></a>
+				<p>/</p>
+				<a id="text3"><span>附近宝贝&nbsp;</span></a>
+				<p>/</p>
+				<a id="text4"><span>关注动态&nbsp;</span></a>
+				<p>/</p>
+				<a id="text5"><span>为你推荐</span></a>
+			</div>
+		</div>
+
+		<!-- 智能硬件 -->
+		<div class="site-product" style="background-color: #FAFAFA;padding: 0px;">
+		  <div class="container" style="width: 1500px;margin-left: 12.5%;padding: 0px;">
+			<!-- 电子产品 -->
+		    <div class="model product-1 clearfix" id="show1" style="display: block;">
+		      <div class="title-box clearfix">
+		        <h2 class="title" style="letter-spacing: 3px;color: #333;">电子产品</h2>
+		        <div class="more-links">
+		          <a href="javascript:;">
+		          查看全部
+		          <i class="icon iconfont6">&#xe6cb;</i>
+		          </a>
+		        </div>
+		      </div>
+			  <hr style="height: 2px;background-color: #8488D8;margin-top: 0px;width: 1420px;"/>
+		      <div class="light-list hasone"  style="height: 692px;width: 282px;background-color: white;">
+		        <div class="light-item" style="margin: 0px">
+		          <a href="javascript:;" style=" height: 692px;">
+		            <img src="secmarket/img/001.jpg" style="width: 282px;height:694px "/>
+		          </a>
+		        </div>
+		      </div>
+		      <ul class="product-list clearfix test" style="width: 1200px;">
+		        <li class="brick-item" style=" padding: 0px;padding-bottom: 40px; width: 270px;height: 300px;" th:each="secGoods:${type1}">
+				  <a class="thumb"  href="javascript:;" style="margin: 0px;padding: 15px 17px;"><img src="secmarket/img/001.jpg" style="width:236px;height: 235px;" th:src="@{${secGoods.pic_path}+${secGoods.pic_name}}"/></a>
+				  <h3 class="title"><a href="#" th:href="@{${secGoods.id}}" th:text="${secGoods.title}">小蚁智能摄像机</a></h3>
+				  <p class="desc" th:text="${secGoods.field01}">能看能听能说，手机远程观看</p>
+				  <p class="price">
+					  <span class="num" th:text="${secGoods.price}">149</span>元
+				  </p>
+			  </li>
+		      </ul>
+		    </div>
+
+			<!-- 校园动态 -->
+			<div class="model product-1 clearfix" id="show2" style="display: none;">
+			  <div class="title-box clearfix">
+			    <h2 class="title" style="letter-spacing: 3px;">校园动态</h2>
+			    <div class="more-links">
+					<a href="javascript:;">
+					查看全部
+					<i class="icon iconfont6">&#xe6cb;</i>
+					</a>
+			    </div>
+			  </div>
+			  <hr style="height: 2px;background-color:#81AAD9;margin-top: 0px;width: 1420px;"/>
+			  <div class="light-list hasone"  style="height: 692px;width: 282px;background-color: white;">
+			    <div class="light-item" style="margin: 0px">
+			      <a href="javascript:;" style=" height: 692px;">
+			        <img src="secmarket/img/001.jpg" style="width: 282px;height:694px "/>
+			      </a>
+			    </div>
+			  </div>
+			  <ul class="product-list clearfix test" style="width: 1200px;">
+				  <li class="brick-item" style=" padding: 0px;padding-bottom: 40px; width: 270px;height: 300px;" th:each="secGoods:${type2}">
+					  <a class="thumb"  href="javascript:;" style="margin: 0px;padding: 15px 17px;"><img src="secmarket/img/001.jpg" style="width:236px;height: 235px;" th:src="@{${secGoods.pic_path}+${secGoods.pic_name}}"/></a>
+					  <h3 class="title"><a href="#" th:href="@{${secGoods.id}}" th:text="${secGoods.title}">小蚁智能摄像机</a></h3>
+					  <p class="desc" th:text="${secGoods.field01}">能看能听能说，手机远程观看</p>
+					  <p class="price">
+						  <span class="num" th:text="${secGoods.price}">149</span>元
+					  </p>
+				  </li>
+			  </ul>
+			</div>
+
+			<!-- 附近 -->
+			<div class="model product-1 clearfix" id="show3" style="display: none;">
+			  <div class="title-box clearfix">
+			    <h2 class="title" style="letter-spacing: 3px;">附近宝贝</h2>
+			    <div class="more-links">
+			      <a href="javascript:;">
+			      查看全部
+			      <i class="icon iconfont6">&#xe6cb;</i>
+			      </a>
+			    </div>
+			  </div>
+			  <hr style="height: 2px;background-color:lightskyblue;margin-top: 0px;width: 1420px;"/>
+			  <div class="light-list hasone"  style="height: 692px;width: 282px;background-color: white;">
+			    <div class="light-item" style="margin: 0px">
+			      <a href="javascript:;" style=" height: 692px;">
+			        <img src="secmarket/img/001.jpg" style="width: 282px;height:694px "/>
+			      </a>
+			    </div>
+			  </div>
+			  <ul class="product-list clearfix test" style="width: 1200px;">
+				  <li class="brick-item" style=" padding: 0px;padding-bottom: 40px; width: 270px;height: 300px;" th:each="secGoods:${type3}">
+					  <a class="thumb"  href="javascript:;" style="margin: 0px;padding: 15px 17px;"><img src="secmarket/img/001.jpg" style="width:236px;height: 235px;" th:src="@{${secGoods.pic_path}+${secGoods.pic_name}}"/></a>
+					  <h3 class="title"><a href="#" th:href="@{${secGoods.id}}" th:text="${secGoods.title}">小蚁智能摄像机</a></h3>
+					  <p class="desc" th:text="${secGoods.field01}">能看能听能说，手机远程观看</p>
+					  <p class="price">
+						  <span class="num" th:text="${secGoods.price}">149</span>元
+					  </p>
+				  </li>
+			  </ul>
+			</div>
+
+			<!-- 关注动态 -->
+			<div class="model product-1 clearfix" id="show4" style="display: none;">
+			  <div class="title-box clearfix">
+			    <h2 class="title" style="letter-spacing: 3px;">关注动态</h2>
+			    <div class="more-links">
+			     <a href="javascript:;">
+			     查看全部
+			     <i class="icon iconfont6">&#xe6cb;</i>
+			     </a>
+			    </div>
+			  </div>
+			  <hr style="height: 2px;background-color:lightsteelblue;margin-top: 0px;width: 1420px;"/>
+			  <div class="light-list hasone"  style="height: 692px;width: 282px;background-color: white;">
+			    <div class="light-item" style="margin: 0px">
+			      <a href="javascript:;" style=" height: 692px;">
+			        <img src="secmarket/img/001.jpg" style="width: 282px;height:694px "/>
+			      </a>
+			    </div>
+			  </div>
+			  <ul class="product-list clearfix test" style="width: 1200px;">
+				  <li class="brick-item" style=" padding: 0px;padding-bottom: 40px; width: 270px;height: 300px;" th:each="secGoods:${type4}">
+					  <a class="thumb"  href="javascript:;" style="margin: 0px;padding: 15px 17px;"><img src="secmarket/img/001.jpg" style="width:236px;height: 235px;" th:src="@{${secGoods.pic_path}+${secGoods.pic_name}}"/></a>
+					  <h3 class="title"><a href="#" th:href="@{${secGoods.id}}" th:text="${secGoods.title}">小蚁智能摄像机</a></h3>
+					  <p class="desc" th:text="${secGoods.field01}">能看能听能说，手机远程观看</p>
+					  <p class="price">
+						  <span class="num" th:text="${secGoods.price}">149</span>元
+					  </p>
+				  </li>
+			  </ul>
+			</div>
+			  <div class="model product-1 clearfix" id="show5" style="display: none;">
+				  <div class="title-box clearfix">
+					  <h2 class="title" style="letter-spacing: 3px;">为你推荐</h2>
+					  <div class="more-links">
+						  <a href="javascript:;">
+							  查看全部
+							  <i class="icon iconfont6">&#xe6cb;</i>
+						  </a>
+					  </div>
+				  </div>
+				  <hr style="height: 2px;background-color:lightskyblue;margin-top: 0px;width: 1420px;"/>
+				  <div class="light-list hasone"  style="height: 692px;width: 282px;background-color: white;">
+					  <div class="light-item" style="margin: 0px">
+						  <a href="javascript:;" style=" height: 692px;">
+							  <img src="secmarket/img/001.jpg" style="width: 282px;height:694px "/>
+						  </a>
+					  </div>
+				  </div>
+				  <ul class="product-list clearfix test" style="width: 1200px;">
+					  <li class="brick-item" style=" padding: 0px;padding-bottom: 40px; width: 270px;height: 300px;" th:each="secGoods:${type5}">
+						  <a class="thumb"  href="javascript:;" style="margin: 0px;padding: 15px 17px;"><img src="secmarket/img/001.jpg" style="width:236px;height: 235px;" th:src="@{${secGoods.pic_path}+${secGoods.pic_name}}"/></a>
+						  <h3 class="title"><a href="#" th:href="@{${secGoods.id}}" th:text="${secGoods.title}">小蚁智能摄像机</a></h3>
+						  <p class="desc" th:text="${secGoods.field01}">能看能听能说，手机远程观看</p>
+						  <p class="price">
+							  <span class="num" th:text="${secGoods.price}">149</span>元
+						  </p>
+					  </li>
+				  </ul>
+			  </div>
+		  </div>
+		</div>
+
+		<!-- 图片 -->
+		<div class="pic">
+			<img src="secmarket/img/1001.jpg" style="margin-left: 100px;"/>
+		</div>
+
+		<!-- 推荐 -->
+		<div class="scrollpic">
+			<p style="margin-left: 5px;font-size: 22px;font-weight: 200;line-height: 58px;color: #333;float: left;">为你推荐<!-- <span class="glyphicon glyphicon-gift" style="color: indianred;margin-left: 5px;"></span> --></p>
+			<div id="mybtns"> <a href="javascript:;" id="right"></a><a href="javascript:;" id="left"></a>  </div>
+			<div id="myscroll">
+				<div id="myscrollbox">
+					<ul>
+						<li th:each="secGoods:${spec}">
+							<a href="#" th:href="@{${secGoods.id}}">
+								<img src="secmarket/img/good1.jpg" width="260" height="240" th:src="@{${secGoods.pic_path}+${secGoods.pic_name}}">
+								<span class="intro">
+									<h5 th:text="${secGoods.price}">￥999</h5>
+									<p style="font-size: 18px;font-weight: 600;" th:text="${secGoods.title}">出平板</p>
+									<img src="secmarket/img/002.png" style="width: 50px;height: 50px;border-radius: 50%;" th:src="@{${secGoods.field02}}"/>
+									<p th:text="${secGoods.field01}">如果我是一只猫</p>
+									<button>联系卖家</button>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- 底部 -->
+		<div class="footer">
+			<div class="footer_outer">
+				<div class="footer_outer_list" style="margin-left: 7%;">
+					<p style="margin-top: 20px;font-size: 16px;color: #333333;letter-spacing: 1px;font-weight: 600;">跑腿代购</p>
+					<p>发布需求</p>
+					<p>接单中心</p>
+					<p>配送员认证</p>
+					<p>个人中心</p>
+				</div>
+				<div class="footer_outer_list">
+					<p style="margin-top: 20px;font-size: 16px;color: #333333;letter-spacing: 1px;font-weight: 600;">二手市场</p>
+					<p>分类</p>
+					<p>我的订单</p>
+					<p>我的收藏</p>
+					<p>个人中心</p>
+				</div>
+				<div class="footer_outer_list">
+					<p style="margin-top: 20px;font-size: 16px;color: #333333;letter-spacing: 1px;font-weight: 600;">个人信息</p>
+					<p>信息认证</p>
+					<p>信息修改</p>
+					<p>账号注销</p>
+					<p>个人中心</p>
+				</div>
+
+				<div class="footer_outer_list">
+					<p style="margin-top: 20px;font-size: 16px;color: #333333;letter-spacing: 1px;font-weight: 600;">订单中心</p>
+					<p>我的订单</p>
+					<p>我的物品</p>
+					<p>我的接单</p>
+					<p>个人中心</p>
+				</div>
+				<div class="footer_outer_list">
+					<p style="margin-top: 20px;font-size: 16px;color: #333333;letter-spacing: 1px;font-weight: 600;">关注微信</p>
+					<img src="secmarket/img/007.png" th:src="@{/secmarket/img/007.png}"/>
+				</div>
+			</div>
+		</div>
+
+		<!-- js -->
+		<script type="text/javascript">
+		$(document).ready(function() {
+			  var blw=$("#myscrollbox li").width();
+			  //获取单个子元素所需宽度
+			  var liArr = $("#myscrollbox ul").children("li");
+			  //获取子元素数量
+			  var mysw = $("#myscroll").width();
+			  //获取子元素所在区域宽度
+			  var mus = parseInt(mysw/blw);
+			  //计算出需要显示的子元素的数量
+			  var length = liArr.length-mus;
+			  //计算子元素可移动次数（被隐藏的子元素数量）
+			  var i=0
+			  $("#right").click(function(){
+				  i++
+				  //点击i加1
+				  if(i<length){
+				      $("#myscrollbox").css("left",-(blw*i));
+					  //子元素集合向左移动，距离为子元素的宽度乘以i。
+				  }else{
+					  i=length;
+					  $("#myscrollbox").css("left",-(blw*length));
+					  //超出可移动范围后点击不再移动。最后几个隐藏的元素显示时i数值固定位已经移走的子元素数量。
+			      }
+		      });
+			  $("#left").click(function(){
+				  i--
+				  //点击i减1
+				  if(i>=0){
+				     $("#myscrollbox").css("left",-(blw*i));
+					 //子元素集合向右移动，距离为子元素的宽度乘以i。
+				  }else{
+					 i=0;
+					 $("#myscrollbox").css("left",0);
+					 //超出可移动范围后点击不再移动。最前几个子元素被显示时i为0。
+					}
+				});
+			});
+
+			$(document).ready(function(){
+				$("#text1").hover(function(){
+					$("#show1").css('display','block');
+					$("#show2").css('display','none');
+					$("#show3").css('display','none');
+					$("#show4").css('display','none');
+                    $("#show5").css('display','none');
+
+                });
+				$("#text2").hover(function(){
+					$("#show1").css('display','none');
+					$("#show2").css('display','block');
+					$("#show3").css('display','none');
+					$("#show4").css('display','none');
+                    $("#show5").css('display','none');
+
+                });
+				$("#text3").hover(function(){
+					$("#show1").css('display','none');
+					$("#show2").css('display','none');
+					$("#show3").css('display','block');
+					$("#show4").css('display','none');
+                    $("#show5").css('display','none');
+				});
+				$("#text4").hover(function(){
+					$("#show1").css('display','none');
+					$("#show2").css('display','none');
+					$("#show3").css('display','none');
+					$("#show4").css('display','block');
+					$("#show5").css('display','none');
+				});
+                $("#text5").hover(function(){
+                    $("#show1").css('display','none');
+                    $("#show2").css('display','none');
+                    $("#show3").css('display','none');
+                    $("#show4").css('display','none');
+                    $("#show5").css('display','block');
+                });
+			});
+		</script>
+	</body>
+</html>

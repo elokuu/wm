@@ -10,7 +10,7 @@ body{
     overflow-x: hidden;
     /* widows: 1349px; */
     width:100%;
-    min-width:1349px;
+    min-width:1800px;
     max-width:100%;
     height:100%;
     overflow:auto; 需要的时候会出现滚动条
