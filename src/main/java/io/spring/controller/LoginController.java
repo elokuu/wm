@@ -30,7 +30,7 @@ public class LoginController {
                     session.setAttribute("name", name);
                     model.addAttribute("msg", "success");
                     model.addAttribute("name", name);
-                    return "homepage";
+                    return "redirect:/homepage";
                 }
             }
         }

@@ -44,7 +44,7 @@
                     <li><a th:href="@{#}">评价晒单</a></li>
                     <li><a th:href="@{#}">我的喜欢</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a th:href="@{/logout}">退出登录</a></li>
+                    <li><a th:href="@{#}">退出登录</a></li>
                 </ul>
             </div>
             <div class="topbar-user pull-right btn-group">
@@ -871,7 +871,7 @@
                         </div>
 
                         <div class="fdata lblnickname" id="fdata">
-                            <form class="form-horizontal center-block" role="form" th:action="@{/update}" method="post" onsubmit="return tijiao_info();">
+                            <form class="form-horizontal center-block" role="form" th:action="@{/update}" method="post" onsubmit="return submit_info();">
                                 <div class="form-group ">
                                     <label class="col-sm-2 control-label">用户名：</label>
                                     <div class="col-sm-4 ">
@@ -882,7 +882,7 @@
                                 <div class="form-group ">
                                     <label class="col-sm-2 control-label">密码：</label>
                                     <div class="col-sm-4 ">
-                                        <input class="form-control input-info" required disabled type="password" name="password"
+                                        <input class="form-control input-info" required disabled type="password" id="pwd" name="password" data-toggle="tooltip" data-placement="right" title="Tooltip on right"
                                                th:value="${session.user.password}"/>
                                     </div>
                                 </div>
@@ -947,12 +947,3 @@
 
 </body>
 </html>
-
-
-<div class="page-main user-main">
-    <div class="container clearfix">
-        <div class="row">
-
-        </div>
-    </div>
-</div>

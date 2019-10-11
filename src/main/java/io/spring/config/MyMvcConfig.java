@@ -9,7 +9,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("homepage");
+        registry.addViewController("/").setViewName("redirect:/homepage");
         registry.addViewController("/sign_up.html").setViewName("register/sign_up");
         registry.addViewController("/sign_in.html").setViewName("register/sign_in");
         registry.addViewController("/MallHomepage.html").setViewName("MallHomepage");
