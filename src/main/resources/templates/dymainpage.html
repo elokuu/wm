@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../static/dyassets/css/bootstrap-grid.min.css" th:href="@{/dyassets/css/bootstrap-grid.min.css}" />
+<link rel="stylesheet" type="text/css" href="../static/dyassets/css/reset.css" th:href="@{/dyassets/css/reset.css}">
 
 <head>
 	<meta charset="utf-8">
 	<title>大工咸鱼</title>
-	<link rel="stylesheet" href="../../resources/static/dyassets/css/mainpage.css" th:href="@{/dyassets/css/mainpage.css}">
-	<link rel="stylesheet" href="../../resources/static/dyassets/css/style.css" th:href="@{/dyassets/css/style.css}">
-	<link rel="stylesheet " href="../../resources/static/dyassets/css/icon.css" th:href="@{/dyassets/css/icon.css}">
+	<link rel="stylesheet" href="../static/dyassets/css/mainpage.css" th:href="@{/dyassets/css/mainpage.css}">
+	<link rel="stylesheet" href="../static/dyassets/css/style.css" th:href="@{/dyassets/css/style.css}">
+	<link rel="stylesheet " href="../static/dyassets/css/icon.css" th:href="@{/dyassets/css/icon.css}">
 	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" >
-	<link rel="stylesheet" href="../../resources/static/dyassets/css/ershou.css" th:href="@{/dyassets/css/ershou.css}">
+	<link rel="stylesheet" href="../static/dyassets/css/ershou.css" th:href="@{/dyassets/css/ershou.css}">
 
 	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
@@ -23,6 +27,164 @@
 <section class="panel home" name="home1" data-section-name="home1">
 	<div class="inner" style="padding-top:2.5%;">
 		<div><a href="#overview" id="1111" class="scroll" style="display:none"></a></div>
+
+
+<!--		<div class="container">-->
+<!--			-->
+<!--		</div>-->
+
+		<div id="sampledata1" class="bringins-content">
+			<div class="box-besides" style="background-color:#81aad9; height: 800px;width: 600px;">
+				<div class="box">
+					<h2>快递跑腿下单系统</h2><br/>
+					<p>这是专为校园学子代取代拿快递的服务业务，下单提交完成后不能修改，请谨慎下单，如有特殊情况请联系业务员。</p>
+					<hr size=1 style="color:black;border-style:dotted;">
+					<form>
+						<div class="form-group">
+							<p>快递驿站：</p><br/>
+							<textarea></textarea>
+						</div><br/>
+						<div class="form-group">
+							<p>收件地址：</p><br/>
+							<textarea></textarea>
+
+						</div><br/>
+						<div style="text-align: center ;color: darkred">
+							<button type="submit" style="width: 50px;height: 30px">提交</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div id="sampledata2" class="bringins-content">
+			<div class="box-besides" style="background-color:#81aad9; height: 800px;width: 600px;">
+				<div class="box">
+					<h2>兼职信息发布平台</h2><br/>
+					<p>这是专为校园发布兼职信息的服务平台，下单提交完成后不能修改，请谨慎下单，如有特殊情况请联系管理员。</p>
+					<hr size=1 style="color:black;border-style:dotted;">
+					<form>
+						<div class="form-gr】
+			oup">
+							<p>信息发布人：</p><br/>
+							<textarea></textarea>
+
+						</div>
+						<div class="form-group">
+							<p>详细内容：</p><br/>
+							<textarea></textarea>
+
+						</div>
+						<div class="form-group">
+							<p>联系电话：</p><br/>
+							<textarea></textarea>
+
+						</div><br/>
+						<div style="text-align: center ;color: darkred">
+							<button type="submit" style="width: 50px;height: 30px">提交</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="sampledata3" class="bringins-content">
+			<div class="box-besides" style="background-color:#81aad9; height: 800px;width: 600px;">
+				<div class="box">
+					<h2>队伍组建系统</h2><br/>
+					<p>这是专为校园学子组建队伍的服务业务，下单提交完成后不能修改，请谨慎下单，如有特殊情况请联系业务员。</p>
+					<hr size=1 style="color:black;border-style:dotted;">
+					<form>
+						<div class="form-group">
+							<p>队伍说明：</p><br/>
+							<textarea></textarea>
+
+						</div>
+						<div class="form-group">
+							<p>联系方式：</p><br/>
+							<textarea></textarea>
+
+						</div><br/>
+						<div style="text-align: center ;color: darkred">
+							<button type="submit" style="width: 50px;height: 30px">提交</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div id="sampledata4" class="bringins-content">
+			<div class="box-besides" style="background-color:#81aad9; height: 800px;width: 600px;">
+				<div class="box">
+					<h2>文件打印系统</h2><br/>
+					<p>这是专为校园学子提供文件打印的服务业务，下单提交完成后不能修改，请谨慎下单，如有特殊情况请联系业务员。</p>
+					<hr size=1 style="color:black;border-style:dotted;">
+					<form>
+						<a href="javascript:;" class="file">选择文件
+							<input type="file">
+						</a><br/>
+						<textarea></textarea>
+						<div class="form-group">
+							<p>配送地址：</p><br/>
+							<textarea></textarea>
+
+						</div>
+						<br/>
+						<div style="text-align: center ;color: darkred">
+							<button type="submit" style="width: 50px;height: 30px">提交</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../static/dyassets/js/jquery-1.11.0.min.js" th:src="@{/dyassets/js/jquery-1.11.0.min.js}"></script>
+		<script type="text/javascript" src="../static/dyassets/js/bringins.js" th:src="@{/dyassets/js/bringins.js}"></script>
+		<script>
+			$(document).ready(function() {
+				$('#ed').click(function(){
+					$('#sampledata1').bringins({
+						"position":"center",
+
+						"closeButton":"white",
+						"width":"100%"
+					});
+				});
+				$('#pt').click(function(){
+					$('#sampledata2').bringins({
+						"position":"center",
+
+						"closeButton":"white",
+						"width":"100%"
+					});
+				});
+				$('#ot').click(function(){
+					$('#sampledata3').bringins({
+						"position":"center",
+
+						"closeButton":"white",
+						"width":"100%"
+					});
+				});
+				$('#fp').click(function(){
+					$('#sampledata4').bringins({
+						"position":"center",
+
+						"closeButton":"white",
+						"width":"100%"
+					});
+				});
+			});
+		</script>
+
+
+
+
 
 		<div class="container" id="yeslogin" style="display:none;padding-top:10px;color:#6a6f8c;font:600 16px/18px 'Open Sans',sans-serif;">
 			<div class="login-wrap">
@@ -49,12 +211,8 @@
 
 </section>
 
-<section id="p2" class="panel overview" data-section-name="overview" style="background: url(/dyassets/img/1-4.jpg) no-repeat center 0;background-size: 100% 100%;">
+<section id="p2" class="panel overview" data-section-name="overview" style="background:  url(/dyassets/img/1-4.jpg) no-repeat center 0;background-size: 100% 100%;">
 
-
-	<!--<a href="#home" class="scroll" style="margin-top:13%;float:right;margin-right:45%;	transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); ">
-        <p style="float:right;margin-top:25%;font-size: 1em;transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg);">点此登录!!</p>
-    </a>-->
 	<div class=" inner icon" >
 		<a href="#home1"  class="scroll" style="text-decoration:none;margin-top:15%;float:right;margin-right:-50px;transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg);	">
 
@@ -63,9 +221,9 @@
 
 		<div style="height:200px;width:300px;"></div>
 		<div id="ershou" class="carre_couleur base_hov tubiao" style="background-color: #5e6fd3;opacity: 0.6;">
-			<a target="_blank" href="ershou.html">
+			<a href="#home1" class="dd" id="ed">
 				<div class="retract" style="background-color: #ffce91;" ><img
-						src="../../resources/static/dyassets/img/jniceit/1.png" th:src="@{/dyassets/img/jniceit/1.png}" height="200" width="200"/></div>
+						src="../static/dyassets/img/jniceit/1.png" th:src="@{/dyassets/img/jniceit/1.png}" height="200" width="200"/></div>
 				<div class="acced" >
 					<div class="big_acced" style="color: #25347b;">快递服务</div>
 					<div class="middle_acced"> </div>
@@ -73,9 +231,9 @@
 			</a>
 		</div>
 		<div id="zulin" class="carre_couleur base_hov tubiao" style="background-color:#437085;opacity: 0.6; ">
-			<a target="_blank" href="zulin.html">
+			<a href="#home1" class="dd" id="ot">
 				<div class="retract" style="background-color: #a0dcfb;"><img
-						src="../../resources/static/dyassets/img/jniceit/2.png" th:src="@{/dyassets/img/jniceit/2.png}" height="200" width="200"/></div>
+						src="../static/dyassets/img/jniceit/2.png" th:src="@{/dyassets/img/jniceit/2.png}" height="200" width="200"/></div>
 				<div class="acced">
 					<div class="big_acced" style="color:#ecebe7 ;">成立队伍</div>
 					<div class="middle_acced"></div>
@@ -83,19 +241,19 @@
 			</a>
 		</div>
 		<div id="ziyuan" class="carre_couleur base_hov tubiao" style="background-color: #81aad9;opacity: 0.6;">
-			<a target="_blank" href="mianfei.html">
+			<a href="#home1" class="dd"  id="pt">
 				<div class="retract" style="background-color: #f1ec9b;"><img
-						src="../../resources/static/dyassets/img/jniceit/3.png" th:src="@{/dyassets/img/jniceit/3.png}" height="200" width="200"/></div>
+						src="../static/dyassets/img/jniceit/3.png" th:src="@{/dyassets/img/jniceit/3.png}" height="200" width="200"/></div>
 				<div class="acced">
-					<div class="big_acced" style="color: #f2ccb1 ;">全职工作</div>
+					<div class="big_acced" style="color: #f2ccb1 ;">兼职工作</div>
 					<div class="middle_acced"> </div>
 				</div>
 			</a>
 		</div>
 		<div id="fabu" class="carre_couleur base_hov tubiao" style="background-color:#002c73 ;opacity: 0.6;" >
-			<a target="_blank" href="qiuzuqiugou.html">
+			<a href="#home1" class="dd" id="fp">
 				<div class="retract" style="background-color: #f7b6da;"><img
-						src="../../resources/static/dyassets/img/jniceit/4.png" th:src="@{/dyassets/img/jniceit/4.png}" height="200" width="200"/></div>
+						src="../static/dyassets/img/jniceit/4.png" th:src="@{/dyassets/img/jniceit/4.png}" height="200" width="200"/></div>
 				<div class="acced">
 					<div class="big_acced" style="color:#ffd009  ;">文件打印</div>
 					<div class="middle_acced"> </div>
@@ -110,8 +268,8 @@
 
 </section>
 
-<script src="../../resources/static/dyassets/js/jquery.easing.min.js" th:src="@{/dyassets/js/jquery.easing.min.js}"></script>
-<script src="../../resources/static/dyassets/js/jquery.scrollify.min.js" th:src="@{/dyassets/js/jquery.scrollify.min.js}"></script>
+<script src="../static/dyassets/js/jquery.easing.min.js" th:src="@{/dyassets/js/jquery.easing.min.js}"></script>
+<script src="../static/dyassets/js/jquery.scrollify.min.js" th:src="@{/dyassets/js/jquery.scrollify.min.js}"></script>
 <script>
     $(function() {
 
@@ -133,10 +291,15 @@
             section: ".panel"
         });
 
-        $(".scroll").click(function(e) {
+        $(".scroll ").click(function(e) {
             e.preventDefault();
             $.scrollify("move", $(this).attr("href"));
         });
+
+		$(".dd ").click(function(e) {
+			e.preventDefault();
+			$.scrollify("move", $(this).attr("href"));
+		});
     });
     function checklogin(e,login){
         if(login==1){

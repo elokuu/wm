@@ -15,8 +15,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/MallHomepage.html").setViewName("MallHomepage");
         registry.addViewController("/dymainpage.html").setViewName("dymainpage");
 
-        //个人中心模板（不单独显示）
         registry.addViewController("/pc-model.html").setViewName("pc-model");
+
         //订单中心/我的订单
         registry.addViewController("/per-order.html").setViewName("per-order");
         //订单中心/我的商品
