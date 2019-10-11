@@ -37,4 +37,11 @@ public class PersonalController {
         session.setAttribute("user", user);
         return "personalCenter";
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+
+        session.invalidate();
+        return "homepage";
+    }
 }
