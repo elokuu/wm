@@ -206,7 +206,6 @@
                         <li class="active"><a th:href="@{/personalCenter.html}">我的首页</a></li>
                         <!--<li><a th:href="@{#}">消息通知</a></li>-->
                         <li><a th:href="@{/per-favorite.html}">我的收藏</a></li>
-                        <li><a th:href="@{/per-address.html}">收货地址</a></li>
                     </ul>
                 </div>
             </div>
@@ -578,7 +577,7 @@
                             <h2 class="username" th:text="${session.user.name}"></h2>
                             <p class="tip">Hello～</p>
                             <a class="link" th:href="@{/perInfo.html}">修改个人信息&gt;</a>
-                            <img class="avatar" src="ncassets/img/user.jpg" width="150"
+                            <img class="avatar" src="ncassets/img/user.jpg" th:src="@{${session.user.icon}}" width="150"
                                  height="150" alt="Max丶">
                         </div>
                         <div class="user-actions">
@@ -791,52 +790,6 @@
         </div>
     </div>
 </div>
-<!--收货地址-->
-<div th:fragment="span6-address">
-    <div class="span16">
-        <div class="protal-content-update ">
-            <div class="protal-username">
-                Hi, username
-            </div>
-            <p class="msg">我们做了一个小升级：你的用户名可以直接修改啦，去换个酷炫的名字吧。<a th:href="@{/perInfo.html}">立即前往&gt;</a></p>
-        </div>
-        <div class="uc-box uc-main-box">
-            <div class="uc-content-box portal-content-box">
-                <div class="box-bd">
-                    <div class="portal-main clearfix">
-                        <div class="user-card">
-                            <h2 class="username">username</h2>
-                            <p class="tip">Hello～</p>
-                            <a class="link" th:href="@{/perInfo.html}">修改个人信息&gt;</a>
-                            <img class="avatar" src="ncassets/img/user.jpg" width="150"
-                                 height="150" alt="Max丶">
-                        </div>
-                        <div class="user-actions">
-                            <ul class="action-list">
-                                <li>认证学号：<span class="level level-2">学号/未认证</span></li>
-                                <li>信用等级：<span class="tel">信用等级</span></li>
-                                <li>绑定邮箱：<span class="tel"></span>email</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="portal-sub" style="padding: 36px 0">
-                        <div class="box-hd">
-                            <h1 class="title">收货地址</h1>
-                        </div>
-                        <div class="box-hd">
-                            <div class="address-item address-item-new col-sm-3"
-                                 style="border: 1px solid #333333;align:center;">
-                                <i class="fa fa-plus" style="font-size: xx-large"></i>
-                                <br>
-                                添加新地址
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!--修改个人信息（已完成）-->
 <div th:fragment="span6-perInfo">
     <div class="span16">
@@ -848,7 +801,7 @@
                             <h2 class="username" th:text="${session.user.name}"></h2>
                             <p class="tip">Hello～</p>
                             <a class="link" type="file" th:href="@{#}">修改头像&gt;</a>
-                            <img class="avatar" src="ncassets/img/user.jpg" width="150"
+                            <img class="avatar" src="ncassets/img/user.jpg" width="150" th:src="@{${session.user.icon}}"
                                  height="150" alt="Max丶">
                         </div>
                         <div class="user-actions">

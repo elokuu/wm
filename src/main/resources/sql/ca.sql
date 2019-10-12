@@ -235,7 +235,7 @@ INSERT INTO `t_task` VALUES (10, 4, '菜鸟驿站的', 1, 1, 'gkd', '2019-10-09 
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user`  (
   `id` int(8) NOT NULL AUTO_INCREMENT,
-  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'upload/icon/default.png' COMMENT '头像(在服务器中的文件路径)',
+  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '/mainassets/img/pic1.jpg' COMMENT '头像(在服务器中的文件路径)',
   `name` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户名',
   `password` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
   `authority` tinyint(1) NULL DEFAULT 1 COMMENT '权限',
@@ -257,5 +257,6 @@ INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12
 INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com');
 INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com');
 INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com');
+INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', '123', 1, '22@33');
 
 SET FOREIGN_KEY_CHECKS = 1;
