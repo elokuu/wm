@@ -11,7 +11,7 @@
  Target Server Version : 50723
  File Encoding         : 65001
 
- Date: 11/10/2019 09:53:54
+ Date: 12/10/2019 08:45:18
 */
 
 SET NAMES utf8mb4;
@@ -44,10 +44,10 @@ CREATE TABLE `t_goods`  (
   `id` int(16) NOT NULL AUTO_INCREMENT,
   `id_user` int(8) NULL DEFAULT NULL COMMENT '商品发布者id',
   `title` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '商品标题',
+  `type` varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '商品类型',
   `quota` int(5) NULL DEFAULT NULL COMMENT '商品剩余数量',
   `price` double(16, 2) NULL DEFAULT NULL COMMENT '商品价格',
-  `
-describe` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '商品描述',
+  `describe` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '商品描述',
   `time_create` datetime(0) NULL DEFAULT NULL COMMENT '上架时间',
   `state` tinyint(1) NULL DEFAULT NULL COMMENT '商品状态',
   PRIMARY KEY (`id`) USING BTREE,
@@ -58,15 +58,15 @@ describe` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT 
 -- ----------------------------
 -- Records of t_goods
 -- ----------------------------
-INSERT INTO `t_goods` VALUES (1, 2, '二手电脑', 1, 100.00, '戴尔的', '2019-10-09 15:51:55', 1);
-INSERT INTO `t_goods` VALUES (2, 2, '桌子', 1, 20.00, '新的', '2019-10-23 15:53:46', 1);
-INSERT INTO `t_goods` VALUES (3, 1, '椅子', 1, 100.00, '1成新', '2019-10-09 15:54:01', 1);
-INSERT INTO `t_goods` VALUES (4, 3, '锅', 1, 3.50, '9成新', '2019-10-09 15:54:19', 1);
-INSERT INTO `t_goods` VALUES (5, 2, '饮水机', 1, 10.00, '8成新', '2019-10-09 15:54:34', 1);
-INSERT INTO `t_goods` VALUES (6, 3, '华为', 1, 1024.00, '买到赚到', '2019-10-09 15:54:49', 1);
-INSERT INTO `t_goods` VALUES (7, 3, '魅族', 1, 888.00, '便宜卖了', '2019-10-09 15:55:03', 1);
-INSERT INTO `t_goods` VALUES (8, 2, '小米', 1, 998.00, '不要了', '2019-10-10 15:55:17', 1);
-INSERT INTO `t_goods` VALUES (9, 2, '塑料', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
+INSERT INTO `t_goods` VALUES (1, 2, '二手电脑', '电子产品', 1, 100.00, '戴尔的', '2019-10-09 15:51:55', 1);
+INSERT INTO `t_goods` VALUES (2, 2, '桌子', '电子产品', 1, 20.00, '新的', '2019-10-23 15:53:46', 1);
+INSERT INTO `t_goods` VALUES (3, 1, '椅子', '电子产品', 1, 100.00, '1成新', '2019-10-09 15:54:01', 1);
+INSERT INTO `t_goods` VALUES (4, 3, '锅', '电子产品', 1, 3.50, '9成新', '2019-10-09 15:54:19', 1);
+INSERT INTO `t_goods` VALUES (5, 2, '饮水机', '电子产品', 1, 10.00, '8成新', '2019-10-09 15:54:34', 1);
+INSERT INTO `t_goods` VALUES (6, 3, '华为', '电子产品', 1, 1024.00, '买到赚到', '2019-10-09 15:54:49', 1);
+INSERT INTO `t_goods` VALUES (7, 3, '魅族', '电子产品', 1, 888.00, '便宜卖了', '2019-10-09 15:55:03', 1);
+INSERT INTO `t_goods` VALUES (8, 2, '小米', '电子产品', 1, 998.00, '不要了', '2019-10-10 15:55:17', 1);
+INSERT INTO `t_goods` VALUES (9, 2, '塑料', '电子产品', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
 
 -- ----------------------------
 -- Table structure for t_img_goods
@@ -98,7 +98,7 @@ INSERT INTO `t_img_goods` VALUES (7, 'timg.jpg', '/mainassets/img/', 1, '2019-10
 INSERT INTO `t_img_goods` VALUES (8, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 15:56:38', '1', 8);
 INSERT INTO `t_img_goods` VALUES (9, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 15:56:38', '1', 9);
 INSERT INTO `t_img_goods` VALUES (10, 'timg2.jpg', '/mainassets/img/', 1, '2019-10-10 09:15:07', '1', 1);
-INSERT INTO `t_img_goods` VALUES (11, 'timg2.jpg', '22/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 2);
+INSERT INTO `t_img_goods` VALUES (11, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 2);
 
 -- ----------------------------
 -- Table structure for t_img_task
