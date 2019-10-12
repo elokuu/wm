@@ -11,7 +11,7 @@
  Target Server Version : 50723
  File Encoding         : 65001
 
- Date: 12/10/2019 08:45:18
+ Date: 12/10/2019 14:33:18
 */
 
 SET NAMES utf8mb4;
@@ -35,6 +35,22 @@ CREATE TABLE `t_detail_user`  (
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_detail_user_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for t_favorites_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `t_favorites_goods`;
+CREATE TABLE `t_favorites_goods`  (
+  `id` int(32) NOT NULL,
+  `id_goods` int(16) NULL DEFAULT NULL COMMENT '收藏的商品id',
+  `id_user` int(16) NULL DEFAULT NULL COMMENT '收藏者的id',
+  `time_create` datetime(0) NULL DEFAULT NULL COMMENT '收藏时间',
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `id_goods`(`id_goods`) USING BTREE,
+  INDEX `id_user`(`id_user`) USING BTREE,
+  CONSTRAINT `t_favorites_goods_ibfk_1` FOREIGN KEY (`id_goods`) REFERENCES `t_goods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `t_favorites_goods_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for t_goods
@@ -241,7 +257,7 @@ CREATE TABLE `t_user`  (
   `authority` tinyint(1) NULL DEFAULT 1 COMMENT '权限',
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '注册邮箱',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user
