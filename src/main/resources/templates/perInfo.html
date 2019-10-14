@@ -19,6 +19,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+
+    <!--  layui  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/ncassets/layui/css/layui.css}"/>
+    <script type="text/javascript" th:src="@{/ncassets/layui/layui.js}"></script>
 </head>
 <body>
 <div th:include="pc-model :: site-topbar"></div>
@@ -61,7 +65,23 @@
 
         return flag;
     }
+    function editImg() {
 
+        layui.use('layer', function(){
+            var layer = layui.layer;
+
+            layer.open({
+                type: 1,
+                title: "修改头像",
+                area: ['500px', '300px'],
+                content: '<form th:href="@{}">' +
+                    '<input type="file" name="file-demo" class="layui-upload-file">'+
+                    '<input type="submit">'+
+                    '</form>'
+
+            });
+        });
+    }
 </script>
 </html>
 

@@ -1,0 +1,58 @@
+.space-home {
+    padding: 32px 0;
+    background: #f5f5f5;
+}
+.container {
+    width: 1226px;
+    margin: 0 auto;
+}
+.space-summary {
+    position: relative;
+    padding-top: 190px;
+    height: 172px;
+    overflow: hidden;
+    _zoom: 1;
+}
+.space-summary .bg4 {
+    background: #c0c1c2;
+}
+.space-summary .space-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+.space-summary .space-user-wrap {
+    position: relative;
+    z-index: 4;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.space-summary .user-info {
+    padding-left: 30px;
+}
+.space-summary .space-user-wrap .user-img {
+    width: 138px;
+    height: 138px;
+}
+.space-summary .space-user-wrap .user-name {
+    margin-left: 40px;
+    font-size: 33px;
+    vertical-align: bottom;
+}
+.space-summary .space-user .space-line {
+    border-right: 1px solid #dbcebf;
+}
+.space-summary .space-user li {
+    float: left;
+    padding: 0 50px;
+}
+.m-num {
+    font-family: 'Avenir', "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei";
+}
+.f1{
+    float: left;
+}

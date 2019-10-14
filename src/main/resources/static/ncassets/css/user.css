@@ -1,7 +1,65 @@
+.table-a a{
+    text-decoration-line: none;
+    text-decoration: none;
+}
+.comment-top a{
+    text-decoration-line: none;
+    text-decoration: none;
+}
 .figure-thumb {
     padding: 40.88px 0 0px 30px;
     left: 0;
     top: 0;
+}
+.clearfix .breadcrumb li{
+    font-size: x-large;
+
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+.container{
+    width: 1426px;
+}
+.span16{
+    width: 1078px;
+}
+.uc-nav-box .box-bd{
+    font-size: large;
+}
+.comment-input input {
+    height: 43px;
+    width: 520px;
+    padding: 10px 0 10px 20px;
+    height: 23px;
+    line-height: 23px;
+    font-size: 14px;
+    outline: none;
+    color: #b0b0b0;
+    border: 1px solid #e0e0e0;
 }
 .goods-list li p{
     position: relative;
@@ -9,11 +67,11 @@
     left: 160px;
     margin: 0px;
 }
-.active{
-    text-decoration: none;
+.active a{
+    text-decoration-line: none;
 }
-.first{
-
+.first a{
+    color: #ff6700;
 }
 .col-sub p{
     text-align: right;
@@ -287,7 +345,7 @@ a:-webkit-any-link {
 }
 .uc-nav-box .box-hd .title {
     margin: 0 48px 2px;
-    font-size: 20px;
+    font-size: x-large;
     font-weight: 400;
     line-height: 52px;
     color: #333;
@@ -296,7 +354,7 @@ a:-webkit-any-link {
     margin-bottom: 0px;
 }
 .span16 {
-    width: 978px;
+    width: 1078px;
     float: left;
     margin-left: 14px;
     min-height: 1px;
