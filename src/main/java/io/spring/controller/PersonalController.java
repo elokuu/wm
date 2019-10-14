@@ -76,10 +76,6 @@ public class PersonalController {
         List<MyTask> myTask = userMapper.getMyTask(user.getId());
         model.addAttribute("myTask", myTask);
 
-        for (MyTask item : myTask) {
-            System.out.println(item);
-        }
-
         return "per-task";
     }
 }
