@@ -19,7 +19,6 @@ public class TaskController {
         User user = (User)(session.getAttribute("user"));
         task.setId_user(user.getId());
         task.setTime_create(new Date(System.currentTimeMillis()));
-        task.setState(-1);
         taskMapper.publishTask(task);
         return "dymainpage";
     }
