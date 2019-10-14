@@ -9,7 +9,7 @@ a{color: #2fa0ec;text-decoration: none;outline: none;}
 a:hover,a:focus{color:#74777b;}
 
 
-.box-besides{
+/* .box-besides{
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -39,7 +39,7 @@ textarea{
 	border-radius: 10px;
 	font-size: 15px;
 }
-
+ */
 
 
 .file {

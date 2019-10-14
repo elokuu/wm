@@ -1,0 +1,79 @@
+.box{
+	width: 800px;
+	height: 800px;
+	margin: auto;
+	/* background-color: #1860AB; */
+	opacity: 0.85;
+	border-radius: 2%;
+	/* border: 1px solid #FFFFFF; */
+}
+.box-text{
+	font-size: 40px;
+	color: white;
+	text-align: center;
+	margin-top: 70px;
+	letter-spacing:8px;
+	font-weight: 600;
+	margin-left: 0px;
+}
+.box-describe{
+	font-size: 22px;
+	color: azure;
+	margin: 8px 30px;
+	margin-top: 30px;
+	line-height: 26px;
+	letter-spacing: 1px;
+}
+.box form{
+	margin: 10px auto;
+	width: 100%;
+	height: 600px;
+}
+.box .box-name{
+	font-size: 18px;
+	color: #000000;
+	margin:  8px 30px;
+	padding:10px;
+	height: 38px;
+	width: 91%;
+	border: 1px #0F5FA6 solid;
+	border-radius: 3px;
+	opacity: 0.8;
+	margin-top: 25px;
+}
+.box-content{
+	font-size: 18px;
+	color: #000000;
+	margin:  8px 30px;
+	padding-left:10px;
+	padding-top:10px;
+	height: 250px;
+	width: 91%;
+	border: 1px #0F5FA6 solid;
+	border-radius: 3px;
+	opacity: 0.8;
+	margin-top: 18px;
+}
+.box span{
+	font-size: 23px;
+	color: white;
+	float: left;
+	margin-top: 18px;
+	margin-left: 30px;
+}
+
+.box-botton{
+	font-size:23px ;
+	color: white;
+	margin:  8px 30px;
+	height: 44px;
+	width: 91%;
+	border: 1px #0F5FA6 solid;
+	border-radius: 3px;
+	opacity: 0.8;
+	text-align: center;
+	background-color: #2E6DA4;
+	padding-left: 40px;
+	letter-spacing: 40px;
+	margin-top: 26px;
+}

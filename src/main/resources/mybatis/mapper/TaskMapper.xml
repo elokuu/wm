@@ -21,5 +21,8 @@
             time_create DESC
             LIMIT 10;
     </select>
+    <insert id="publishTask" parameterType="io.spring.bean.Task">
+        INSERT INTO t_task(id_user,title,type,quota,`describe`,contact,time_create,state) VALUES (#{id_user},#{title},#{type},#{quota},#{describe},#{contact},#{time_create},#{state})
+    </insert>
 
 </mapper>

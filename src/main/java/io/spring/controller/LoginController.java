@@ -28,6 +28,7 @@ public class LoginController {
                 if (password.equals(item.getPassword())) {
                     session.removeAttribute("msg");
                     session.setAttribute("name", name);
+                    session.setAttribute("user", item);
                     model.addAttribute("msg", "success");
                     model.addAttribute("name", name);
                     return "redirect:/homepage";

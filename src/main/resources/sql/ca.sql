@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 本地mysql
+ Source Server         : localhost_3306
  Source Server Type    : MySQL
  Source Server Version : 50723
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50723
  File Encoding         : 65001
 
- Date: 12/10/2019 14:33:18
+ Date: 14/10/2019 08:57:51
 */
 
 SET NAMES utf8mb4;
@@ -41,7 +41,7 @@ CREATE TABLE `t_detail_user`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `t_favorites_goods`;
 CREATE TABLE `t_favorites_goods`  (
-  `id` int(32) NOT NULL,
+  `id` int(32) NOT NULL AUTO_INCREMENT,
   `id_goods` int(16) NULL DEFAULT NULL COMMENT '收藏的商品id',
   `id_user` int(16) NULL DEFAULT NULL COMMENT '收藏者的id',
   `time_create` datetime(0) NULL DEFAULT NULL COMMENT '收藏时间',
@@ -50,7 +50,7 @@ CREATE TABLE `t_favorites_goods`  (
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_favorites_goods_ibfk_1` FOREIGN KEY (`id_goods`) REFERENCES `t_goods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_favorites_goods_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for t_goods
@@ -224,26 +224,30 @@ CREATE TABLE `t_task`  (
   `type` tinyint(1) NULL DEFAULT NULL COMMENT '任务类型:代拿快递(1)/组建队伍(2)/兼职工作(3)/文件打印(4)/其他(5)',
   `quota` int(5) NULL DEFAULT NULL COMMENT '任务剩余名额',
   `describe` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '任务描述',
-  `time_create` datetime(0) NULL DEFAULT NULL COMMENT '任务发布时间',
+  `contact` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系方式',
+  `time_create` datetime(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '任务发布时间',
   `state` tinyint(1) NULL DEFAULT NULL COMMENT '任务状态',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_task_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_task
 -- ----------------------------
-INSERT INTO `t_task` VALUES (1, 2, '食堂招兼职', 3, 5, '100/天', '2019-10-09 13:54:59', 1);
-INSERT INTO `t_task` VALUES (2, 2, '篮球缺人', 2, 5, '打篮球', '2019-10-09 13:55:40', 1);
-INSERT INTO `t_task` VALUES (3, 3, '代课', 5, 5, '20/节', '2019-10-09 13:57:09', 1);
-INSERT INTO `t_task` VALUES (4, 3, '有在食堂的吗', 5, 1, '热干面', '2019-10-02 13:57:56', 1);
-INSERT INTO `t_task` VALUES (5, 3, '带饭', 5, 1, '黄焖鸡', '2019-10-03 13:58:20', 1);
-INSERT INTO `t_task` VALUES (6, 2, '竞赛组队了', 2, 1, '冲冲冲', '2019-10-04 13:58:50', 1);
-INSERT INTO `t_task` VALUES (7, 1, '韵达的快递', 1, 1, 'gkd', '2019-10-01 15:02:52', 1);
-INSERT INTO `t_task` VALUES (8, 4, '表格打印', 4, 1, 'gkd', '2019-10-09 15:03:14', 1);
-INSERT INTO `t_task` VALUES (9, 4, '兄弟车行的', 1, 1, 'gkd', '2019-09-30 15:03:46', 1);
-INSERT INTO `t_task` VALUES (10, 4, '菜鸟驿站的', 1, 1, 'gkd', '2019-10-09 15:04:06', 1);
+INSERT INTO `t_task` VALUES (1, 2, '食堂招兼职', 3, 5, '100/天', NULL, '2019-10-09 13:54:59', 1);
+INSERT INTO `t_task` VALUES (2, 2, '篮球缺人', 2, 5, '打篮球', NULL, '2019-10-09 13:55:40', 1);
+INSERT INTO `t_task` VALUES (3, 3, '代课', 5, 5, '20/节', NULL, '2019-10-09 13:57:09', 1);
+INSERT INTO `t_task` VALUES (4, 3, '有在食堂的吗', 5, 1, '热干面', NULL, '2019-10-02 13:57:56', 1);
+INSERT INTO `t_task` VALUES (5, 3, '带饭', 5, 1, '黄焖鸡', NULL, '2019-10-03 13:58:20', 1);
+INSERT INTO `t_task` VALUES (6, 2, '竞赛组队了', 2, 1, '冲冲冲', NULL, '2019-10-04 13:58:50', 1);
+INSERT INTO `t_task` VALUES (7, 1, '韵达的快递', 1, 1, 'gkd', NULL, '2019-10-01 15:02:52', 1);
+INSERT INTO `t_task` VALUES (8, 4, '表格打印', 4, 1, 'gkd', NULL, '2019-10-09 15:03:14', 1);
+INSERT INTO `t_task` VALUES (9, 4, '兄弟车行的', 1, 1, 'gkd', NULL, '2019-09-30 15:03:46', 1);
+INSERT INTO `t_task` VALUES (10, 4, '菜鸟驿站的', 1, 1, 'gkd', NULL, '2019-10-09 15:04:06', 1);
+INSERT INTO `t_task` VALUES (11, 2, '证书打印', 4, 2, NULL, '10010', '2019-10-14 00:00:00', -1);
+INSERT INTO `t_task` VALUES (12, 2, '文件打印', 4, 1, 'gkd', '10010', '2019-10-14 00:00:00', -1);
+INSERT INTO `t_task` VALUES (13, 2, '赚钱了赚钱了', 3, 3, '来来来 我们要发财了', '10010', '2019-10-14 00:00:00', -1);
 
 -- ----------------------------
 -- Table structure for t_user

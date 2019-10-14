@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: lzj
+    active: wjh
   thymeleaf:
     cache: false
 

@@ -31,7 +31,7 @@
             t_goods.price price,
             t_goods.title title,
             t_goods.type field01,
-            t_goods.DESCRIBE field02,
+            t_goods.`describe` field02,
             t_img_goods.NAME pic_name,
             t_img_goods.path pic_path
         FROM
