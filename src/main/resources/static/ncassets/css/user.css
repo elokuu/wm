@@ -9,6 +9,12 @@
     left: 160px;
     margin: 0px;
 }
+.active{
+    text-decoration: none;
+}
+.first{
+
+}
 .col-sub p{
     text-align: right;
 }

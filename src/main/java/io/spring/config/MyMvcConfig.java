@@ -32,6 +32,9 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/per-address.html").setViewName("per-address");
         //账户管理/修改个人信息
         registry.addViewController("/perInfo.html").setViewName("perInfo");
+
+        //他的个人中心
+        registry.addViewController("/o-p-homepage.html").setViewName("o-p-homepage");
     }
 
 }

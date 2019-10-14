@@ -465,7 +465,7 @@
                             <tbody style="font-size: large">
                             <tr style="border-bottom: 1px solid #333333">
                                 <td>我草泥马</td>
-                                <td>ss</td>
+                                <td><a class="a-user" th:href="@{/o-p-homepage.html}">username</a></td>
                                 <td>阿达萨达萨达飒飒</td>
                             </tr>
                             <tr style="border-bottom: 1px solid #333333">
@@ -506,7 +506,8 @@
                     <h1 class="title">我的任务</h1>
                     <div class="more clearfix">
                         <ul class="filter-list J_orderType">
-                            <li class="first active"><a th:href="@{#}">我发布的任务</a></li>
+                            <li class="first active"><a th:href="@{#}">所有任务</a></li>
+                            <li class="active"><a th:href="@{#}">我发布的任务</a></li>
                             <li class="active"><a th:href="@{#}">我接受的任务</a></li>
                         </ul>
                     </div>
@@ -629,25 +630,25 @@
                         <ul class="info-list clearfix">
                             <li>
                                 <h3>所有任务：<span class="num">0</span></h3>
-                                <a th:href="@{#}">查看所有的任务<span
+                                <a th:href="@{/per-task.html}">查看所有的任务<span
                                         class="glyphicon glyphicon-circle-arrow-right"></span></a>
                                 <img src="ncassets/img/portal-icon-1.png" alt="" style="height: 100px;width: 100px; border-radius: 50%">
                             </li>
                             <li>
                                 <h3>所有的订单：<span class="num">0</span></h3>
-                                <a th:href="@{#}">查看所有的订单<span
+                                <a th:href="@{/per-order.html}">查看所有的订单<span
                                         class="glyphicon glyphicon-circle-arrow-right"></span></a>
                                 <img src="ncassets/img/portal-icon-2.png" alt="">
                             </li>
                             <li>
                                 <h3>待评价商品数：<span class="num">0</span></h3>
-                                <a href="evaluation.html">查看待评价商品<span
+                                <a th:href="@{/per-evaluation.html}">查看待评价商品<span
                                         class="glyphicon glyphicon-circle-arrow-right"></span></a>
                                 <img src="ncassets/img/portal-icon-3.png" alt="">
                             </li>
                             <li>
                                 <h3>收藏的商品：<span class="num">0</span></h3>
-                                <a th:href="@{#}">查看收藏的商品<span
+                                <a th:href="@{/per-favorite.html}">查看收藏的商品<span
                                         class="glyphicon glyphicon-circle-arrow-right"></span></a>
                                 <img src="ncassets/img/portal-icon-4.png" alt="">
                             </li>
