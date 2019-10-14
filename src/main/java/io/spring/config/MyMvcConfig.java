@@ -1,6 +1,8 @@
 package io.spring.config;
 
+import io.spring.component.LoginHandlerIntercepter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -37,4 +39,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/o-p-homepage.html").setViewName("o-p-homepage");
     }
 
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LoginHandlerIntercepter()).addPathPatterns("/**").excludePathPatterns("/","/sign_up.html","/login","/logup","/sign_in.html","/homepage","/assets/**","/dsassets/**","/mainassets/**","/ncassets/**","/secmarket/**");
+    }
 }

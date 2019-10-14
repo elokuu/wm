@@ -88,7 +88,7 @@
 				<button type="submit" class="box-botton">提交</button>
 			</form>
 		</div>
-		
+
 		<!-- 文件打印服务 -->
 		<div class="box" style="display: none;" id="block4">
 			<p class="box-text">文件打印服务</p>
@@ -102,6 +102,26 @@
 				  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
 				  <input class="mui-numbox-input"  name="quota" type="number"/>
 				  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+				</div>
+				<span style="margin-left: 180px;">联系方式</span>
+				<input class="text" name="contact" placeholder="请输入联系方式..." style="width: 247px;height: 35px;margin: 11px 20px;padding: 5px;border-radius: 3px;opacity: 0.8;color: #000000;font-size: 18px;border: 1px #0F5FA6 solid;"/>
+				<button type="submit" class="box-botton">提交</button>
+			</form>
+		</div>
+
+		<!-- 其他 -->
+		<div class="box" style="display: block;" id="block5" >
+			<p class="box-text">Others</p>
+			<p class="box-describe">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是专为校园学子提供代办任务的服务平台，下单提交完成后不能修改，请谨慎下单，如有特殊情况请联系管理员。</p>
+			<form method="post" action="/task">
+				<input value="5" name="type" type="hidden">
+				<input type="text" name="title" placeholder="请输入标题..." class="box-name"/>
+				<textarea class="box-content" name="describe" placeholder="请输入任务描述..."></textarea>
+				<span>人数</span>
+				<div class="mui-numbox">
+					<button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+					<input class="mui-numbox-input"  name="quota" type="number"/>
+					<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
 				</div>
 				<span style="margin-left: 180px;">联系方式</span>
 				<input class="text" name="contact" placeholder="请输入联系方式..." style="width: 247px;height: 35px;margin: 11px 20px;padding: 5px;border-radius: 3px;opacity: 0.8;color: #000000;font-size: 18px;border: 1px #0F5FA6 solid;"/>
@@ -246,28 +266,35 @@
 			$("#block2").css('display','none');
 			$("#block3").css('display','none');
 			$("#block4").css('display','none');
-			
-		})
+            $("#block5").css('display','none');
+
+
+        })
 		$("#zulin").click(function(){
 			$("#block1").css('display','none');
 			$("#block2").css('display','block');
 			$("#block3").css('display','none');
 			$("#block4").css('display','none');
-			
-		})
+            $("#block5").css('display','none');
+
+
+        })
 		$("#ziyuan").click(function(){
 			$("#block1").css('display','none');
 			$("#block2").css('display','none');
 			$("#block3").css('display','block');
 			$("#block4").css('display','none');
-			
-		})
+            $("#block5").css('display','none');
+
+
+        })
 		$("#fabu").click(function(){
 			$("#block1").css('display','none');
 			$("#block2").css('display','none');
 			$("#block3").css('display','none');
 			$("#block4").css('display','block');
-			
+			$("#block5").css('display','none');
+
 		})
 	})
 </script>
