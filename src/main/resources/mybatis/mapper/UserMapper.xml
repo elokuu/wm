@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="io.spring.mapper.UserMapper">
-<!-- List<User> getAll();
+    <!-- List<User> getAll();
 
-    void insertUser(User user);-->
+        void insertUser(User user);-->
 
     <select id="getAll" resultType="io.spring.bean.User">
         select * from t_user
@@ -21,5 +21,71 @@
 
     <select id="updateUser">
         update t_user set password=#{password},email=#{email} where name=#{name}
+    </select>
+
+    <select id="getTasks" resultType="io.spring.bean.Task">
+        select * from t_task where id_user=#{id_user}
+    </select>
+
+    <select id="getGoods" resultType="io.spring.bean.Goods">
+        select * from t_goods where id_user=#{id_user}
+    </select>
+
+    <select id="T_FAVORITES_GOODS_LIST" resultType="io.spring.bean.TFavoritesGoods">
+        select * from t_favorites_goods where id_user=#{id_user}
+    </select>
+
+    <select id="getFavorGoods" resultType="io.spring.bean.FavorGoods">
+        SELECT
+            t_user.NAME,
+            t_img_goods.name AS img_name,
+	        t_img_goods.path,
+            t_goods.title,
+            t_goods.price,
+            t_favorites_goods.time_create
+        FROM
+            t_goods,
+            t_favorites_goods,
+            t_user,
+            t_img_goods
+        WHERE
+            t_favorites_goods.id_goods = t_goods.id
+            AND t_user.id = t_goods.id_user
+            AND t_img_goods.id_goods=t_goods.id
+            AND t_favorites_goods.id_user = #{id_user}
+    </select>
+
+    <select id="getFavorGoodNum" resultType="int">
+        SELECT COUNT(*) FROM t_favorites_goods WHERE id_user=#{id_user}
+    </select>
+
+    <select id="getAllTaskNum" resultType="int">
+        SELECT COUNT(*) FROM t_record_task WHERE id_responder=#{id_user}
+    </select>
+
+    <select id="getAllGoodNum" resultType="int">
+        SELECT COUNT(*) FROM t_record_transaction WHERE id_purchaser=#{id_user}
+    </select>
+
+    <select id="getAllReviewNum" resultType="int">
+        SELECT COUNT(*) FROM t_review_transaction WHERE id_evaluator=#{id_user}
+    </select>
+
+    <select id="getMyTask" resultType="io.spring.bean.MyTask">
+        SELECT
+            t_task.title,
+            t_task.price,
+            t_task.id_user,
+            t_user.name,
+            t_record_task.time_create,
+            t_record_task.time_completion,
+            t_record_task.state
+        FROM
+            t_record_task,
+            t_user,
+            t_task
+        WHERE
+            t_user.id = t_record_task.id_responder
+            AND t_task.id = t_record_task.id_task
     </select>
 </mapper>
