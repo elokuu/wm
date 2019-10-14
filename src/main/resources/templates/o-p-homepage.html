@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript"  th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <meta charset="UTF-8">
+    <title>他的个人中心</title>
+    <script type="text/javascript" src="ncassets/js/index.js" th:src="@{/ncassets/js/index.js}"></script>
+    <script type="text/javascript" src="ncassets/js/bootstrap.js" th:src="@{/ncassets/js/bootstrap.js}"></script>
+    <link rel="stylesheet" href="ncassets/dist/css/bootstrap.min.css" th:href="@{/ncassets/dist/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="ncassets/css/reset.css" th:href="@{/ncassets/css/reset.css}">
+    <link rel="stylesheet" href="ncassets/css/style.css" th:href="@{/ncassets/css/style.css}">
+    <link rel="stylesheet" type="text/css" href="ncassets/css/user.css" th:href="@{/ncassets/css/user.css}"/>
+</head>
+<body>
+<div th:include="pc-model :: site-topbar"></div>
+<div th:include="pc-model :: site-header"></div>
+<div th:include="pc-model :: breadcrumb"></div>
+<div th:include="pc-model :: footer"></div>
+</body>
+
+</html>
