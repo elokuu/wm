@@ -3,15 +3,15 @@ package io.spring.bean;
 import java.sql.Date;
 
 public class Task {
-    Integer id;
-    Integer id_user;
-    String title;
-    Integer type;
-    Integer quota;
-    String describe;
-    String contact;
-    Date time_create;
-    Integer state;
+    private Integer id;
+    private Integer id_user;
+    private String title;
+    private Integer type;
+    private Integer quota;
+    private String describe;
+    private String contact;
+    private Date time_create;
+    private Integer state;
 
     public Integer getId() {
         return id;

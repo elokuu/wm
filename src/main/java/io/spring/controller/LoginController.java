@@ -31,7 +31,11 @@ public class LoginController {
                     session.setAttribute("user", item);
                     model.addAttribute("msg", "success");
                     model.addAttribute("name", name);
-                    return "redirect:/homepage";
+                    if (item.getAuthority() == 2){
+                        return "redirect:/admin/userlist";
+                    }else {
+                        return "redirect:/homepage";
+                    }
                 }
             }
         }

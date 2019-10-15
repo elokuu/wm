@@ -4,6 +4,7 @@ import io.spring.bean.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface UserMapper {
@@ -31,4 +32,7 @@ public interface UserMapper {
     List<MyGood> getMyGood(int id_user);
 
     List<MyReview> getMyReview(int id_user);
+    void updateState(Map map);
+    void addUser(User user);
+    void updatePassword(Map map);
 }

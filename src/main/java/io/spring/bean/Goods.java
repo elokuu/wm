@@ -1,98 +1,87 @@
 package io.spring.bean;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Goods {
+    private Integer id;
+    private Integer id_user;
+    private String title;
+    private String type;
+    private Integer quota;
+    private double price;
+    private String describe;
+    private Date time_create;
+    private Integer state;
 
-  private long id;
-  private long idUser;
-  private String title;
-  private String type;
-  private long quota;
-  private double price;
-  private String describe;
-  private Date timeCreate;
-  private long state;
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public long getId() {
-    return id;
-  }
+    public Integer getId_user() {
+        return id_user;
+    }
 
+    public void setId_user(Integer id_user) {
+        this.id_user = id_user;
+    }
 
-  public void setId(long id) {
-    this.id = id;
-  }
+    public String getTitle() {
+        return title;
+    }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-  public long getIdUser() {
-    return idUser;
-  }
+    public String getType() {
+        return type;
+    }
 
-  public void setIdUser(long idUser) {
-    this.idUser = idUser;
-  }
+    public void setType(String type) {
+        this.type = type;
+    }
 
+    public Integer getQuota() {
+        return quota;
+    }
 
-  public String getTitle() {
-    return title;
-  }
+    public void setQuota(Integer quota) {
+        this.quota = quota;
+    }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    public double getPrice() {
+        return price;
+    }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-  public String getType() {
-    return type;
-  }
+    public String getDescribe() {
+        return describe;
+    }
 
-  public void setType(String type) {
-    this.type = type;
-  }
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
 
+    public Date getTime_create() {
+        return time_create;
+    }
 
-  public long getQuota() {
-    return quota;
-  }
+    public void setTime_create(Date time_create) {
+        this.time_create = time_create;
+    }
 
-  public void setQuota(long quota) {
-    this.quota = quota;
-  }
+    public Integer getState() {
+        return state;
+    }
 
-
-  public double getPrice() {
-    return price;
-  }
-
-  public void setPrice(double price) {
-    this.price = price;
-  }
-
-
-  public String getDescribe() {
-    return describe;
-  }
-
-  public void setDescribe(String describe) {
-    this.describe = describe;
-  }
-
-
-  public Date getTimeCreate() {
-    return timeCreate;
-  }
-
-  public void setTimeCreate(Date timeCreate) {
-    this.timeCreate = timeCreate;
-  }
-
-  public long getState() {
-    return state;
-  }
-
-  public void setState(long state) {
-    this.state = state;
-  }
-
+    public void setState(Integer state) {
+        this.state = state;
+    }
 }
