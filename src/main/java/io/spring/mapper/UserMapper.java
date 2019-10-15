@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface UserMapper {
@@ -16,4 +17,7 @@ public interface UserMapper {
     User getUser(String name);
 
     void updateUser(String name, String password, String email);
+    void updateState(Map map);
+    void addUser(User user);
+    void updatePassword(Map map);
 }
