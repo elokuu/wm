@@ -48,7 +48,7 @@ public class PersonalController {
         User user = userMapper.getUser((String) session.getAttribute("name"));
 
         session.setAttribute("user", user);
-        return "personalCenter";
+        return "redirect:/personal";
     }
 
     @GetMapping("/logout")

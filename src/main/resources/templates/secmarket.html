@@ -20,8 +20,10 @@
 		<div class="headmenu">
 			<div class="head">
 				<ul style="margin-left: 11.5%">
-					<li style="width: 4%;"><a href="#" class="li-1">登陆</a></li>
-					<li style="width: 4%;"><a href="#" class="li-1">注册</a></li>
+<!--					<li style="width: 4%;"><a href="#" class="li-1">登陆</a></li>-->
+<!--					<li style="width: 4%;"><a href="#" class="li-1">注册</a></li>-->
+					<li style="width: 4%; margin-left: 10px;" ><a href="#" th:href="${ #strings.isEmpty(session.name)? '/sign_in.html': '/personal'}" class="li-1" th:text="${ #strings.isEmpty(session.name)?'登录': session.name}" style="text-decoration: none;"></a></li>
+					<li style="width: 4%; margin-left: -10px;" ><a href="#" th:href="${ #strings.isEmpty(session.name)? '/sign_up.html': '#'}"  th:text="${ #strings.isEmpty(session.name)?'注册': ''}" class="li-1" style="text-decoration: none;"></a></li>
 				</ul>
 				<div class="searchbar">
 					<input type="text" placeholder="搜索..."/>
@@ -64,8 +66,8 @@
 					<img src="secmarket/img/002.png" />
 					<!-- <p class="header-bac-card_username">如果我是一只猫</p> -->
 					<div class="header-bac-card-button">
-						<button class="header-bac-card-button-login"><a>登陆</a></button>
-						<button class="header-bac-card-button-register">注册</button>
+						<button class="header-bac-card-button-login" th:if=" ${ #strings.isEmpty(session.name)}"><a>登陆</a></button>
+						<button class="header-bac-card-button-register" th:if=" ${ #strings.isEmpty(session.name)}">注册</button>
 					</div>
 				</div>
 			</div>
