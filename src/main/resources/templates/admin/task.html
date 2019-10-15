@@ -45,7 +45,7 @@
                     <td th:text="${task.type}"></td>
                     <td th:text="${task.quota}"></td>
                     <td th:text="${task.contact}"></td>
-                    <td th:text="${task.describe}"></td>
+                    <td><p style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 400px;" th:text="${task.describe}"></p></td>
                     <td><a th:href="@{'/admin/updateTaskState?id='+${task.id}+'&state=1&&pageState='+${task.state}}" >上线</a></td>
                     <td><a th:href="@{'/admin/updateTaskState?id='+${task.id}+'&state=-1&pageState='+${task.state}}" >下线</a></td>
                 </tr>

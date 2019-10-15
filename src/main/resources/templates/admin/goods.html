@@ -45,7 +45,7 @@
                     <td th:text="${goods.type}"></td>
                     <td th:text="${goods.quota}"></td>
                     <td th:text="${goods.price}"></td>
-                    <td th:text="${goods.describe}"></td>
+                    <td><p style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 400px;" th:text="${goods.describe}"></p></td>
                     <td><a th:href="@{'/admin/updateGoodsState?id='+${goods.id}+'&state=1&&pageState='+${goods.state}}" >上架</a></td>
                     <td><a th:href="@{'/admin/updateGoodsState?id='+${goods.id}+'&state=-1&pageState='+${goods.state}}" >下架</a></td>
                 </tr>
