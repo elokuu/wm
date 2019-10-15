@@ -11,12 +11,10 @@
         select * from t_user
     </select>
 
-    <insert id="insertUser">
+    <select id="insertUser">
         insert into t_user(name, password, email) values(#{name}, #{password}, #{email})
-    </insert>
-    <insert id="addUser" parameterType="io.spring.bean.User">
-        insert into t_user(name, password, authority) values(#{name}, #{password}, #{authority})
-    </insert>
+    </select>
+
     <select id="getUser" resultType="io.spring.bean.User">
         select * from t_user where name=#{name}
     </select>
@@ -24,10 +22,4 @@
     <select id="updateUser">
         update t_user set password=#{password},email=#{email} where name=#{name}
     </select>
-    <update id="updateState" parameterType="java.util.Map">
-        update t_user set state=#{state} where id=#{id}
-    </update>
-    <update id="updatePassword" parameterType="java.util.Map">
-        update t_user set password = #{password} where id = #{id}
-    </update>
 </mapper>
