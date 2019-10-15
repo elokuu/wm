@@ -7,7 +7,8 @@ public class User {
     private String name;
     private String password;
     private String email;
-    private boolean authority;
+    private Integer authority;
+    private Integer state;
 
     public int getId() {
         return id;
@@ -49,23 +50,19 @@ public class User {
         this.email = email;
     }
 
-    public boolean isAuthority() {
+    public Integer getAuthority() {
         return authority;
     }
 
-    public void setAuthority(boolean authority) {
+    public void setAuthority(Integer authority) {
         this.authority = authority;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", icon='" + icon + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", authority=" + authority +
-                '}';
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

@@ -240,7 +240,7 @@
                     </div>
                 </div>
                 <div class="box-bd">
-                    <div th:each=" item : ${myGood}">
+                    <div>
                         <ul class="order-list">
                             <button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i>
                             </button>
@@ -252,10 +252,10 @@
                                     <table class="order-detail-table">
                                         <thead>
                                         <tr>
-                                            <th class="col-main"><p class="caption-info"><span th:text="${item.time_create}">2018年09月20日 12:11</span><span
+                                            <th class="col-main"><p class="caption-info">2018年09月20日 12:11<span
                                                     class="sep">|</span>username</p></th>
                                             <th class="col-sub"><p class="caption-price">实付金额：<span
-                                                    class="num" th:text="${item.price}">0.00</span>元</p></th>
+                                                    class="num">0.00</span>元</p></th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -269,8 +269,50 @@
                                                                  width="80" height="80">
 
                                                         </div>
-                                                        <p th:text="${item.title}">商品名字</p>
-                                                        <p th:text="${item.price}">价格</p>
+                                                        <p>商品名字</p>
+                                                        <p>价格</p>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="order-actions">
+                                                <a class="btn btn-small btn-line-gray">订单详情</a>
+                                                <a class="btn btn-small btn-line-gray">申请售后</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                            <button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i>
+                            </button>
+                            <li class="uc-order-item uc-order-unfinish">
+                                <div class="order-detail">
+                                    <div class="order-summary">
+                                        <div class="order-status">未收货</div>
+                                        <!--<button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i></button>-->
+                                    </div>
+                                    <table class="order-detail-table">
+                                        <thead>
+                                        <tr>
+                                            <th class="col-main"><p class="caption-info">2018年09月20日 12:11<span
+                                                    class="sep">|</span>username</p></th>
+                                            <th class="col-sub"><p class="caption-price">实付金额：<span
+                                                    class="num">0.00</span>元</p></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="order-items">
+
+                                                <ul class="goods-list">
+                                                    <li>
+                                                        <div class="figure figure-thumb" width="80" height="80">
+                                                            <img th:src="@{/ncassets/img/logo16.png}"
+                                                                 width="80" height="80">
+
+                                                        </div>
+                                                        <p class="name">商品名字</p>
+                                                        <p class="price">价格</p>
                                                     </li>
                                                 </ul>
                                             </td>
@@ -557,7 +599,7 @@
                             </li>
                             <li>
                                 <h3>所有的订单：<span class="num" th:text="${NumMap.get('allGoodNum')}">0</span></h3>
-                                <a th:href="@{/per-order}">查看所有的订单<span
+                                <a th:href="@{/per-order.html}">查看所有的订单<span
                                         class="glyphicon glyphicon-circle-arrow-right"></span></a>
                                 <img src="ncassets/img/portal-icon-2.png" alt="">
                             </li>

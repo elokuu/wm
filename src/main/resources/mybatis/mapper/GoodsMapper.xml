@@ -69,5 +69,11 @@
             time_create DESC
             LIMIT 8
     </select>
+    <update id="updateState" parameterType="java.util.Map">
+        update t_goods set state=#{state} where id = #{id}
+    </update>
+    <select id="getAllByState" parameterType="int" resultType="io.spring.bean.Goods">
+        select * from t_goods where state=#{state}
+    </select>
 
 </mapper>

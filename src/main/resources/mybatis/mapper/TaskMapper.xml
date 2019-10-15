@@ -16,7 +16,7 @@
             t_task
         WHERE
             t_task.id_user = t_user.id
-            AND state = 1
+            AND t_task.state = 1
         ORDER BY
             time_create DESC
             LIMIT 10;
@@ -24,5 +24,10 @@
     <insert id="publishTask" parameterType="io.spring.bean.Task">
         INSERT INTO t_task(id_user,title,type,quota,`describe`,contact,time_create) VALUES (#{id_user},#{title},#{type},#{quota},#{describe},#{contact},#{time_create})
     </insert>
-
+    <update id="updateState" parameterType="java.util.Map">
+        update t_task set state=#{state} where id = #{id}
+    </update>
+    <select id="getAllByState" parameterType="int" resultType="io.spring.bean.Task">
+        select * from t_task where state=#{state}
+    </select>
 </mapper>
