@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 本地mysql
+ Source Server         : localhost_3306
  Source Server Type    : MySQL
  Source Server Version : 50723
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50723
  File Encoding         : 65001
 
- Date: 15/10/2019 10:50:27
+ Date: 14/10/2019 08:57:51
 */
 
 SET NAMES utf8mb4;
@@ -226,31 +226,28 @@ CREATE TABLE `t_task`  (
   `describe` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '任务描述',
   `contact` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系方式',
   `time_create` datetime(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '任务发布时间',
-  `state` tinyint(1) NULL DEFAULT -1 COMMENT '任务状态',
+  `state` tinyint(1) NULL DEFAULT NULL COMMENT '任务状态',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_task_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_task
 -- ----------------------------
 INSERT INTO `t_task` VALUES (1, 2, '食堂招兼职', 3, 5, '100/天', NULL, '2019-10-09 13:54:59', 1);
-INSERT INTO `t_task` VALUES (2, 2, '篮球缺人', 2, 5, '打篮球', NULL, '2019-10-15 10:46:52', -1);
+INSERT INTO `t_task` VALUES (2, 2, '篮球缺人', 2, 5, '打篮球', NULL, '2019-10-09 13:55:40', 1);
 INSERT INTO `t_task` VALUES (3, 3, '代课', 5, 5, '20/节', NULL, '2019-10-09 13:57:09', 1);
 INSERT INTO `t_task` VALUES (4, 3, '有在食堂的吗', 5, 1, '热干面', NULL, '2019-10-02 13:57:56', 1);
 INSERT INTO `t_task` VALUES (5, 3, '带饭', 5, 1, '黄焖鸡', NULL, '2019-10-03 13:58:20', 1);
-INSERT INTO `t_task` VALUES (6, 2, '竞赛组队了', 2, 1, '冲冲冲', NULL, '2019-10-15 10:46:53', -1);
+INSERT INTO `t_task` VALUES (6, 2, '竞赛组队了', 2, 1, '冲冲冲', NULL, '2019-10-04 13:58:50', 1);
 INSERT INTO `t_task` VALUES (7, 1, '韵达的快递', 1, 1, 'gkd', NULL, '2019-10-01 15:02:52', 1);
-INSERT INTO `t_task` VALUES (8, 4, '表格打印', 4, 1, 'gkd', NULL, '2019-10-15 10:46:54', -1);
+INSERT INTO `t_task` VALUES (8, 4, '表格打印', 4, 1, 'gkd', NULL, '2019-10-09 15:03:14', 1);
 INSERT INTO `t_task` VALUES (9, 4, '兄弟车行的', 1, 1, 'gkd', NULL, '2019-09-30 15:03:46', 1);
 INSERT INTO `t_task` VALUES (10, 4, '菜鸟驿站的', 1, 1, 'gkd', NULL, '2019-10-09 15:04:06', 1);
-INSERT INTO `t_task` VALUES (11, 2, '证书打印', 4, 2, NULL, '10010', '2019-10-15 09:54:45', 1);
-INSERT INTO `t_task` VALUES (12, 2, '文件打印', 4, 1, 'gkd', '10010', '2019-10-15 10:50:05', 1);
-INSERT INTO `t_task` VALUES (13, 2, '赚钱了赚钱了', 3, 3, '来来来 我们要发财了', '10010', '2019-10-15 10:50:07', 1);
-INSERT INTO `t_task` VALUES (14, 2, '证书打印', 4, 8, 'sudo', '10010', '2019-10-15 10:50:08', 0);
-INSERT INTO `t_task` VALUES (15, 2, '其他', 5, 1, '其他任务', '10010', '2019-10-14 00:00:00', -1);
-INSERT INTO `t_task` VALUES (16, 2, 'lei', 3, 1, 'xixi', '10010', '2019-10-14 00:00:00', -1);
+INSERT INTO `t_task` VALUES (11, 2, '证书打印', 4, 2, NULL, '10010', '2019-10-14 00:00:00', -1);
+INSERT INTO `t_task` VALUES (12, 2, '文件打印', 4, 1, 'gkd', '10010', '2019-10-14 00:00:00', -1);
+INSERT INTO `t_task` VALUES (13, 2, '赚钱了赚钱了', 3, 3, '来来来 我们要发财了', '10010', '2019-10-14 00:00:00', -1);
 
 -- ----------------------------
 -- Table structure for t_user
@@ -263,23 +260,23 @@ CREATE TABLE `t_user`  (
   `password` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
   `authority` tinyint(1) NULL DEFAULT 1 COMMENT '权限',
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '注册邮箱',
-  `state` tinyint(1) NULL DEFAULT 1 COMMENT '状态',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (1, '/mainassets/img/pic1.jpg', '工具人1号', '12345678', 1, '33333333333', -1);
-INSERT INTO `t_user` VALUES (2, '/mainassets/img/pic1.jpg', 'wujinhui', '123', 2, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (3, '/mainassets/img/pic1.jpg', '工具人3号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (4, '/mainassets/img/pic1.jpg', '工具人4号', '12345678', 1, '1213341', 1);
-INSERT INTO `t_user` VALUES (7, '/mainassets/img/pic1.jpg', '工具人7号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com', -1);
-INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', '123', 1, '22@33', 1);
-INSERT INTO `t_user` VALUES (21, '/mainassets/img/pic1.jpg', 'admin', '1', 2, NULL, 1);
+INSERT INTO `t_user` VALUES (1, '/mainassets/img/pic1.jpg', '工具人1号', '12345678', 1, '33333333333');
+INSERT INTO `t_user` VALUES (2, '/mainassets/img/pic1.jpg', 'wujinhui', '12345678', 1, 'scarletflandre@foxmail.com');
+INSERT INTO `t_user` VALUES (3, '/mainassets/img/pic1.jpg', '工具人3号', '12345678', 1, 'scarletflandre@foxmail.com');
+INSERT INTO `t_user` VALUES (4, '/mainassets/img/pic1.jpg', '工具人4号', '12345678', 1, '1213341');
+INSERT INTO `t_user` VALUES (5, '/mainassets/img/pic1.jpg', '工具人5号', '12345678', 1, '1231');
+INSERT INTO `t_user` VALUES (6, '/mainassets/img/pic1.jpg', 'lzj', '12345678', 1, '123122');
+INSERT INTO `t_user` VALUES (7, '/mainassets/img/pic1.jpg', '工具人7号', '12345678', 1, 'scarletflandre@foxmail.com');
+INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12345678', 1, 'scarletflandre@foxmail.com');
+INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com');
+INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com');
+INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com');
+INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', '123', 1, '22@33');
 
 SET FOREIGN_KEY_CHECKS = 1;

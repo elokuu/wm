@@ -1,19 +1,14 @@
 package io.spring.controller;
 
-import io.spring.bean.*;
+import io.spring.bean.User;
 import io.spring.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.jws.WebParam;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Controller
 public class PersonalController {
@@ -22,19 +17,12 @@ public class PersonalController {
     UserMapper userMapper;
 
     @GetMapping("/personal")
-    public String personalCenter(HttpSession session, Model model) {
+    public String personalCenter(HttpSession session) {
 
         String name = (String) session.getAttribute("name");
         User user = userMapper.getUser(name);
-        session.setAttribute("user", user);
 
-        Map<String, Integer> NumMap = new HashMap<>();
-        NumMap.put("allTaskNum", userMapper.getAllTaskNum(user.getId()));
-        NumMap.put("allGoodNum", userMapper.getAllGoodNum(user.getId()));
-        NumMap.put("allReviewNum", userMapper.getAllReviewNum(user.getId()));
-        NumMap.put("favorGoodNum", userMapper.getFavorGoodNum(user.getId()));
-
-        model.addAttribute("NumMap", NumMap);
+       session.setAttribute("user", user);
         return "personalCenter";
     }
 
@@ -55,27 +43,5 @@ public class PersonalController {
 
         session.invalidate();
         return "homepage";
-    }
-
-    @GetMapping("/per-favorite")
-    public String perFavorite(HttpSession session, Model model) {
-
-        User user = (User) session.getAttribute("user");
-
-        List<FavorGoods> favorGoods = userMapper.getFavorGoods(user.getId());
-        model.addAttribute("favorGoods", favorGoods);
-
-        return "per-favorite";
-    }
-
-    @GetMapping("/per-task")
-    public String perTask(HttpSession session, Model model) {
-
-        User user = (User) session.getAttribute("user");
-
-        List<MyTask> myTask = userMapper.getMyTask(user.getId());
-        model.addAttribute("myTask", myTask);
-
-        return "per-task";
     }
 }

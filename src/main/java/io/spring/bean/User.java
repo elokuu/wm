@@ -1,6 +1,7 @@
 package io.spring.bean;
 
 public class User {
+
     private int id;
     private String icon;
     private String name;
