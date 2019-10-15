@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -32,12 +31,7 @@ public class LoginController {
                     session.setAttribute("user", item);
                     model.addAttribute("msg", "success");
                     model.addAttribute("name", name);
-                    session.setAttribute("activeURI","infopassword");
-                    if (item.getAuthority() == 2){
-                        return "redirect:/admin/userlist";
-                    }else {
-                        return "redirect:/homepage";
-                    }
+                    return "redirect:/homepage";
                 }
             }
         }
@@ -49,7 +43,7 @@ public class LoginController {
 
 
     @PostMapping("/logup")
-    public String logup(User user , HttpSession session) {
+    public String logup(User user ,HttpSession session) {
         String username = user.getName();
         List<User> all = userMapper.getAll();
         for (User item : all) {

@@ -1,6 +1,5 @@
 package io.spring.config;
 
-import io.spring.component.AdminHandlerIntercepter;
 import io.spring.component.LoginHandlerIntercepter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -16,7 +15,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/sign_up.html").setViewName("register/sign_up");
         registry.addViewController("/sign_in.html").setViewName("register/sign_in");
         registry.addViewController("/dymainpage.html").setViewName("dymainpage");
-        registry.addViewController("/authority.html").setViewName("error/authority");
+
+        registry.addViewController("/pc-model.html").setViewName("pc-model");
 
         //订单中心/我的订单
         registry.addViewController("/per-order.html").setViewName("per-order");
@@ -37,16 +37,10 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
         //他的个人中心
         registry.addViewController("/o-p-homepage.html").setViewName("o-p-homepage");
-
-
-        registry.addViewController("/admin/useradd.html").setViewName("admin/useradd");
-        registry.addViewController("/admin/password.html").setViewName("admin/password");
-
     }
 
-
+    @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginHandlerIntercepter()).addPathPatterns("/dymainpage.html");
-        registry.addInterceptor(new AdminHandlerIntercepter()).addPathPatterns("/admin/*");
+        registry.addInterceptor(new LoginHandlerIntercepter()).addPathPatterns("/**").excludePathPatterns("/","/sign_up.html","/login","/logup","/sign_in.html","/homepage","/assets/**","/dsassets/**","/mainassets/**","/ncassets/**","/secmarket/**");
     }
 }
