@@ -28,7 +28,11 @@
 <script>
     var other = document.getElementsByClassName("o-eva");
     var my = document.getElementsByClassName("my-eva");
+    var look = document.getElementById("look");
+    var eva = document.getElementById("eva");
     function allEva() {
+        look.hidden=false;
+        eva.hidden=true;
         for(var i=0; i<other.length; i++){
             other[i].hidden=false;
         }
@@ -37,6 +41,8 @@
         }
     }
     function oEva() {
+        look.hidden=false;
+        eva.hidden=true;
         for(var i=0; i<other.length; i++){
             other[i].hidden=false;
         }
@@ -45,12 +51,25 @@
         }
     }
     function myEva() {
+        look.hidden=false;
+        eva.hidden=true;
         for(var i=0; i<other.length; i++){
             other[i].hidden=true;
         }
         for(var i=0; i<my.length; i++){
             my[i].hidden=false;
         }
+    }
+    function notEva() {
+        look.hidden=true;
+        eva.hidden=false;
+        document.getElementById("evaTr").hidden=true;
+    }
+    function Eva() {
+        document.getElementById("evaTr").hidden=false;
+    }
+    function fewer() {
+        document.getElementById("evaTr").hidden=true;
     }
 </script>
 </html>

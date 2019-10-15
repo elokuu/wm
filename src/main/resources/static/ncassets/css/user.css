@@ -2,6 +2,7 @@
     text-decoration-line: none;
     text-decoration: none;
 }
+
 .table-a p{
     position:relative;
     line-height:20px;
@@ -535,4 +536,7 @@ a {
 .site-product .container{
     padding-right: 0px;
     padding-left: 0px;
+}
+a.a-user{
+    text-decoration-line: none;
 }
