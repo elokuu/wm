@@ -2,6 +2,29 @@
     text-decoration-line: none;
     text-decoration: none;
 }
+.table-a p{
+    position:relative;
+    line-height:20px;
+    height:60px; /* 是line-height的三倍，如果设置了padding属性，也要加上padding的高度*/
+    overflow:hidden;
+    width: 264px;
+    margin-left: 15px;
+    background-color: #fcf8e3;
+    top: 50%;
+    font-size: small;
+}
+.box-bd .uc-nav-box a{
+    text-decoration-line: none;
+}
+a.a-user {
+    margin-left: 15px;
+}
+.table-a p:after {
+    content:"...";
+}
+.table-a td{
+    margin-left: 20px;
+}
 .comment-top a{
     text-decoration-line: none;
     text-decoration: none;
@@ -15,6 +38,7 @@
     font-size: x-large;
 
 }
+
 .file {
     position: relative;
     display: inline-block;
@@ -70,9 +94,7 @@
 .active a{
     text-decoration-line: none;
 }
-.first a{
-    color: #ff6700;
-}
+
 .col-sub p{
     text-align: right;
 }

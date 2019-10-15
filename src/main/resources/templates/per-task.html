@@ -28,4 +28,32 @@
 </div>
 <div th:include="pc-model :: footer"></div>
 </body>
+<script>
+    var my = document.getElementsByClassName("my-task");
+    var other = document.getElementsByClassName("o-task");
+    function allTask() {
+        for(var i=0; i<my.length; i++){
+            my[i].hidden=false;
+        }
+        for(var i=0; i<other.length; i++){
+            other[i].hidden=false;
+        }
+    }
+    function myTask() {
+        for(var i=0; i<my.length; i++){
+            my[i].hidden=false;
+        }
+        for(var i=0; i<other.length; i++){
+            other[i].hidden=true;
+        }
+    }
+    function oTask() {
+        for(var i=0; i<my.length; i++){
+            my[i].hidden=true;
+        }
+        for(var i=0; i<other.length; i++){
+            other[i].hidden=false;
+        }
+    }
+</script>
 </html>
