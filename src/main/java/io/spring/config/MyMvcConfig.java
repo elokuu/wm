@@ -22,6 +22,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/per-foods.html").setViewName("per-foods");
         //订单中心/评价晒单
         registry.addViewController("/per-evaluation.html").setViewName("per-evaluation");
+        //订单中心/未审核
+        registry.addViewController("/per-unaudited.html").setViewName("per-unaudited");
         //任务中心/我的任务
         registry.addViewController("/per-task.html").setViewName("per-task");
         //个人中心/我的首页

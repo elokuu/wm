@@ -5,11 +5,11 @@
 .table-a p{
     position:relative;
     line-height:20px;
-    height:60px; /* 是line-height的三倍，如果设置了padding属性，也要加上padding的高度*/
-    overflow:hidden;
+    height:60px;
+    overflow:auto;
     width: 264px;
     margin-left: 15px;
-    background-color: #fcf8e3;
+    background-color: #9e9e9e3b;
     top: 50%;
     font-size: small;
 }
@@ -18,9 +18,6 @@
 }
 a.a-user {
     margin-left: 15px;
-}
-.table-a p:after {
-    content:"...";
 }
 .table-a td{
     margin-left: 20px;

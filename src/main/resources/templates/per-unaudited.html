@@ -3,9 +3,13 @@
 <head>
     <script type="text/javascript"  th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
     <meta charset="UTF-8">
-    <title>评价晒单</title>
+    <title>未审核</title>
     <script type="text/javascript" src="ncassets/js/index.js" th:src="@{/ncassets/js/index.js}"></script>
     <script type="text/javascript" src="ncassets/js/bootstrap.js" th:src="@{/ncassets/js/bootstrap.js}"></script>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <link rel="stylesheet" href="ncassets/dist/css/bootstrap.min.css" th:href="@{/ncassets/dist/css/bootstrap.min.css}">
     <link rel="stylesheet" href="ncassets/css/reset.css" th:href="@{/ncassets/css/reset.css}">
     <link rel="stylesheet" href="ncassets/css/style.css" th:href="@{/ncassets/css/style.css}">
@@ -14,42 +18,36 @@
 <body>
 <div th:include="pc-model :: site-topbar"></div>
 <div th:include="pc-model :: site-header"></div>
-<div th:include="pc-model :: breadcrumb-evaluation"></div>
+<div th:include="pc-model :: breadcrumb-unaudited"></div>
 <div class="page-main user-main">
     <div class="container clearfix">
         <div class="row">
             <div th:include="pc-model :: span4"></div>
-            <div th:include="pc-model :: span6-evaluation"></div>
+            <div th:include="pc-model :: span6-unaudited"></div>
+
         </div>
     </div>
 </div>
+
 <div th:include="pc-model :: footer"></div>
 </body>
 <script>
-    var other = document.getElementsByClassName("o-eva");
-    var my = document.getElementsByClassName("my-eva");
-    function allEva() {
-        for(var i=0; i<other.length; i++){
-            other[i].hidden=false;
+    var un = document.getElementsByClassName("uc-order-unaudited");
+    var notpass = document.getElementsByClassName("uc-order-notpass");
+    function unaudited() {
+        for (var i=0; i<un.length; i++){
+            un[i].hidden=false;
         }
-        for(var i=0; i<my.length; i++){
-            my[i].hidden=false;
-        }
-    }
-    function oEva() {
-        for(var i=0; i<other.length; i++){
-            other[i].hidden=false;
-        }
-        for(var i=0; i<my.length; i++){
-            my[i].hidden=true;
+        for (var i=0; i<notpass.length; i++){
+            notpass[i].hidden=true;
         }
     }
-    function myEva() {
-        for(var i=0; i<other.length; i++){
-            other[i].hidden=true;
+    function notPass() {
+        for (var i=0; i<un.length; i++){
+            un[i].hidden=true;
         }
-        for(var i=0; i<my.length; i++){
-            my[i].hidden=false;
+        for (var i=0; i<notpass.length; i++){
+            notpass[i].hidden=false;
         }
     }
 </script>
