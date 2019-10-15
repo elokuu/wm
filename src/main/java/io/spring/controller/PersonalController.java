@@ -78,4 +78,15 @@ public class PersonalController {
 
         return "per-task";
     }
+
+    @GetMapping("/per-order")
+    public String perOrder(HttpSession session, Model model) {
+
+        User user = (User) session.getAttribute("user");
+
+        List<MyGood> myGood = userMapper.getMyGood(user.getId());
+        model.addAttribute("myGood", myGood);
+
+        return "per-task";
+    }
 }

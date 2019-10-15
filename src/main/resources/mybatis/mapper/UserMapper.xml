@@ -88,4 +88,23 @@
             t_user.id = t_record_task.id_responder
             AND t_task.id = t_record_task.id_task
     </select>
+
+    <select id="getMyGood" resultType="io.spring.bean.MyGood">
+        SELECT
+            t_goods.title,
+            t_goods.price,
+            t_img_goods.path,
+            t_img_goods.name AS img_name,
+            t_record_transaction.state,
+            t_record_transaction.time_create,
+            t_goods.id_user
+        FROM
+            t_record_transaction,
+            t_goods,
+            t_img_goods
+        WHERE
+            t_record_transaction.id_purchaser = 14
+            AND t_goods.id=t_record_transaction.id_goods
+            AND t_img_goods.id_goods=t_goods.id
+    </select>
 </mapper>

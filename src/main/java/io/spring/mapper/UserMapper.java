@@ -27,4 +27,6 @@ public interface UserMapper {
     List<FavorGoods> getFavorGoods(int id_user);
 
     List<MyTask> getMyTask(int id_user);
+
+    List<MyGood> getMyGood(int id_user);
 }
