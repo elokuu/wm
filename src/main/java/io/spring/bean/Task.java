@@ -84,4 +84,19 @@ public class Task {
     public void setState(Integer state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", id_user=" + id_user +
+                ", title='" + title + '\'' +
+                ", type=" + type +
+                ", quota=" + quota +
+                ", describe='" + describe + '\'' +
+                ", contact='" + contact + '\'' +
+                ", time_create=" + time_create +
+                ", state=" + state +
+                '}';
+    }
 }

@@ -1,5 +1,6 @@
 package io.spring.controller;
 
+import com.sun.xml.internal.ws.resources.HttpserverMessages;
 import io.spring.bean.*;
 import io.spring.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,5 +78,27 @@ public class PersonalController {
         model.addAttribute("myTask", myTask);
 
         return "per-task";
+    }
+
+    @GetMapping("/per-order")
+    public String perOrder(HttpSession session, Model model) {
+
+        User user = (User) session.getAttribute("user");
+
+        List<MyGood> myGood = userMapper.getMyGood(user.getId());
+        model.addAttribute("myGood", myGood);
+
+        return "per-order";
+    }
+
+    @GetMapping("/per-evaluation")
+    public String perEvaluation(HttpSession session, Model model) {
+
+        User user = (User) session.getAttribute("user");
+
+        List<MyReview> myReview = userMapper.getMyReview(user.getId());
+        model.addAttribute("myReview", myReview);
+
+        return "per-evaluation";
     }
 }

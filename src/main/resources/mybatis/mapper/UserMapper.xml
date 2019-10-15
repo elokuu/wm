@@ -19,9 +19,9 @@
         select * from t_user where name=#{name}
     </select>
 
-    <select id="updateUser">
+    <update id="updateUser">
         update t_user set password=#{password},email=#{email} where name=#{name}
-    </select>
+    </update>
 
     <select id="getTasks" resultType="io.spring.bean.Task">
         select * from t_task where id_user=#{id_user}
@@ -68,7 +68,7 @@
     </select>
 
     <select id="getAllReviewNum" resultType="int">
-        SELECT COUNT(*) FROM t_review_transaction WHERE id_evaluator=#{id_user}
+        SELECT COUNT(*) FROM t_review_transaction WHERE id_evaluated=#{id_user}
     </select>
 
     <select id="getMyTask" resultType="io.spring.bean.MyTask">
@@ -88,4 +88,47 @@
             t_user.id = t_record_task.id_responder
             AND t_task.id = t_record_task.id_task
     </select>
+
+    <select id="getMyGood" resultType="io.spring.bean.MyGood">
+        SELECT
+            t_goods.title,
+            t_goods.price,
+            t_img_goods.path,
+            t_img_goods.name AS img_name,
+            t_record_transaction.state,
+            t_record_transaction.time_create,
+            t_goods.id_user
+        FROM
+            t_record_transaction,
+            t_goods,
+            t_img_goods
+        WHERE
+            t_record_transaction.id_purchaser = 14
+            AND t_goods.id=t_record_transaction.id_goods
+            AND t_img_goods.id_goods=t_goods.id
+    </select>
+    
+    <select id="getMyReview" resultType="io.spring.bean.MyReview">
+        SELECT
+            t_user.NAME,
+            t_review_transaction.content,
+            t_goods.title
+        FROM
+            t_review_transaction,
+            t_record_transaction,
+            t_goods,
+            t_user
+        WHERE
+            t_review_transaction.id_record = t_record_transaction.id
+            AND t_record_transaction.id_goods = t_goods.id
+            AND t_user.id = t_review_transaction.id_evaluator
+            AND t_review_transaction.id_evaluated = #{id_user}
+    </select>
+
+    <update id="updateState" parameterType="java.util.Map">
+        update t_user set state=#{state} where id=#{id}
+    </update>
+    <update id="updatePassword" parameterType="java.util.Map">
+        update t_user set password = #{password} where id = #{id}
+    </update>
 </mapper>
