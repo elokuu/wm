@@ -41,14 +41,14 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a th:href="@{/personal}">个人中心</a></li>
-                    <li><a th:href="@{#}">评价晒单</a></li>
-                    <li><a th:href="@{#}">我的喜欢</a></li>
+                    <li><a th:href="@{/per-evaluation}">评价晒单</a></li>
+                    <li><a th:href="@{/per-favorite}">我的喜欢</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a th:href="@{/logout}">退出登录</a></li>
                 </ul>
             </div>
             <div class="topbar-user pull-right btn-group">
-                <a th:href="@{/personalCenter.html}" type="button" id="user" class="btn">
+                <a th:href="@{/personal}" type="button" id="user" class="btn">
                     <span th:text="${session.user.name}"></span>
                 </a>
             </div>
@@ -373,7 +373,7 @@
                                                 <ul class="goods-list">
                                                     <li>
                                                         <div class="figure figure-thumb" width="80" height="80">
-                                                            <img th:src="@{/ncassets/img/logo16.png}"
+                                                            <img src="/ncassets/img/logo16.png"  th:src="${item.path} + ${item.img_name}"
                                                                  width="80" height="80">
                                                         </div>
                                                         <p class="name" th:text="${item.title}">商品名字</p>
