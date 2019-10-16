@@ -1,5 +1,6 @@
 package io.spring.controller;
 
+import com.sun.xml.internal.ws.resources.HttpserverMessages;
 import io.spring.bean.*;
 import io.spring.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -184,5 +185,15 @@ public class PersonalController {
         model.addAttribute("user", user);
 
         return "o-p-homepage";
+    }
+
+    @GetMapping("/delete-myfavorgood/{id}")
+    public String delMyFavorGood(HttpSession session,
+                                 @PathVariable("id") int id_goods) {
+
+        User user = (User) session.getAttribute("user");
+        userMapper.deleteMyfavorgood(id_goods, user.getId());
+
+        return "redirect:/per-favorite";
     }
 }

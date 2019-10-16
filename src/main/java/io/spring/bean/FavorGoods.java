@@ -9,6 +9,7 @@ public class FavorGoods {
     private Date time_create;
     private String path;
     private String img_name;
+    private int id;
 
     public String getName() {
         return name;
@@ -56,6 +57,14 @@ public class FavorGoods {
 
     public void setImg_name(String img_name) {
         this.img_name = img_name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

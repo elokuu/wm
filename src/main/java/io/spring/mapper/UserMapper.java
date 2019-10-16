@@ -46,4 +46,6 @@ public interface UserMapper {
     void addUser(User user);
 
     void updatePassword(Map map);
+
+    void deleteMyfavorgood(int id_goods, int id_user);
 }

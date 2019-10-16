@@ -39,7 +39,8 @@
 	        t_img_goods.path,
             t_goods.title,
             t_goods.price,
-            t_favorites_goods.time_create
+            t_favorites_goods.time_create,
+            t_goods.id
         FROM
             t_goods,
             t_favorites_goods,
@@ -186,4 +187,8 @@
             AND t_goods.id_user = t_user.id
             AND t_img_goods.id_goods = t_goods.id
     </select>
+
+    <delete id="deleteMyfavorgood">
+        DELETE FROM t_favorites_goods WHERE id_goods = #{id_goods} AND id_user = #{id_user}
+    </delete>
 </mapper>
