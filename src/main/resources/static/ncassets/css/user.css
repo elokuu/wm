@@ -190,9 +190,12 @@ table {
     padding: 10px 0;
     list-style-type: none;
 }
-p .name{
-
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
 .uc-order-item {
     margin-bottom: 20px;
     border: 1px solid #333333;

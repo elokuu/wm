@@ -12,39 +12,39 @@
     <link rel="stylesheet" type="text/css" href="ncassets/css/user.css" th:href="@{/ncassets/css/user.css}"/>
 </head>
 <body>
+
 <div th:include="pc-model :: site-topbar"></div>
 <div th:include="pc-model :: site-header"></div>
-<div class="breadcrumb">
+<div class="breadcrumb" style="min-height: 100%">
     <div class="container clearfix">
-    </div>
-</div>
-<div class="page-main">
-    <div class="container">
-        <div class="uc-box uc-main-box">
-            <div class="uc-content-box portal-content-box">
-                <div class="box-bd">
-                    <div class="portal-main clearfix">
-                        <div class="user-card">
-                            <h2 class="username" th:text="${user.name}" style="margin-top: 50px"></h2><br>
-                            <h5>邮箱：<span class="tel" th:text="${user.email}"></span></h5>
-                            <img class="avatar" src="ncassets/img/user.jpg" th:src="${user.icon}" width="150"
-                                 height="150" alt="Max丶">
-                        </div>
-<!--                        <div class="user-actions">-->
-<!--                            <ul class="action-list">-->
-<!--                                <li>发布任务数：<span class="level level-2"></span></li>-->
-<!--                                <li>接单数：<span class="tel"></span></li>-->
-<!--                                <li>绑定邮箱：<span class="tel" th:text="${session.user.email}"></span></li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
-                    </div>
+        <div class="page-main">
+            <div class="container">
+                <div class="uc-box uc-main-box">
+                    <div class="uc-content-box portal-content-box">
+                        <div class="box-bd">
+                            <div class="portal-main clearfix">
+                                <div class="user-card">
+                                    <h2 class="username" th:text="${user.name}" style="margin-top: 50px"></h2><br>
+                                    <h5>邮箱：<span class="tel" th:text="${user.email}"></span></h5>
+                                    <img class="avatar" src="ncassets/img/user.jpg" th:src="${user.icon}" width="150"
+                                         height="150" alt="Max丶">
+                                </div>
+                                <!--                        <div class="user-actions">-->
+                                <!--                            <ul class="action-list">-->
+                                <!--                                <li>发布任务数：<span class="level level-2"></span></li>-->
+                                <!--                                <li>接单数：<span class="tel"></span></li>-->
+                                <!--                                <li>绑定邮箱：<span class="tel" th:text="${session.user.email}"></span></li>-->
+                                <!--                            </ul>-->
+                                <!--                        </div>-->
+                            </div>
 
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="span10">
+        <div class="span10">
             <div class="page-main">
                 <div class="container">
                     <div class="uc-box uc-main-box" style="margin-top: 5px;margin-bottom: 5px">
@@ -71,8 +71,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </div>
 <div th:include="pc-model :: footer"></div>
+
 </body>
 
 </html>

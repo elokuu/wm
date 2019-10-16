@@ -936,17 +936,17 @@
 </div>
 <!--footer-->
 <div th:fragment="footer">
-    <footer style="bottom: 0px">
+    <footer>
         <div class="site-info container">
             <div class=" clearfix">
                 <div class="logo">
-                    <img src="ncassets/img/logo16.png" style="width: 40px;height: 40px"/>
+                    <img src="ncassets/img/logo16.png" th:src="@{/ncassets/img/logo16.png}" style="width: 40px;height: 40px"/>
                 </div>
                 <div class="info-text">
                     <p>
-                        <a th:href="@{#}">鲸矿网</a>
+                        <a th:href="@{/}">鲸矿网</a>
                         <span class="sep">|</span>
-                        <a th:href="@{#}">WM</a>
+                        <a th:href="@{/}">WM</a>
                         <span class="sep">|</span>
                         <a th:href="@{#}">鲸矿网盟</a>
                         <span class="sep">|</span>
@@ -959,9 +959,9 @@
                         京公网安备9999999999999号京网文[2019]9999-9999号违法和不良信息举报电话：185-0130-1238</p>
                 </div>
                 <div class="info-links">
-                    <a th:href="@{#}"><img src="ncassets/img/foot1.png"/></a>
-                    <a th:href="@{#}"><img src="ncassets/img/foot2.gif"/></a>
-                    <a th:href="@{#}"><img src="ncassets/img/foot3.jpg"/></a>
+                    <a th:href="@{#}"><img src="ncassets/img/foot1.png" th:src="@{/ncassets/img/foot1.png}"/></a>
+                    <a th:href="@{#}"><img src="ncassets/img/foot2.gif" th:src="@{/ncassets/img/foot2.gif}"/></a>
+                    <a th:href="@{#}"><img src="ncassets/img/foot3.jpg" th:src="@{/ncassets/img/foot3.jpg}"/></a>
                 </div>
             </div>
         </div>
