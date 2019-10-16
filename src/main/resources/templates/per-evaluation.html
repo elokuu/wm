@@ -12,10 +12,8 @@
     <link rel="stylesheet" type="text/css" href="ncassets/css/user.css" th:href="@{/ncassets/css/user.css}"/>
     <!--  DataTable  -->
     <link rel="stylesheet" type="text/css" th:href="@{/ncassets/datatables.net-bs/css/dataTables.bootstrap.min.css}"/>
-    <script type="text/javascript" th:src="@{/ncassets/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
     <script type="text/javascript"  th:src="@{/ncassets/datatables.net/js/jquery.dataTables.min.js}"></script>
-    <!--  AdminLTE themye  -->
-    <link rel="stylesheet" type="text/css" th:href="@{/ncassets/css/AdminLTE.min.css}"/>
+    <script type="text/javascript" th:src="@{/ncassets/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
 </head>
 <body>
 <div th:include="pc-model :: site-topbar"></div>
@@ -34,13 +32,11 @@
     $(function () {
         $("#dataTable").dataTable({
             "paging":true,
-           "info":false,
+            "info":false,
             "lengthChange":false,
             "ordering":false,
             "processing":true,
             "searching":false,
-
-
         });
     });
 </script>

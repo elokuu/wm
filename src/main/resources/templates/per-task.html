@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="ncassets/css/reset.css" th:href="@{/ncassets/css/reset.css}">
     <link rel="stylesheet" href="ncassets/css/style.css" th:href="@{/ncassets/css/style.css}">
     <link rel="stylesheet" type="text/css" href="ncassets/css/user.css" th:href="@{/ncassets/css/user.css}"/>
+    <!--  DataTable  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/ncassets/datatables.net-bs/css/dataTables.bootstrap.min.css}"/>
+    <script type="text/javascript"  th:src="@{/ncassets/datatables.net/js/jquery.dataTables.min.js}"></script>
+    <script type="text/javascript" th:src="@{/ncassets/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
 </head>
 <body>
 <div th:include="pc-model :: site-topbar"></div>
@@ -27,6 +31,18 @@
     </div>
 </div>
 <div th:include="pc-model :: footer"></div>
+<script>
+    $(".dataTable").DataTable({
+        "paging":true,
+        "info":false,
+        "lengthChange":false,
+        "ordering":false,
+        "processing":true,
+        "searching":false,
+        "pageLength": 5,
+        "lengthMenu": [ 5,10, 25, 50, 75, 100 ],
+    });
+</script>
 </body>
 <script>
     var my = document.getElementsByClassName("my-task");

@@ -2,6 +2,9 @@
     text-decoration-line: none;
     text-decoration: none;
 }
+.left-a a:hover{
+    color: #ff6700;
+}
 
 .table-a p{
     position:relative;
