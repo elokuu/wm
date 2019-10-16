@@ -1,6 +1,5 @@
 package io.spring.controller;
 
-import com.sun.xml.internal.ws.resources.HttpserverMessages;
 import io.spring.bean.*;
 import io.spring.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.jws.WebParam;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
@@ -48,7 +46,7 @@ public class PersonalController {
         User user = userMapper.getUser((String) session.getAttribute("name"));
 
         session.setAttribute("user", user);
-        return  "redirect:/personal";
+        return "redirect:/personal";
     }
 
     @GetMapping("/logout")
@@ -75,21 +73,66 @@ public class PersonalController {
         User user = (User) session.getAttribute("user");
 
         List<MyTask> myTask = userMapper.getMyTask(user.getId());
+        List<MyTask> otherTask = userMapper.getOtherTask(user.getId());
+        myTask.addAll(otherTask);
         model.addAttribute("myTask", myTask);
 
         return "per-task";
     }
 
-    @GetMapping("/per-order")
-    public String perOrder(HttpSession session, Model model) {
+    @GetMapping("/my-per-task")
+    public String MyPerTask(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+
+        List<MyTask> myTask = userMapper.getMyTask(user.getId());
+        model.addAttribute("myTask", myTask);
+
+        return "per-task";
+    }
+
+    @GetMapping("/other-per-task")
+    public String OtherPerTask(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+
+        List<MyTask> otherTask = userMapper.getOtherTask(user.getId());
+        model.addAttribute("myTask", otherTask);
+
+        return "per-task";
+    }
+
+    @GetMapping("/per-foods")
+    public String perFoods(HttpSession session, Model model) {
+
+        User user = (User) session.getAttribute("user");
+
+        List<MyGood> myGood = userMapper.getMyGood(user.getId());
+        List<MyGood> otherGood = userMapper.getOtherGood(user.getId());
+        myGood.addAll(otherGood);
+        model.addAttribute("myGood", myGood);
+
+        return "per-foods";
+    }
+    @GetMapping("/my-per-foods")
+    public String MyPerFoods(HttpSession session, Model model) {
 
         User user = (User) session.getAttribute("user");
 
         List<MyGood> myGood = userMapper.getMyGood(user.getId());
         model.addAttribute("myGood", myGood);
 
-        return "per-order";
+        return "per-foods";
     }
+    @GetMapping("/other-per-foods")
+    public String OtherPerFoods(HttpSession session, Model model) {
+
+        User user = (User) session.getAttribute("user");
+
+        List<MyGood> myGood = userMapper.getOtherGood(user.getId());
+        model.addAttribute("myGood", myGood);
+
+        return "per-foods";
+    }
+
 
     @GetMapping("/per-evaluation")
     public String perEvaluation(HttpSession session, Model model) {
@@ -97,6 +140,30 @@ public class PersonalController {
         User user = (User) session.getAttribute("user");
 
         List<MyReview> myReview = userMapper.getMyReview(user.getId());
+        List<MyReview> otherReview = userMapper.getOtherView(user.getId());
+        myReview.addAll(otherReview);
+        model.addAttribute("myReview", myReview);
+
+        return "per-evaluation";
+    }
+
+    @GetMapping("/my-per-evaluation")
+    public String MyPerEvaluation(HttpSession session, Model model) {
+
+        User user = (User) session.getAttribute("user");
+
+        List<MyReview> myReview = userMapper.getMyReview(user.getId());
+        model.addAttribute("myReview", myReview);
+
+        return "per-evaluation";
+    }
+
+    @GetMapping("/other-per-evaluation")
+    public String OtherPerEvaluation(HttpSession session, Model model) {
+
+        User user = (User) session.getAttribute("user");
+
+        List<MyReview> myReview = userMapper.getOtherView(user.getId());
         model.addAttribute("myReview", myReview);
 
         return "per-evaluation";

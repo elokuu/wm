@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 15/10/2019 15:00:12
+ Date: 16/10/2019 01:23:02
 */
 
 SET NAMES utf8mb4;
@@ -55,10 +55,10 @@ CREATE TABLE `t_favorites_goods`  (
 -- ----------------------------
 -- Records of t_favorites_goods
 -- ----------------------------
-INSERT INTO `t_favorites_goods` VALUES (1, 14, 14, '2019-10-14');
+INSERT INTO `t_favorites_goods` VALUES (1, 4, 14, '2019-10-14');
 INSERT INTO `t_favorites_goods` VALUES (2, 6, 14, '2019-10-14');
-INSERT INTO `t_favorites_goods` VALUES (3, 14, 14, '2019-10-14');
-INSERT INTO `t_favorites_goods` VALUES (4, 14, 14, '2019-10-14');
+INSERT INTO `t_favorites_goods` VALUES (3, 1, 14, '2019-10-14');
+INSERT INTO `t_favorites_goods` VALUES (4, 9, 14, '2019-10-14');
 INSERT INTO `t_favorites_goods` VALUES (5, 4, 14, '2019-10-14');
 
 -- ----------------------------
@@ -174,14 +174,16 @@ CREATE TABLE `t_record_task`  (
   INDEX `id_responder`(`id_responder`) USING BTREE,
   CONSTRAINT `t_record_task_ibfk_1` FOREIGN KEY (`id_task`) REFERENCES `t_task` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_record_task_ibfk_3` FOREIGN KEY (`id_responder`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_record_task
 -- ----------------------------
-INSERT INTO `t_record_task` VALUES (1, 7, 14, '2019-10-14 14:42:10', '2019-10-14 14:42:14', 1);
-INSERT INTO `t_record_task` VALUES (2, 5, 14, '2019-10-14 15:44:59', '2019-10-14 16:05:50', 1);
-INSERT INTO `t_record_task` VALUES (3, 4, 14, '2019-10-14 16:06:12', NULL, -1);
+INSERT INTO `t_record_task` VALUES (1, 7, 14, '2019-10-14 14:42:10', '2019-10-14 14:42:14', 2);
+INSERT INTO `t_record_task` VALUES (2, 5, 14, '2019-10-14 15:44:59', '2019-10-14 16:05:50', 2);
+INSERT INTO `t_record_task` VALUES (3, 4, 14, '2019-10-14 16:06:12', NULL, 1);
+INSERT INTO `t_record_task` VALUES (4, 22, 5, '2019-10-15 21:26:20', NULL, 1);
+INSERT INTO `t_record_task` VALUES (5, 18, 3, '2019-10-15 22:16:38', NULL, 1);
 
 -- ----------------------------
 -- Table structure for t_record_transaction
@@ -204,7 +206,7 @@ CREATE TABLE `t_record_transaction`  (
 -- ----------------------------
 -- Records of t_record_transaction
 -- ----------------------------
-INSERT INTO `t_record_transaction` VALUES (1, 15, 14, '2019-10-14 10:54:01', '2019-10-14 10:54:04', 2);
+INSERT INTO `t_record_transaction` VALUES (1, 3, 14, '2019-10-14 10:54:01', '2019-10-14 10:54:04', 2);
 
 -- ----------------------------
 -- Table structure for t_review_task
@@ -248,12 +250,13 @@ CREATE TABLE `t_review_transaction`  (
   CONSTRAINT `t_review_transaction_ibfk_1` FOREIGN KEY (`id_evaluator`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_review_transaction_ibfk_2` FOREIGN KEY (`id_evaluated`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_review_transaction_ibfk_3` FOREIGN KEY (`id_record`) REFERENCES `t_record_transaction` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_review_transaction
 -- ----------------------------
 INSERT INTO `t_review_transaction` VALUES (1, 7, 14, 0, '123', 'hhh', 1, '2019-10-15 14:37:40');
+INSERT INTO `t_review_transaction` VALUES (2, 14, 10, 0, '33', '222', 1, '2019-10-16 01:00:17');
 
 -- ----------------------------
 -- Table structure for t_task
@@ -273,38 +276,39 @@ CREATE TABLE `t_task`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_task_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_task
 -- ----------------------------
-INSERT INTO `t_task` VALUES (1, 2, '食堂招兼职', 3, 5, '100/天', NULL, '2019-10-14 14:54:27', 1, 1.00);
-INSERT INTO `t_task` VALUES (2, 2, '篮球缺人', 2, 5, '打篮球', NULL, '2019-10-14 14:54:30', 1, 1.00);
-INSERT INTO `t_task` VALUES (3, 3, '代课', 5, 5, '20/节', NULL, '2019-10-14 14:54:29', 1, 1.00);
-INSERT INTO `t_task` VALUES (4, 3, '有在食堂的吗', 5, 1, '热干面', NULL, '2019-10-14 14:54:31', 1, 1.00);
-INSERT INTO `t_task` VALUES (5, 3, '带饭', 5, 1, '黄焖鸡', NULL, '2019-10-14 14:54:35', 1, 1.00);
-INSERT INTO `t_task` VALUES (6, 2, '竞赛组队了', 2, 1, '冲冲冲', NULL, '2019-10-14 14:54:38', 1, 1.00);
-INSERT INTO `t_task` VALUES (7, 1, '韵达的快递', 1, 1, 'gkd', NULL, '2019-10-14 14:54:39', 1, 1.00);
-INSERT INTO `t_task` VALUES (8, 4, '表格打印', 4, 1, 'gkd', NULL, '2019-10-14 14:54:40', 1, 1.00);
-INSERT INTO `t_task` VALUES (9, 4, '兄弟车行的', 1, 1, 'gkd', NULL, '2019-10-14 14:54:41', 1, 1.00);
-INSERT INTO `t_task` VALUES (10, 4, '菜鸟驿站的', 1, 1, 'gkd', NULL, '2019-10-14 14:54:42', 1, 1.00);
-INSERT INTO `t_task` VALUES (11, 2, '证书打印', 4, 2, NULL, '10010', '2019-10-14 14:54:43', -1, 1.00);
-INSERT INTO `t_task` VALUES (12, 2, '文件打印', 4, 1, 'gkd', '10010', '2019-10-14 14:54:44', -1, 1.00);
-INSERT INTO `t_task` VALUES (13, 2, '赚钱了赚钱了', 3, 3, '来来来 我们要发财了', '10010', '2019-10-14 14:54:46', -1, 1.00);
-INSERT INTO `t_task` VALUES (14, 14, '食堂招兼职', 3, 5, '100/天', NULL, '2019-10-14 14:54:47', 1, 1.00);
-INSERT INTO `t_task` VALUES (15, 14, '篮球缺人', 2, 5, '打篮球', NULL, '2019-10-14 14:54:48', 1, 1.00);
-INSERT INTO `t_task` VALUES (16, 14, '代课', 5, 5, '20/节', NULL, '2019-10-14 14:54:49', 1, 1.00);
-INSERT INTO `t_task` VALUES (17, 14, '有在食堂的吗', 5, 1, '热干面', NULL, '2019-10-14 14:54:50', 1, 1.00);
-INSERT INTO `t_task` VALUES (18, 14, '带饭', 5, 1, '黄焖鸡', NULL, '2019-10-14 14:54:51', 1, 1.00);
-INSERT INTO `t_task` VALUES (19, 14, '竞赛组队了', 2, 1, '冲冲冲', NULL, '2019-10-14 14:54:52', 1, 1.00);
-INSERT INTO `t_task` VALUES (20, 14, '韵达的快递', 1, 1, 'gkd', NULL, '2019-10-14 14:54:53', 1, 1.00);
-INSERT INTO `t_task` VALUES (21, 14, '表格打印', 4, 1, 'gkd', NULL, '2019-10-14 14:54:54', 1, 1.00);
-INSERT INTO `t_task` VALUES (22, 14, '兄弟车行的', 1, 1, 'gkd', NULL, '2019-10-14 14:54:55', 1, 1.00);
-INSERT INTO `t_task` VALUES (23, 14, '菜鸟驿站的', 1, 1, 'gkd', NULL, '2019-10-14 14:54:56', 1, 1.00);
-INSERT INTO `t_task` VALUES (24, 14, '证书打印', 4, 2, NULL, '10010', '2019-10-14 14:54:59', -1, 1.00);
-INSERT INTO `t_task` VALUES (25, 14, '文件打印', 4, 1, 'gkd', '10010', '2019-10-14 14:54:58', -1, 1.00);
-INSERT INTO `t_task` VALUES (26, 14, '赚钱了赚钱了', 3, 3, '来来来 我们要发财了', '10010', '2019-10-14 14:55:00', -1, 1.00);
-INSERT INTO `t_task` VALUES (27, 14, '', 4, 1, '', '', '2019-10-15 00:00:00', NULL, NULL);
+INSERT INTO `t_task` VALUES (1, 2, '食堂招兼职', 3, 5, '100/天', NULL, '2019-10-15 22:43:15', 0, 1.00);
+INSERT INTO `t_task` VALUES (2, 2, '篮球缺人', 2, 5, '打篮球', NULL, '2019-10-15 22:43:16', 0, 1.00);
+INSERT INTO `t_task` VALUES (3, 3, '代课', 5, 5, '20/节', NULL, '2019-10-15 22:43:18', 0, 1.00);
+INSERT INTO `t_task` VALUES (4, 3, '有在食堂的吗', 5, 1, '热干面', NULL, '2019-10-15 22:45:19', 1, 1.00);
+INSERT INTO `t_task` VALUES (5, 3, '带饭', 5, 1, '黄焖鸡', NULL, '2019-10-15 22:45:21', 1, 1.00);
+INSERT INTO `t_task` VALUES (6, 2, '竞赛组队了', 2, 1, '冲冲冲', NULL, '2019-10-15 22:43:23', 0, 1.00);
+INSERT INTO `t_task` VALUES (7, 1, '韵达的快递', 1, 1, 'gkd', NULL, '2019-10-15 22:45:24', 1, 1.00);
+INSERT INTO `t_task` VALUES (8, 4, '表格打印', 4, 1, 'gkd', NULL, '2019-10-15 22:43:27', 0, 1.00);
+INSERT INTO `t_task` VALUES (9, 4, '兄弟车行的', 1, 1, 'gkd', NULL, '2019-10-15 22:43:28', 0, 1.00);
+INSERT INTO `t_task` VALUES (10, 4, '菜鸟驿站的', 1, 1, 'gkd', NULL, '2019-10-15 22:43:30', 0, 1.00);
+INSERT INTO `t_task` VALUES (11, 2, '证书打印', 4, 2, NULL, '10010', '2019-10-15 22:43:32', 0, 1.00);
+INSERT INTO `t_task` VALUES (12, 2, '文件打印', 4, 1, 'gkd', '10010', '2019-10-15 22:43:35', 0, 1.00);
+INSERT INTO `t_task` VALUES (13, 2, '赚钱了赚钱了', 3, 3, '来来来 我们要发财了', '10010', '2019-10-15 22:43:37', 0, 1.00);
+INSERT INTO `t_task` VALUES (14, 14, '食堂招兼职', 3, 5, '100/天', NULL, '2019-10-15 22:44:19', 0, 1.00);
+INSERT INTO `t_task` VALUES (15, 14, '篮球缺人', 2, 5, '打篮球', NULL, '2019-10-15 22:44:23', 0, 1.00);
+INSERT INTO `t_task` VALUES (16, 14, '代课', 5, 5, '20/节', NULL, '2019-10-15 22:44:25', 0, 1.00);
+INSERT INTO `t_task` VALUES (17, 14, '有在食堂的吗', 5, 1, '热干面', NULL, '2019-10-15 22:44:26', 0, 1.00);
+INSERT INTO `t_task` VALUES (18, 14, '带饭', 5, 1, '黄焖鸡', NULL, '2019-10-15 22:45:28', 1, 1.00);
+INSERT INTO `t_task` VALUES (19, 14, '竞赛组队了', 2, 1, '冲冲冲', NULL, '2019-10-15 22:44:29', 0, 1.00);
+INSERT INTO `t_task` VALUES (20, 14, '韵达的快递', 1, 1, 'gkd', NULL, '2019-10-15 22:44:31', 0, 1.00);
+INSERT INTO `t_task` VALUES (21, 14, '表格打印', 4, 1, 'gkd', NULL, '2019-10-15 22:44:33', 0, 1.00);
+INSERT INTO `t_task` VALUES (22, 14, '兄弟车行的', 1, 1, 'gkd', NULL, '2019-10-15 22:45:32', 1, 1.00);
+INSERT INTO `t_task` VALUES (23, 14, '菜鸟驿站的', 1, 1, 'gkd', NULL, '2019-10-15 22:44:36', 0, 1.00);
+INSERT INTO `t_task` VALUES (24, 14, '证书打印', 4, 2, NULL, '10010', '2019-10-15 22:44:38', 0, 1.00);
+INSERT INTO `t_task` VALUES (25, 14, '文件打印', 4, 1, 'gkd', '10010', '2019-10-15 22:44:40', 0, 1.00);
+INSERT INTO `t_task` VALUES (26, 14, '赚钱了赚钱了', 3, 3, '来来来 我们要发财了', '10010', '2019-10-15 22:44:42', 0, 1.00);
+INSERT INTO `t_task` VALUES (30, 14, '123', 5, 1, '123', '123', '2019-10-15 22:44:43', 0, 2.00);
+INSERT INTO `t_task` VALUES (31, 14, '123', 4, 1, '333', '3333', '2019-10-15 22:44:45', 0, 2.00);
 
 -- ----------------------------
 -- Table structure for t_user
@@ -319,22 +323,23 @@ CREATE TABLE `t_user`  (
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '注册邮箱',
   `state` tinyint(1) NULL DEFAULT NULL COMMENT '状态',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (1, '/mainassets/img/pic1.jpg', '工具人1号', '12345678', 1, '33333333333', NULL);
-INSERT INTO `t_user` VALUES (2, '/mainassets/img/pic1.jpg', 'wujinhui', '12345678', 1, 'scarletflandre@foxmail.com', NULL);
-INSERT INTO `t_user` VALUES (3, '/mainassets/img/pic1.jpg', '工具人3号', '12345678', 1, 'scarletflandre@foxmail.com', NULL);
-INSERT INTO `t_user` VALUES (4, '/mainassets/img/pic1.jpg', '工具人4号', '12345678', 1, '1213341', NULL);
-INSERT INTO `t_user` VALUES (5, '/mainassets/img/pic1.jpg', '工具人5号', '12345678', 1, '1231', NULL);
-INSERT INTO `t_user` VALUES (6, '/mainassets/img/pic1.jpg', 'lzj', '12345678', 1, '123122', NULL);
-INSERT INTO `t_user` VALUES (7, '/mainassets/img/pic1.jpg', '工具人7号', '12345678', 1, 'scarletflandre@foxmail.com', NULL);
-INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12345678', 1, 'scarletflandre@foxmail.com', NULL);
-INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com', NULL);
-INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com', NULL);
-INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com', NULL);
-INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', '123', 1, '22@33', NULL);
+INSERT INTO `t_user` VALUES (1, '/mainassets/img/pic1.jpg', '工具人1号', '12345678', 1, '33333333333', 1);
+INSERT INTO `t_user` VALUES (2, '/mainassets/img/pic1.jpg', 'wujinhui', '12345678', 1, 'scarletflandre@foxmail.com', 1);
+INSERT INTO `t_user` VALUES (3, '/mainassets/img/pic1.jpg', '工具人3号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
+INSERT INTO `t_user` VALUES (4, '/mainassets/img/pic1.jpg', '工具人4号', '12345678', 1, '1213341', 1);
+INSERT INTO `t_user` VALUES (5, '/mainassets/img/pic1.jpg', '工具人5号', '12345678', 1, '1231', 1);
+INSERT INTO `t_user` VALUES (6, '/mainassets/img/pic1.jpg', 'lzj', '12345678', 1, '123122', 1);
+INSERT INTO `t_user` VALUES (7, '/mainassets/img/pic1.jpg', '工具人7号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
+INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
+INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
+INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
+INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
+INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', '123', 1, '22@333', 1);
+INSERT INTO `t_user` VALUES (15, '/mainassets/img/pic1.jpg', 'admin', '123', 2, '33@22', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

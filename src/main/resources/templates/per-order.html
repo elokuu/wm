@@ -28,6 +28,39 @@
         </div>
     </div>
 </div>
+
 <div th:include="pc-model :: footer"></div>
 </body>
+
+<script>
+    var finish = document.getElementsByClassName("o-finish");
+    var unfinish = document.getElementsByClassName("o-unfinish");
+    function o_all() {
+        for (i=0;i<finish.length;i++){
+            finish[i].hidden=false;
+        }
+        for (i=0;i<unfinish.length;i++){
+            unfinish[i].hidden=false;
+        }
+    }
+    function o_received() {
+        for (i=0;i<finish.length;i++){
+            finish[i].hidden=false;
+        }
+        for (i=0;i<unfinish.length;i++){
+            unfinish[i].hidden=true;
+        }
+    }
+    function o_wait() {
+        for (i=0;i<finish.length;i++){
+            finish[i].hidden=true;
+        }
+        for (i=0;i<unfinish.length;i++){
+            unfinish[i].hidden=false;
+        }
+    }
+    function o_recycle() {
+        alert(1)
+    }
+</script>
 </html>

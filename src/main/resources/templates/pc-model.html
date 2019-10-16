@@ -40,7 +40,7 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a th:href="@{/personalCenter.html}">个人中心</a></li>
+                    <li><a th:href="@{/personal}">个人中心</a></li>
                     <li><a th:href="@{#}">评价晒单</a></li>
                     <li><a th:href="@{#}">我的喜欢</a></li>
                     <li role="separator" class="divider"></li>
@@ -56,34 +56,13 @@
         </div>
     </div>
 </div>
-
-<!--logo导航-->
-<div th:fragment="site-header">
-    <div class="site-header">
-        <div class="container clearfix">
-            <!--网站logo-->
-            <div class="header-logo pull-left" style="margin-left: 33px">
-                <a th:href="@{/}">
-                    <img src="ncassets/img/logo16.png" style="width: 55px;height: 55px;margin: -3px 0 0 -3px">
-                </a>
-            </div>
-
-            <ul class="header-nav pull-left clearfix" style="align-self: center;margin-left: 100px">
-                <li class="nav-item"><a class="link" th:href="@{/}">官方首页</a></li>
-                <li class="nav-item"><a class="link" th:href="@{MallHomepage.html}">二手市场</a></li>
-                <li class="nav-item"><a class="link" th:href="@{dymainpage.html}">跑腿市场</a></li>
-
-            </ul>
-        </div>
-    </div>
-</div>
-
+<div th:fragment="site-header"></div>
 <!--个人导航-->
 <div th:fragment="breadcrumb-order">
     <div class="breadcrumb">
         <div class="container clearfix">
-            <ol class="breadcrumb" style="margin-left: 18px">
-                <li><a th:href="@{personalCenter.html}">首页</a></li>
+            <ol class="breadcrumb" style="margin-left: 365px">
+                <li class="active">首页</li>
                 <li class="active">订单中心</li>
                 <li class="active">我的订单</li>
             </ol>
@@ -93,8 +72,8 @@
 <div th:fragment="breadcrumb-goods">
     <div class="breadcrumb">
         <div class="container clearfix">
-            <ol class="breadcrumb" style="margin-left: 18px">
-                <li><a th:href="@{personalCenter.html}">首页</a></li>
+            <ol class="breadcrumb" style="margin-left: 365px">
+                <li class="active">首页</li>
                 <li class="active">订单中心</li>
                 <li class="active">我的商品</li>
             </ol>
@@ -104,10 +83,21 @@
 <div th:fragment="breadcrumb-evaluation">
     <div class="breadcrumb">
         <div class="container clearfix">
-            <ol class="breadcrumb" style="margin-left: 18px">
-                <li><a th:href="@{personalCenter.html}">首页</a></li>
+            <ol class="breadcrumb" style="margin-left: 365px">
+                <li class="active">首页</li>
                 <li class="active">订单中心</li>
                 <li class="active">评价晒单</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div th:fragment="breadcrumb-unaudited">
+    <div class="breadcrumb">
+        <div class="container clearfix">
+            <ol class="breadcrumb" style="margin-left: 365px">
+                <li class="active">首页</li>
+                <li class="active">订单中心</li>
+                <li class="active">未审核的发布</li>
             </ol>
         </div>
     </div>
@@ -115,8 +105,8 @@
 <div th:fragment="breadcrumb-task">
     <div class="breadcrumb">
         <div class="container clearfix">
-            <ol class="breadcrumb" style="margin-left: 18px">
-                <li><a th:href="@{personalCenter.html}">首页</a></li>
+            <ol class="breadcrumb" style="margin-left: 365px">
+                <li class="active">首页</li>
                 <li class="active">任务中心</li>
                 <li class="active">我的任务</li>
             </ol>
@@ -126,8 +116,8 @@
 <div th:fragment="breadcrumb">
     <div class="breadcrumb">
         <div class="container clearfix">
-            <ol class="breadcrumb" style="margin-left: 18px">
-                <li><a th:href="@{personalCenter.html}">首页</a></li>
+            <ol class="breadcrumb" style="margin-left: 365px">
+                <li class="active">首页</li>
                 <li class="active">个人中心</li>
                 <li class="active">我的首页</li>
             </ol>
@@ -137,8 +127,8 @@
 <div th:fragment="breadcrumb-favorite">
     <div class="breadcrumb">
         <div class="container clearfix">
-            <ol class="breadcrumb" style="margin-left: 18px">
-                <li><a th:href="@{personalCenter.html}">首页</a></li>
+            <ol class="breadcrumb" style="margin-left: 365px">
+                <li class="active">首页</li>
                 <li class="active">个人中心</li>
                 <li class="active">我的收藏</li>
             </ol>
@@ -148,8 +138,8 @@
 <div th:fragment="breadcrumb-address">
     <div class="breadcrumb">
         <div class="container clearfix">
-            <ol class="breadcrumb" style="margin-left: 18px">
-                <li><a th:href="@{personalCenter.html}">首页</a></li>
+            <ol class="breadcrumb" style="margin-left: 365px">
+                <li class="active">首页</li>
                 <li class="active">个人中心</li>
                 <li class="active">收货地址</li>
             </ol>
@@ -159,8 +149,8 @@
 <div th:fragment="breadcrumb-info">
     <div class="breadcrumb">
         <div class="container clearfix">
-            <ol class="breadcrumb" style="margin-left: 18px">
-                <li><a th:href="@{personalCenter.html}">首页</a></li>
+            <ol class="breadcrumb" style="margin-left: 365px">
+                <li class="active">首页</li>
                 <li class="active">账户管理</li>
                 <li class="active">修改个人信息</li>
             </ol>
@@ -171,7 +161,7 @@
 
 <!--左侧导航-->
 <div th:fragment="span4">
-    <div class="span4">
+    <div class="span4" style="width: 334px">
         <div class="uc-box uc-sub-box">
             <div class="uc-nav-box">
                 <div class="box-hd">
@@ -179,9 +169,10 @@
                 </div>
                 <div class="box-bd">
                     <ul class="uc-nav-list">
-                        <li><a th:href="@{/per-order}">我的订单</a></li>
+<!--                        <li><a th:href="@{/per-order}">我的订单</a></li>-->
                         <li><a th:href="@{/per-foods}">我的商品</a></li>
                         <li><a th:href="@{/per-evaluation}">评价晒单</a></li>
+                        <li><a th:href="@{/per-unaudited.html}">未审核的发布</a></li>
                     </ul>
                 </div>
             </div>
@@ -225,26 +216,143 @@
 
 <!--我的订单（已完成）-->
 <div th:fragment="span6-order">
+<!--    <div class="span16" style="width: 1078px">-->
+<!--        <div class="uc-box uc-main-box">-->
+<!--            <div class="uc-content-box portal-content-box">-->
+<!--                <div class="box-bd">-->
+<!--                    <h1 class="title">我的订单</h1>-->
+<!--                    <div class="more clearfix">-->
+<!--                        <ul class="filter-list J_orderType">-->
+<!--                            <li class="first active"><a th:href="@{#}" onclick="o_all();">全部有效订单</a></li>-->
+<!--                            <li class="active" ><a th:href="@{#}" id="o-re" onclick="o_received();">已收货</a></li>-->
+<!--                            <li class="active" ><a th:href="@{javascript:}" id="o-wait" onclick="o_wait();">待收货</a></li>-->
+<!--                            <li class="active"><a th:href="@{#}" onclick="o_recycle();">订单回收站</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="box-bd">-->
+<!--                    <div>-->
+<!--                        <ul class="order-list">-->
+<!--                            <li class="o-finish uc-order-item uc-order-finish" th:each=" item : ${myGood}">-->
+<!--                                <button class="button-i"><a th:href="@{#}"><i class="fa fa-trash" style="font-size: x-large"></i></a></button>-->
+<!--                                <div class="order-detail">-->
+<!--                                    <div class="order-summary">-->
+<!--                                        <div class="order-status">已收货</div>-->
+<!--                                    </div>-->
+<!--                                    <table class="order-detail-table">-->
+<!--                                        <thead>-->
+<!--                                        <tr>-->
+<!--                                            <th class="col-main"><p class="caption-info"><span th:text="${item.time_create}">2018年09月20日 12:11</span><span-->
+<!--                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user" th:text="${item.name}">username</a></p></th>-->
+<!--                                            <th class="col-sub"><p class="caption-price">实付金额：<span-->
+<!--                                                    class="num" th:text="${item.price}">0.00</span>元</p></th>-->
+<!--                                        </tr>-->
+<!--                                        </thead>-->
+<!--                                        <tbody>-->
+<!--                                        <tr>-->
+<!--                                            <td class="order-items">-->
+
+<!--                                                <ul class="goods-list">-->
+<!--                                                    <li>-->
+<!--                                                        <div class="figure figure-thumb" width="80" height="80">-->
+<!--                                                            <img src="/ncassets/img/logo16.png" th:src="@{${item.path} + ${item.img_name}}"-->
+<!--                                                                 width="80" height="80">-->
+
+<!--                                                        </div>-->
+<!--                                                        <p th:text="${item.title}">商品名字</p>-->
+<!--                                                        <p>价格: <span th:text="${item.price}"></span></p>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+<!--                                            </td>-->
+<!--                                            <td class="order-actions">-->
+<!--                                                <a class="btn btn-small btn-line-gray">商品详情</a>-->
+<!--                                                <a class="btn btn-small btn-line-gray">联系店家</a>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        </tbody>-->
+<!--                                    </table>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--&lt;!&ndash;                            <li class="o-unfinish uc-order-item uc-order-unfinish">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <button class="button-i"><a th:href="@{#}"><i class="fa fa-trash" style="font-size: x-large"></i></a></button>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="order-detail">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="order-summary">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="order-status">未收货</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        &lt;!&ndash;<button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i></button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <table class="order-detail-table">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <th class="col-main"><p class="caption-info">2018年09月20日 12:11<span&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user">username</a></p></th>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <th class="col-sub"><p class="caption-price">实付金额：<span&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    class="num">0.00</span>元</p></th>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </thead>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <td class="order-items">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                                <ul class="goods-list">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <div class="figure figure-thumb" width="80" height="80">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                            <img th:src="@{/ncassets/img/logo16.png}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                                 width="80" height="80">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <p class="name">商品名字</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <p class="price">价格</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <td class="order-actions">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <a class="btn btn-small btn-line-gray">商品详情</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <a class="btn btn-small btn-line-gray">联系店家</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </table>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </li>&ndash;&gt;-->
+<!--                        </ul>-->
+<!--                        <div class="pagination">-->
+<!--                            <ul>-->
+<!--                                <li><a href="#">Prev</a></li>-->
+<!--                                <li><a href="#">1</a></li>-->
+<!--                                <li><a href="#">2</a></li>-->
+<!--                                <li><a href="#">3</a></li>-->
+<!--                                <li><a href="#">4</a></li>-->
+<!--                                <li><a href="#">5</a></li>-->
+<!--                                <li><a href="#">Next</a></li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
+<!--我的商品（）-->
+<div th:fragment="span6-goods">
     <div class="span16">
         <div class="uc-box uc-main-box">
             <div class="uc-content-box portal-content-box">
                 <div class="box-bd">
-                    <h1 class="title">我的订单</h1>
+                    <h1 class="title">我的商品</h1>
                     <div class="more clearfix">
                         <ul class="filter-list J_orderType">
-                            <li class="first active"><a th:href="@{#}">全部有效订单</a></li>
-                            <li class="active"><a th:href="@{#}">待支付</a></li>
-                            <li class="active"><a th:href="@{#}">待收货</a></li>
-                            <li class="active"><a th:href="@{#}">订单回收站</a></li>
+                            <li class="first active"><a th:href="@{/per-foods}">所有的商品</a></li>
+                            <li class="active"><a th:href="@{/my-per-foods}">我卖的商品</a></li>
+                            <li class="active"><a th:href="@{/other-per-foods}">我买的商品</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="box-bd">
-                    <div th:each=" item : ${myGood}">
+                    <div>
                         <ul class="order-list">
-                            <button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i>
-                            </button>
-                            <li class="uc-order-item uc-order-finish">
+                            <li class="uc-order-item uc-order-finish" th:each=" item : ${myGood}">
+                                <button class="button-i"><a th:href="@{#}"><i class="fa fa-trash" style="font-size: x-large"></i></a>
+                                </button>
                                 <div class="order-detail">
                                     <div class="order-summary">
                                         <div class="order-status">已收货</div>
@@ -253,7 +361,7 @@
                                         <thead>
                                         <tr>
                                             <th class="col-main"><p class="caption-info"><span th:text="${item.time_create}">2018年09月20日 12:11</span><span
-                                                    class="sep">|</span>username</p></th>
+                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user" th:text="${ #strings.isEmpty(item.name)?session.user.name : item.name}">username</a></p></th>
                                             <th class="col-sub"><p class="caption-price">实付金额：<span
                                                     class="num" th:text="${item.price}">0.00</span>元</p></th>
                                         </tr>
@@ -267,122 +375,15 @@
                                                         <div class="figure figure-thumb" width="80" height="80">
                                                             <img th:src="@{/ncassets/img/logo16.png}"
                                                                  width="80" height="80">
-
                                                         </div>
-                                                        <p th:text="${item.title}">商品名字</p>
-                                                        <p th:text="${item.price}">价格</p>
+                                                        <p class="name" th:text="${item.title}">商品名字</p>
+                                                        <p class="price">价格: <span th:text="${item.price}"></span></p>
                                                     </li>
                                                 </ul>
                                             </td>
                                             <td class="order-actions">
-                                                <a class="btn btn-small btn-line-gray">订单详情</a>
-                                                <a class="btn btn-small btn-line-gray">申请售后</a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--我的商品（）-->
-<div th:fragment="span6-goods">
-    <div class="span16">
-        <div class="uc-box uc-main-box">
-            <div class="uc-content-box portal-content-box">
-                <div class="box-bd">
-                    <h1 class="title">我的商品</h1>
-                    <div class="more clearfix">
-                        <ul class="filter-list J_orderType">
-                            <li class="first active"><a th:href="@{#}">我买的商品</a></li>
-                            <li class="active"><a th:href="@{#}">我卖的商品</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="box-bd">
-                    <div>
-                        <ul class="order-list">
-                            <button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i>
-                            </button>
-                            <li class="uc-order-item uc-order-finish">
-                                <div class="order-detail">
-                                    <div class="order-summary">
-                                        <div class="order-status">已收货</div>
-                                    </div>
-                                    <table class="order-detail-table">
-                                        <thead>
-                                        <tr>
-                                            <th class="col-main"><p class="caption-info">2018年09月20日 12:11<span
-                                                    class="sep">|</span>username</p></th>
-                                            <th class="col-sub"><p class="caption-price">实付金额：<span
-                                                    class="num">0.00</span>元</p></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td class="order-items">
-
-                                                <ul class="goods-list">
-                                                    <li>
-                                                        <div class="figure figure-thumb" width="80" height="80">
-                                                            <img th:src="@{/ncassets/img/logo16.png}"
-                                                                 width="80" height="80">
-                                                        </div>
-                                                        <p class="name">商品名字</p>
-                                                        <p class="price">价格</p>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td class="order-actions">
-                                                <a class="btn btn-small btn-line-gray">订单详情</a>
-                                                <a class="btn btn-small btn-line-gray">申请售后</a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </li>
-                            <button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i>
-                            </button>
-                            <li class="uc-order-item uc-order-unfinish">
-                                <div class="order-detail">
-                                    <div class="order-summary">
-                                        <div class="order-status">未收货</div>
-                                        <!--<button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i></button>-->
-                                    </div>
-                                    <table class="order-detail-table">
-                                        <thead>
-                                        <tr>
-                                            <th class="col-main"><p class="caption-info">2018年09月20日 12:11<span
-                                                    class="sep">|</span>username</p></th>
-                                            <th class="col-sub"><p class="caption-price">实付金额：<span
-                                                    class="num">0.00</span>元</p></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td class="order-items">
-
-                                                <ul class="goods-list">
-                                                    <li>
-                                                        <div class="figure figure-thumb" width="80" height="80">
-                                                            <img th:src="@{/ncassets/img/logo16.png}"
-                                                                 width="80" height="80">
-                                                        </div>
-                                                        <p class="name">商品名字</p>
-                                                        <p class="price">价格</p>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td class="order-actions">
-                                                <a class="btn btn-small btn-line-gray">订单详情</a>
-                                                <a class="btn btn-small btn-line-gray">申请售后</a>
+                                                <a class="btn btn-small btn-line-gray">商品详情</a>
+                                                <a class="btn btn-small btn-line-gray">联系店家</a>
                                             </td>
                                         </tr>
                                         </tbody>
@@ -405,31 +406,211 @@
                     <h1 class="title">我的评价</h1>
                     <div class="more clearfix">
                         <ul class="filter-list J_orderType">
-<!--                            <li class="first active"><a th:href="@{#}">已评价</a></li>-->
-<!--                            <li class="active"><a th:href="@{#}">未评价</a></li>-->
+                            <li class="first active"><a th:href="@{/per-evaluation}" onclick="allEva();">全部评价</a></li>
+                            <li class="active"><a th:href="@{/other-per-evaluation}" onclick="oEva();">别人对我的评价</a></li>
+                            <li class="active"><a th:href="@{/my-per-evaluation}" onclick="myEva();">我对别人的评价</a></li>
+<!--                            <li class="active"><a th:href="@{#}" onclick="notEva();">未评价</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="box-bd" id="look">
+                    <div class="table-a">
+                        <table class="table" style="width: 882px">
+                            <thead style="border-top: 5px solid #ff6700;border-bottom: 2px solid #333333;padding: 10px 0 10px 0">
+                            <tr style="height: 50px;font-size: x-large">
+                                <th class="col-sm-4">评价</th>
+                                <th class="col-sm-4">评价人</th>
+                                <th class="col-sm-4">宝贝标题</th>
+                            </tr>
+                            </thead>
+                            <tbody style="font-size: large">
+                            <tr style="border-bottom: 1px solid #333333" class="o-eva" th:each=" item : ${myReview}">
+                                <td >
+                                    <span style="margin-left: 15px" th:text="${item.time_completion}">[2019.10.15]</span>
+                                    <p th:text="${item.content}">时光如流，错落有致的思维中，卷卷都铺着柔情，瓣瓣心香，飘逸着诗情，拾取光阴里那片 倾心的云朵，静静一个人，静心坐落在一角落，安静的听风数雨，等某个人快马加鞭而来，等那笔最温暖，最懂得，最催心的宝贝，于是心心念的那一刻如期而至。【宜居良品店】用心做好灯具的每一个细节，更加懂你~</p>
+
+                                </td>
+                                <td><a class="a-user" th:href="@{/o-p-homepage.html}">[买家]：<span th:text="${ #strings.isEmpty(item.name) ? session.user.name : item.name}">username</span></a></td>
+                                <td><a class="a-user" th:href="@{#}" th:text="${item.title}">小米8</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="box-bd" id="eva" hidden="">
+                    <div >
+                        <ul class="order-list">
+                            <li class="uc-order-item">
+                                <div class="order-detail">
+                                    <table class="order-detail-table">
+                                        <thead>
+                                        <tr>
+                                            <th class="col-main"><p class="caption-info">2018年09月20日 12:11<span
+                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user">username</a></p></th>
+                                            <th></th>
+                                            <th class="col-sub">
+                                                <p class="caption-price">金额：<span
+                                                        class="num">0.00</span>元</p>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr style="border-bottom: 1px solid #e0e0e0">
+                                            <td class="order-items">
+
+                                                <ul class="goods-list">
+                                                    <li>
+                                                        <div class="figure figure-thumb" width="80" height="80">
+                                                            <img th:src="@{/ncassets/img/logo16.png}"
+                                                                 width="80" height="80">
+
+                                                        </div>
+                                                        <p>商品名字</p>
+                                                        <p>价格</p>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td>
+                                            </td>
+                                            <td class="order-actions">
+                                                <a class="btn btn-small btn-line-gray">商品详情</a>
+                                                <a class="btn btn-small btn-line-gray" onclick="Eva();">点击评价</a>
+                                            </td>
+                                        </tr>
+                                        <tr style="height: 100px;padding-left: 28px" hidden id="evaTr">
+                                            <form action="">
+                                                <td>
+                                                    <textarea style="width: 90%;margin-left: 28px" placeholder="请输入评价内容..."></textarea>
+                                                </td>
+                                                <td>
+                                                    <input type="file">
+                                                </td>
+                                                <td>
+                                                    <input type="button" class="btn btn-small btn-line-gray" value="点击收起" onclick="fewer();">
+                                                    <input type="submit" class="btn btn-small btn-line-gray">
+                                                </td>
+                                            </form>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--未审核-->
+<div th:fragment="span6-unaudited">
+    <div class="span16" style="width: 1078px">
+        <div class="uc-box uc-main-box">
+            <div class="uc-content-box portal-content-box">
+                <div class="box-bd">
+                    <h1 class="title">未审核的发布</h1>
+                    <div class="more clearfix">
+                        <ul class="filter-list J_orderType">
+                            <li class="first active"><a th:href="@{#}" onclick="unaudited();">待审核</a></li>
+                            <li class="active" ><a th:href="@{#}" onclick="notPass();">审核不通过</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="box-bd">
                     <div>
-                        <table style="width: 882px">
-                            <thead style="border-top: 5px solid #ff6700;border-bottom: 2px solid #333333;padding: 10px 0 10px 0">
-                            <tr style="height: 50px;font-size: x-large">
-                                <th class="col-sm-5">评价</th>
-                                <th class="col-sm-3">评价人</th>
-                                <th class="col-sm-4">宝贝信息</th>
-                            </tr>
-                            </thead>
-                            <tbody style="font-size: large">
-                            <tr style="border-bottom: 1px solid #333333" th:each="item : ${myReview}">
-                                <td th:text="${item.content}">我草泥马</td>
-                                <td><a class="a-user" th:href="@{/o-p-homepage.html}" th:text="${item.name}">username</a></td>
-                                <td th:text="${item.title}">阿达萨达萨达飒飒</td>
-                            </tr>
+                        <ul class="order-list">
+                            <li class="o-finish uc-order-item uc-order-unaudited">
+                                <button class="button-i"><a th:href="@{#}"><i class="fa fa-trash" style="font-size: x-large"></i></a></button>
+                                <div class="order-detail">
+                                    <div class="order-summary">
+                                        <div class="order-status">待审核</div>
+                                    </div>
+                                    <table class="order-detail-table">
+                                        <thead>
+                                        <tr>
+                                            <th class="col-main"><p class="caption-info">2018年09月20日 12:11<span
+                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user">username</a></p></th>
+                                            <th class="col-sub"><p class="caption-price">应付金额：<span
+                                                    class="num">0.00</span>元</p></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="order-items">
 
-                            </tbody>
-                        </table>
+                                                <ul class="goods-list">
+                                                    <li>
+                                                        <div class="figure figure-thumb" width="80" height="80">
+                                                            <img th:src="@{/ncassets/img/logo16.png}"
+                                                                 width="80" height="80">
 
+                                                        </div>
+                                                        <p>商品名字</p>
+                                                        <p>价格</p>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="order-items" style="float: right;width: 300px;height: 164px;margin-left: 0px;position: relative;left: -200px;padding: 30px 0 30px 0">
+                                                <ul class="goods-list-describe">
+                                                    <li>
+                                                        <h3>商品描述:</h3>
+                                                        <p style="font-size: large;max-height: 80px;overflow: auto">商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述</p>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                            <li class="o-finish uc-order-item uc-order-notpass">
+                                <button class="button-i"><a th:href="@{#}"><i class="fa fa-trash" style="font-size: x-large"></i></a></button>
+                                <div class="order-detail">
+                                    <div class="order-summary">
+                                        <div class="order-status">审核不通过</div>
+                                    </div>
+                                    <table class="order-detail-table">
+                                        <thead>
+                                        <tr>
+                                            <th class="col-main"><p class="caption-info">2018年09月20日 12:11<span
+                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user">username</a></p></th>
+                                            <th class="col-sub"><p class="caption-price">应付金额：<span
+                                                    class="num">0.00</span>元</p></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="order-items">
+
+                                                <ul class="goods-list">
+                                                    <li>
+                                                        <div class="figure figure-thumb" width="80" height="80">
+                                                            <img th:src="@{/ncassets/img/logo16.png}"
+                                                                 width="80" height="80">
+
+                                                        </div>
+                                                        <p>商品名字</p>
+                                                        <p>价格</p>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="order-items" style="float: right;width: 300px;height: 164px;margin-left: 0px;position: relative;left: -200px;padding: 30px 0 30px 0">
+                                                <ul class="goods-list-describe">
+                                                    <li>
+                                                        <h3>商品描述:</h3>
+                                                        <p style="font-size: large;max-height: 80px;overflow: auto">商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述</p>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
 
                     </div>
                 </div>
@@ -446,29 +627,29 @@
                     <h1 class="title">我的任务</h1>
                     <div class="more clearfix">
                         <ul class="filter-list J_orderType">
-                            <li class="first active"><a th:href="@{#}">所有任务</a></li>
-                            <li class="active"><a th:href="@{#}">我发布的任务</a></li>
-                            <li class="active"><a th:href="@{#}">我接受的任务</a></li>
+                            <li class="first active"><a th:href="@{/per-task}" onclick="allTask();">所有任务</a></li>
+                            <li class="active"><a th:href="@{/my-per-task}" onclick="myTask();">我发布的任务</a></li>
+                            <li class="active"><a th:href="@{/other-per-task}" onclick="oTask();">我接受的任务</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="box-bd">
-                    <div th:each="item : ${myTask}">
+                    <div>
                         <ul class="order-list">
-                            <button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i>
-                            </button>
-                            <li class="uc-order-item uc-order-finish">
+                            <li class="uc-order-item uc-order-finish my-task" th:each=" item : ${myTask}">
+                                <button class="button-i"><a th:href="@{#}"><i class="fa fa-trash" style="font-size: x-large"></i></a></button>
                                 <div class="order-detail">
                                     <div class="order-summary">
-                                        <div class="order-status" th:text="未完成" th:if="${item.state}==-1">已完成</div>
-                                        <div class="order-status" th:text="已完成" th:if="${item.state}==1">已完成</div>
+                                        <div class="order-status" th:if=" ${item.state} == 0">未接收</div>
+                                        <div class="order-status" th:if=" ${item.state} == 1">未完成</div>
+                                        <div class="order-status" th:if=" ${item.state} == 2">已完成</div>
                                         <!--<button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i></button>-->
                                     </div>
                                     <table class="order-detail-table">
                                         <thead>
                                         <tr>
                                             <th class="col-main"><p class="caption-info"><span th:text="${item.time_create}">2018年09月20日 12:11</span><span
-                                                    class="sep">|</span><span th:text="${item.time_completion}">username</span></p></th>
+                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user" th:text="${ #strings.isEmpty(item.name)?session.user.name : item.name}">username</a></p></th>
                                             <th class="col-sub"><p class="caption-price">实付金额：<span
                                                     class="num" th:text="${item.price}">0.00</span>元</p></th>
                                         </tr>
@@ -479,9 +660,9 @@
 
                                                 <ul style="margin-left: 30px">
                                                     <li>
-                                                        <p class="name" th:text="${item.title}">任务名字</p>
-<!--                                                        <p class="price" th:text="${item.price}">价格</p>-->
-                                                        <p class="username" th:text="${item.name}">接单人</p>
+                                                        <p class="name">任务: <span th:text="${item.title}"></span></p>
+                                                        <p class="price">价格: <span th:text="${item.price}">0</span></p>
+<!--                                                        <p class="username">接单人: <span th:text="${item.name}"></span></p>-->
                                                     </li>
                                                 </ul>
                                             </td>
@@ -494,6 +675,45 @@
                                     </table>
                                 </div>
                             </li>
+
+<!--                            <li class="uc-order-item uc-order-unfinish o-task">-->
+<!--                                <button class="button-i"><a th:href="@{#}"><i class="fa fa-trash" style="font-size: x-large"></i></a></button>-->
+<!--                                <div class="order-detail">-->
+<!--                                    <div class="order-summary">-->
+<!--                                        <div class="order-status">未完成</div>-->
+<!--                                        &lt;!&ndash;<button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i></button>&ndash;&gt;-->
+<!--                                    </div>-->
+<!--                                    <table class="order-detail-table">-->
+<!--                                        <thead>-->
+<!--                                        <tr>-->
+<!--                                            <th class="col-main"><p class="caption-info">2018年09月20日 12:11<span-->
+<!--                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user">username</a></p></th>-->
+<!--                                            <th class="col-sub"><p class="caption-price">实付金额：<span-->
+<!--                                                    class="num">0.00</span>元</p></th>-->
+<!--                                        </tr>-->
+<!--                                        </thead>-->
+<!--                                        <tbody>-->
+<!--                                        <tr>-->
+<!--                                            <td class="order-items">-->
+
+<!--                                                <ul style="margin-left: 30px">-->
+<!--                                                    <li>-->
+<!--                                                        <p class="name">任务名字</p>-->
+<!--                                                        <p class="price">价格</p>-->
+<!--                                                        <p class="username">接单人</p>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
+<!--                                            </td>-->
+<!--                                            <td class="order-actions">-->
+<!--                                                <a class="btn btn-small btn-line-gray">任务详情</a>-->
+<!--                                                <a class="btn btn-small btn-line-gray">查看评价</a>-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+<!--                                        </tbody>-->
+<!--                                    </table>-->
+<!--                                </div>-->
+<!--                            </li>-->
+
                         </ul>
                     </div>
                 </div>
@@ -533,26 +753,22 @@
                         <ul class="info-list clearfix">
                             <li>
                                 <h3>所有任务：<span class="num" th:text="${NumMap.get('allTaskNum')}">0</span></h3>
-                                <a th:href="@{/per-task}">查看所有的任务<span
-                                        class="glyphicon glyphicon-circle-arrow-right"></span></a>
+                                <a th:href="@{/per-task}" style="text-decoration-line: none;">查看所有的任务</a>
                                 <img src="ncassets/img/portal-icon-1.png" alt="" style="height: 100px;width: 100px; border-radius: 50%">
                             </li>
                             <li>
-                                <h3>所有的订单：<span class="num" th:text="${NumMap.get('allGoodNum')}">0</span></h3>
-                                <a th:href="@{/per-order}">查看所有的订单<span
-                                        class="glyphicon glyphicon-circle-arrow-right"></span></a>
+                                <h3>所有的商品：<span class="num" th:text="${NumMap.get('allGoodNum')}">0</span></h3>
+                                <a th:href="@{/per-foods}" style="text-decoration-line: none;">查看所有的商品</a>
                                 <img src="ncassets/img/portal-icon-2.png" alt="">
                             </li>
                             <li>
-                                <h3>我的评价：<span class="num" th:text="${NumMap.get('allReviewNum')}">0</span></h3>
-                                <a th:href="@{/per-evaluation}">查看待评价商品<span
-                                        class="glyphicon glyphicon-circle-arrow-right"></span></a>
+                                <h3>所有评价：<span class="num" th:text="${NumMap.get('allReviewNum')}">0</span></h3>
+                                <a th:href="@{/per-evaluation}" style="text-decoration-line: none;">查看所有评价</a>
                                 <img src="ncassets/img/portal-icon-3.png" alt="">
                             </li>
                             <li>
                                 <h3>收藏的商品：<span class="num" th:text="${NumMap.get('favorGoodNum')}">0</span></h3>
-                                <a th:href="@{/per-favorite}">查看收藏的商品<span
-                                        class="glyphicon glyphicon-circle-arrow-right"></span></a>
+                                <a th:href="@{/per-favorite}" style="text-decoration-line: none;">查看收藏的商品</a>
                                 <img src="ncassets/img/portal-icon-4.png" alt="">
                             </li>
                         </ul>
@@ -570,21 +786,22 @@
                 <div class="box-bd">
                     <h1 class="title">我的收藏</h1>
                 </div>
+
                 <div class="box-bd">
-                    <div th:each="item:${favorGoods}">
+                    <div>
                         <ul class="order-list">
-                            <li class="uc-order-item">
+                            <li class="uc-order-item" th:each=" item : ${favorGoods}">
                                 <div class="order-detail">
                                     <table class="order-detail-table">
                                         <thead>
                                         <tr>
                                             <th class="col-main"><p class="caption-info"> <span th:text="${item.time_create}">2018年09月20日 12:11</span><span
-                                                    class="sep">|</span><span th:text="${item.name}">username</span></p></th>
-<!--                                            <th class="col-sub"><p class="caption-price">需付金额：<span-->
-<!--                                                    class="num">0.00</span>元</p></th>-->
+                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user" th:text="${item.name}">username</a></p></th>
+                                            <th class="col-sub"><p class="caption-price">金额：<span
+                                                    class="num" th:text="${item.price}">0.00</span>元</p></th>
                                             <th>
-                                                <button class="button-i" style=""><i class="fa fa-trash"
-                                                                                     style="font-size: x-large"></i>
+                                                <button class="button-i" style=""><a th:href="@{#}"><i class="fa fa-trash"
+                                                                                                       style="font-size: x-large"></i></a>
                                                 </button>
                                             </th>
                                         </tr>
@@ -596,17 +813,18 @@
                                                 <ul class="goods-list">
                                                     <li>
                                                         <div class="figure figure-thumb" width="80" height="80">
-                                                            <img th:src="@{${item.path} + ${item.img_name}}"
+                                                            <img src="/ncassets/img/logo16.png" th:src="@{${item.path} + ${item.img_name}}"
                                                                  width="80" height="80">
+
                                                         </div>
                                                         <p th:text="${item.title}">商品名字</p>
-                                                        <p th:text="${item.price}">价格</p>
+                                                        <p>价格: <span th:text="${item.price}"></span></p>
                                                     </li>
                                                 </ul>
                                             </td>
                                             <td class="order-actions">
                                                 <a class="btn btn-small btn-line-gray">商品详情</a>
-<!--                                                <a class="btn btn-small btn-line-gray">申请售后</a>-->
+                                                <a class="btn btn-small btn-line-gray">联系卖家</a>
                                             </td>
                                         </tr>
                                         <!--<tr>
@@ -625,7 +843,7 @@
                                                 </ul>
                                             </td>
                                             <td class="order-actions">
-                                                <a class="btn btn-small btn-line-gray">订单详情</a>
+                                                <a class="btn btn-small btn-line-gray">商品详情</a>
                                                 <a class="btn btn-small btn-line-gray">联系他</a>
                                             </td>
                                         </tr>-->
@@ -652,7 +870,7 @@
                         <div class="user-card">
                             <h2 class="username" th:text="${session.user.name}"></h2>
                             <p class="tip">Hello～</p>
-                            <a class="link" type="file" th:href="@{#}">修改头像&gt;</a>
+                            <a class="link" type="file" th:href="@{#}" onclick="editImg();">修改头像&gt;</a>
                             <img class="avatar" src="ncassets/img/user.jpg" width="150" th:src="@{${session.user.icon}}"
                                  height="150" alt="Max丶">
                         </div>
@@ -668,9 +886,9 @@
                     <div class="portal-sub">
                         <div class="main_r" id="main_r">
 
-                            <h3 style="float: left">基础资料<a th:href="@{#}" onclick="edit();"
-                                                           style="float: right;margin-left: 250px"><i
-                                    class="fa fa-pencil-square-o" style="font-size: x-large;">编辑</i></a></h3>
+                            <h3 style="margin-left: 12px"><a th:href="@{#}" onclick="edit();"
+                                                           style=""><i
+                                    class="fa fa-pencil-square-o" style="font-size: x-large;">编辑资料</i></a></h3>
                             <br>
 
                         </div>

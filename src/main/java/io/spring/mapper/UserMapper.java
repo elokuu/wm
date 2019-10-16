@@ -29,10 +29,19 @@ public interface UserMapper {
 
     List<MyTask> getMyTask(int id_user);
 
+    List<MyTask> getOtherTask(int id_user);
+
     List<MyGood> getMyGood(int id_user);
 
+    List<MyGood> getOtherGood(int id_user);
+
     List<MyReview> getMyReview(int id_user);
+
+    List<MyReview> getOtherView(int id_user);
+
     void updateState(Map map);
+
     void addUser(User user);
+
     void updatePassword(Map map);
 }

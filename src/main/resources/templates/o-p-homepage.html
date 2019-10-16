@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <script type="text/javascript"  th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
     <meta charset="UTF-8">
     <title>他的个人中心</title>
     <script type="text/javascript" src="ncassets/js/index.js" th:src="@{/ncassets/js/index.js}"></script>
@@ -10,11 +10,121 @@
     <link rel="stylesheet" href="ncassets/css/reset.css" th:href="@{/ncassets/css/reset.css}">
     <link rel="stylesheet" href="ncassets/css/style.css" th:href="@{/ncassets/css/style.css}">
     <link rel="stylesheet" type="text/css" href="ncassets/css/user.css" th:href="@{/ncassets/css/user.css}"/>
+    <!--    <link rel="stylesheet" type="text/css" th:href="@{/ncassets/css/o-user.css}">-->
 </head>
 <body>
 <div th:include="pc-model :: site-topbar"></div>
 <div th:include="pc-model :: site-header"></div>
-<div th:include="pc-model :: breadcrumb"></div>
+<div class="breadcrumb">
+    <div class="container clearfix">
+    </div>
+</div>
+<div class="page-main">
+    <div class="container">
+        <div class="uc-box uc-main-box">
+            <div class="uc-content-box portal-content-box">
+                <div class="box-bd">
+                    <div class="portal-main clearfix">
+                        <div class="user-card">
+                            <h2 class="username" th:text="${session.user.name}" style="margin-top: 50px"></h2>
+                            <img class="avatar" src="ncassets/img/user.jpg" th:src="@{${session.user.icon}}" width="150"
+                                 height="150" alt="Max丶">
+                        </div>
+                        <div class="user-actions">
+                            <ul class="action-list">
+                                <li>发布任务数：<span class="level level-2"></span></li>
+                                <li>接单数：<span class="tel"></span></li>
+                                <li>绑定邮箱：<span class="tel" th:text="${session.user.email}"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="span10">
+            <div class="page-main">
+                <div class="container">
+                    <div class="uc-box uc-main-box" style="margin-top: 5px;margin-bottom: 5px">
+                        <div class="uc-content-box portal-content-box">
+                            <div class="portal-sub" style="border: 0">
+                                <div class="table"><h3 style="margin-bottom: 50px"><a href="">全部商品</a></h3></div>
+                                <ul style="position: relative;overflow:hidden">
+                                    <li style="border: 1px solid #e0e0e0;width: 350px;height:250px;float: left;margin: 0 30px 50px 30px">
+                                        <div class="comment-top" style="padding: 50px 50px 100px 80px">
+
+                                            <img th:src="@{/ncassets/img/logo16.png}" alt="商品图"
+                                                 style="width: 50px;height: 50px;float: left">
+                                            <h4 style="float: left;margin-left: 50px"><a href="@{#}">商品name</a><p style="position: relative;top: -5px;">
+                                                <span>商品价格</span></p></h4>
+
+                                        </div>
+                                        <div class="comment-info" style="clear: left;border-top: 1px solid #e0e0e0;text-align: center">
+                                            <p class="time">描述描述描述描述描述</p>
+                                        </div>
+                                    </li>
+                                    <li style="border: 1px solid #e0e0e0;width: 350px;height:250px;float: left;margin: 0 30px 50px 30px">
+                                        <div class="comment-top" style="padding: 50px 50px 100px 80px">
+
+                                            <img th:src="@{/ncassets/img/logo16.png}" alt="商品图"
+                                                 style="width: 50px;height: 50px;float: left">
+                                            <h4 style="float: left;margin-left: 50px"><a href="@{#}">商品name</a><p style="position: relative;top: -5px;">
+                                                <span>商品价格</span></p></h4>
+
+                                        </div>
+                                        <div class="comment-info" style="clear: left;border-top: 1px solid #e0e0e0;text-align: center">
+                                            <p class="time">描述描述描述描述描述</p>
+                                        </div>
+                                    </li>
+                                    <li style="border: 1px solid #e0e0e0;width: 350px;height:250px;float: left;margin: 0 30px 50px 30px">
+                                        <div class="comment-top" style="padding: 50px 50px 100px 80px">
+
+                                            <img th:src="@{/ncassets/img/logo16.png}" alt="商品图"
+                                                 style="width: 50px;height: 50px;float: left">
+                                            <h4 style="float: left;margin-left: 50px"><a href="@{#}">商品name</a><p style="position: relative;top: -5px;">
+                                                <span>商品价格</span></p></h4>
+
+                                        </div>
+                                        <div class="comment-info" style="clear: left;border-top: 1px solid #e0e0e0;text-align: center">
+                                            <p class="time">描述描述描述描述描述</p>
+                                        </div>
+                                    </li>
+                                    <li style="border: 1px solid #e0e0e0;width: 350px;height:250px;float: left;margin: 0 30px 50px 30px">
+                                        <div class="comment-top" style="padding: 50px 50px 100px 80px">
+
+                                            <img th:src="@{/ncassets/img/logo16.png}" alt="商品图"
+                                                 style="width: 50px;height: 50px;float: left">
+                                            <h4 style="float: left;margin-left: 50px"><a href="@{#}">商品name</a><p style="position: relative;top: -5px;">
+                                                <span>商品价格</span></p></h4>
+
+                                        </div>
+                                        <div class="comment-info" style="clear: left;border-top: 1px solid #e0e0e0;text-align: center">
+                                            <p class="time">描述描述描述描述描述</p>
+                                        </div>
+                                    </li>
+                                    <li style="border: 1px solid #e0e0e0;width: 350px;height:250px;float: left;margin: 0 30px 50px 30px">
+                                        <div class="comment-top" style="padding: 50px 50px 100px 80px">
+
+                                            <img th:src="@{/ncassets/img/logo16.png}" alt="商品图"
+                                                 style="width: 50px;height: 50px;float: left">
+                                            <h4 style="float: left;margin-left: 50px"><a href="@{#}">商品name</a><p style="position: relative;top: -5px;">
+                                                <span>商品价格</span></p></h4>
+
+                                        </div>
+                                        <div class="comment-info" style="clear: left;border-top: 1px solid #e0e0e0;text-align: center">
+                                            <p class="time">描述描述描述描述描述</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
 <div th:include="pc-model :: footer"></div>
 </body>
 
