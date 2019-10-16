@@ -15,4 +15,6 @@ public interface GoodsMapper {
     List<SecGoods> getSpecGoods();
     void updateState(Map map);
     List<Goods> getAllByState(Integer state);
+    void createRecord(Map map);
+    void updateRecordPaymentStatus(Map map);
 }

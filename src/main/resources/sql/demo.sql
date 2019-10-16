@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 50726
+ Source Server Version : 50723
  Source Host           : localhost:3306
- Source Schema         : demo
+ Source Schema         : ca
 
  Target Server Type    : MySQL
- Target Server Version : 50726
+ Target Server Version : 50723
  File Encoding         : 65001
 
- Date: 16/10/2019 01:23:02
+ Date: 16/10/2019 22:46:56
 */
 
 SET NAMES utf8mb4;
@@ -196,17 +196,31 @@ CREATE TABLE `t_record_transaction`  (
   `time_create` datetime(0) NULL DEFAULT NULL COMMENT '订单创建时间',
   `time_completion` datetime(0) NULL DEFAULT NULL COMMENT '订单完成时间',
   `state` tinyint(1) NOT NULL DEFAULT -1 COMMENT '订单状态',
+  `trade_no` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '支付宝订单号',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_goods`(`id_goods`) USING BTREE,
   INDEX `id_purchaser`(`id_purchaser`) USING BTREE,
   CONSTRAINT `t_record_transaction_ibfk_1` FOREIGN KEY (`id_goods`) REFERENCES `t_goods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_record_transaction_ibfk_3` FOREIGN KEY (`id_purchaser`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_record_transaction
 -- ----------------------------
-INSERT INTO `t_record_transaction` VALUES (1, 3, 14, '2019-10-14 10:54:01', '2019-10-14 10:54:04', 2);
+INSERT INTO `t_record_transaction` VALUES (1, 3, 14, '2019-10-14 10:54:01', '2019-10-14 10:54:04', 1, '2019101622001459221000022738');
+INSERT INTO `t_record_transaction` VALUES (2, 1, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
+INSERT INTO `t_record_transaction` VALUES (3, 1, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
+INSERT INTO `t_record_transaction` VALUES (5, 3, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
+INSERT INTO `t_record_transaction` VALUES (6, 6, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
+INSERT INTO `t_record_transaction` VALUES (7, 1, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
+INSERT INTO `t_record_transaction` VALUES (8, 2, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
+INSERT INTO `t_record_transaction` VALUES (9, 2, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
+INSERT INTO `t_record_transaction` VALUES (10, 2, 1, '2019-10-16 00:00:00', NULL, 0, NULL);
+INSERT INTO `t_record_transaction` VALUES (11, 2, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
+INSERT INTO `t_record_transaction` VALUES (12, 1, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
+INSERT INTO `t_record_transaction` VALUES (13, 1, 2, '2019-10-16 00:00:00', NULL, 1, '2019101622001459221000022739');
+INSERT INTO `t_record_transaction` VALUES (14, 1, 14, '2019-10-16 00:00:00', NULL, 1, '2019101622001459221000025926');
+INSERT INTO `t_record_transaction` VALUES (15, 2, 14, '2019-10-16 00:00:00', NULL, 1, '2019101622001459221000025927');
 
 -- ----------------------------
 -- Table structure for t_review_task

@@ -72,8 +72,14 @@
     <update id="updateState" parameterType="java.util.Map">
         update t_goods set state=#{state} where id = #{id}
     </update>
-    <select id="getAllByState" parameterType="int" resultType="io.spring.bean.Goods">
+    <select id="getAllByState"  parameterType="int" resultType="io.spring.bean.Goods">
         select * from t_goods where state=#{state}
     </select>
 
+    <insert id="createRecord"  parameterType="java.util.Map" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO t_record_transaction(id_goods,id_purchaser,time_create) VALUES(#{id_goods},#{id_purchaser},#{time_create})
+    </insert>
+    <update id="updateRecordPaymentStatus" parameterType="java.util.Map">
+        UPDATE t_record_transaction SET state = 1,trade_no=#{trade_no} WHERE id=#{id}
+    </update>
 </mapper>

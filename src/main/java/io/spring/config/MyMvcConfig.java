@@ -46,6 +46,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/admin/useradd.html").setViewName("admin/useradd");
         registry.addViewController("/admin/password.html").setViewName("admin/password");
 
+        //支付宝api测试
+        registry.addViewController("/alipayTest").setViewName("alipayTest");
     }
 
     public void addInterceptors(InterceptorRegistry registry) {
