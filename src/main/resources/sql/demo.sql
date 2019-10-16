@@ -131,7 +131,7 @@ INSERT INTO `t_img_goods` VALUES (6, 'timg.jpg', '/mainassets/img/', 1, '2019-10
 INSERT INTO `t_img_goods` VALUES (7, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 15:56:38', '1', 7);
 INSERT INTO `t_img_goods` VALUES (8, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 15:56:38', '1', 8);
 INSERT INTO `t_img_goods` VALUES (9, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 15:56:38', '1', 9);
-INSERT INTO `t_img_goods` VALUES (10, 'timg2.jpg', '/mainassets/img/', 1, '2019-10-10 09:15:07', '1', 10);
+INSERT INTO `t_img_goods` VALUES (10, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:15:07', '1', 10);
 INSERT INTO `t_img_goods` VALUES (11, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 11);
 INSERT INTO `t_img_goods` VALUES (12, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 12);
 INSERT INTO `t_img_goods` VALUES (13, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 13);
