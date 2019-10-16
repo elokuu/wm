@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="ncassets/css/reset.css" th:href="@{/ncassets/css/reset.css}">
     <link rel="stylesheet" href="ncassets/css/style.css" th:href="@{/ncassets/css/style.css}">
     <link rel="stylesheet" type="text/css" href="ncassets/css/user.css" th:href="@{/ncassets/css/user.css}"/>
+    <!--  DataTable  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/ncassets/datatables.net-bs/css/dataTables.bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/ncassets/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
+    <script type="text/javascript"  th:src="@{/ncassets/datatables.net/js/jquery.dataTables.min.js}"></script>
 </head>
 <body>
 <div th:include="pc-model :: site-topbar"></div>
@@ -24,6 +28,11 @@
     </div>
 </div>
 <div th:include="pc-model :: footer"></div>
+<script>
+    $(function () {
+        $("#dataTable").dataTable();
+    });
+</script>
 </body>
 <script>
     var other = document.getElementsByClassName("o-eva");
@@ -71,5 +80,6 @@
     function fewer() {
         document.getElementById("evaTr").hidden=true;
     }
+
 </script>
 </html>
