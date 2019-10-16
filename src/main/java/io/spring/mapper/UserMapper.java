@@ -39,6 +39,8 @@ public interface UserMapper {
 
     List<MyReview> getOtherView(int id_user);
 
+    List<OtherMessage> getOtherHomepage(int id_user);
+
     void updateState(Map map);
 
     void addUser(User user);

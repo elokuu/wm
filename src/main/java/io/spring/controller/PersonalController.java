@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -112,6 +113,7 @@ public class PersonalController {
 
         return "per-foods";
     }
+
     @GetMapping("/my-per-foods")
     public String MyPerFoods(HttpSession session, Model model) {
 
@@ -122,6 +124,7 @@ public class PersonalController {
 
         return "per-foods";
     }
+
     @GetMapping("/other-per-foods")
     public String OtherPerFoods(HttpSession session, Model model) {
 
@@ -167,5 +170,19 @@ public class PersonalController {
         model.addAttribute("myReview", myReview);
 
         return "per-evaluation";
+    }
+
+    @GetMapping("/o-p-homepage/{name}")
+    public String OPHomepage(@PathVariable("name") String name,
+                             Model model) {
+
+        User user = userMapper.getUser(name);
+
+        List<OtherMessage> otherHomepage = userMapper.getOtherHomepage(user.getId());
+
+        model.addAttribute("otherHomepage", otherHomepage);
+        model.addAttribute("user", user);
+
+        return "o-p-homepage";
     }
 }

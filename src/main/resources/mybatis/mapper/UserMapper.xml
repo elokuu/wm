@@ -168,4 +168,22 @@
     <update id="updatePassword" parameterType="java.util.Map">
         update t_user set password = #{password} where id = #{id}
     </update>
+
+    <select id="getOtherHomepage" resultType="io.spring.bean.OtherMessage">
+        SELECT
+            t_user.name,
+            t_goods.title,
+            t_goods.price,
+            t_goods.describe,
+            t_img_goods.path,
+            t_img_goods.name AS img_name
+        FROM
+            t_user,
+            t_goods,
+            t_img_goods
+        WHERE
+            t_user.id = #{id_user}
+            AND t_goods.id_user = t_user.id
+            AND t_img_goods.id_goods = t_goods.id
+    </select>
 </mapper>

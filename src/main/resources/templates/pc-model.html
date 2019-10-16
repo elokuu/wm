@@ -361,7 +361,7 @@
                                         <thead>
                                         <tr>
                                             <th class="col-main"><p class="caption-info"><span th:text="${item.time_create}">2018年09月20日 12:11</span><span
-                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user" th:text="${ #strings.isEmpty(item.name)?session.user.name : item.name}">username</a></p></th>
+                                                    class="sep">|</span><a th:href="${ '/o-p-homepage/' + ( #strings.isEmpty(item.name)?session.user.name : item.name)}" class="a-user" th:text="${ #strings.isEmpty(item.name)?session.user.name : item.name}">username</a></p></th>
                                             <th class="col-sub"><p class="caption-price">实付金额：<span
                                                     class="num" th:text="${item.price}">0.00</span>元</p></th>
                                         </tr>
@@ -430,7 +430,7 @@
                                     <p th:text="${item.content}">时光如流，错落有致的思维中，卷卷都铺着柔情，瓣瓣心香，飘逸着诗情，拾取光阴里那片 倾心的云朵，静静一个人，静心坐落在一角落，安静的听风数雨，等某个人快马加鞭而来，等那笔最温暖，最懂得，最催心的宝贝，于是心心念的那一刻如期而至。【宜居良品店】用心做好灯具的每一个细节，更加懂你~</p>
 
                                 </td>
-                                <td><a class="a-user" th:href="@{/o-p-homepage.html}">[买家]：<span th:text="${ #strings.isEmpty(item.name) ? session.user.name : item.name}">username</span></a></td>
+                                <td><a class="a-user" th:href="${ '/o-p-homepage/' + ( #strings.isEmpty(item.name)?session.user.name : item.name)}">[买家]：<span th:text="${ #strings.isEmpty(item.name) ? session.user.name : item.name}">username</span></a></td>
                                 <td><a class="a-user" th:href="@{#}" th:text="${item.title}">小米8</a></td>
                             </tr>
                             </tbody>
@@ -649,7 +649,7 @@
                                         <thead>
                                         <tr>
                                             <th class="col-main"><p class="caption-info"><span th:text="${item.time_create}">2018年09月20日 12:11</span><span
-                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user" th:text="${ #strings.isEmpty(item.name)?session.user.name : item.name}">username</a></p></th>
+                                                    class="sep">|</span><a th:href="${ '/o-p-homepage/' + ( #strings.isEmpty(item.name)?session.user.name : item.name)}" class="a-user" th:text="${ #strings.isEmpty(item.name)?session.user.name : item.name}">username</a></p></th>
                                             <th class="col-sub"><p class="caption-price">实付金额：<span
                                                     class="num" th:text="${item.price}">0.00</span>元</p></th>
                                         </tr>
@@ -796,7 +796,7 @@
                                         <thead>
                                         <tr>
                                             <th class="col-main"><p class="caption-info"> <span th:text="${item.time_create}">2018年09月20日 12:11</span><span
-                                                    class="sep">|</span><a th:href="@{/o-p-homepage.html}" class="a-user" th:text="${item.name}">username</a></p></th>
+                                                    class="sep">|</span><a th:href="${ '/o-p-homepage/' + ( #strings.isEmpty(item.name)?session.user.name : item.name)}" class="a-user" th:text="${item.name}">username</a></p></th>
                                             <th class="col-sub"><p class="caption-price">金额：<span
                                                     class="num" th:text="${item.price}">0.00</span>元</p></th>
                                             <th>
