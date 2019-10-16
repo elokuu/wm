@@ -9,19 +9,17 @@
     height:60px;
     overflow:auto;
     width: 264px;
-    margin-left: 15px;
-    background-color: #9e9e9e3b;
+    background-color: #9e9e9e1f;
     top: 50%;
     font-size: small;
 }
 .box-bd .uc-nav-box a{
     text-decoration-line: none;
 }
-a.a-user {
-    margin-left: 15px;
-}
+
 .table-a td{
     margin-left: 20px;
+    background-color: #9e9e9e2e;
 }
 .comment-top a{
     text-decoration-line: none;

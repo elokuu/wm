@@ -426,7 +426,7 @@
                             <tbody style="font-size: large">
                             <tr style="border-bottom: 1px solid #333333" class="o-eva" th:each=" item : ${myReview}">
                                 <td >
-                                    <span style="margin-left: 15px" th:text="${item.time_completion}">[2019.10.15]</span>
+                                    <span th:text="${item.time_completion}">[2019.10.15]</span>
                                     <p th:text="${item.content}">时光如流，错落有致的思维中，卷卷都铺着柔情，瓣瓣心香，飘逸着诗情，拾取光阴里那片 倾心的云朵，静静一个人，静心坐落在一角落，安静的听风数雨，等某个人快马加鞭而来，等那笔最温暖，最懂得，最催心的宝贝，于是心心念的那一刻如期而至。【宜居良品店】用心做好灯具的每一个细节，更加懂你~</p>
 
                                 </td>
@@ -728,7 +728,7 @@
             <div class="protal-username">
                 Hi,<span th:text="${session.user.name}"></span>
             </div>
-            <p class="msg">我们做了一个小升级：你的用户名可以直接修改啦，去换个酷炫的名字吧。<a th:href="@{/perInfo.html}">立即前往&gt;</a></p>
+            <p class="msg">我们做了一个小升级：你的密码和邮箱可以直接修改啦，去换个安全的密码吧。<a th:href="@{/perInfo.html}">立即前往&gt;</a></p>
         </div>
         <div class="uc-box uc-main-box">
             <div class="uc-content-box portal-content-box">
