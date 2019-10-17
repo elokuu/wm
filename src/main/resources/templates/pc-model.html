@@ -860,9 +860,11 @@
                                             <button class="button-i"><a th:href="@{#shanchu}"><i class="fa fa-trash" style="font-size: x-large"></i></a></button>
                                             <div class="order-detail">
                                                 <div class="order-summary">
-                                                    <div class="order-status" th:if=" ${item.state} == 0">未接收</div>
-                                                    <div class="order-status" th:if=" ${item.state} == 1">未完成</div>
-                                                    <div class="order-status" th:if=" ${item.state} == 2">已完成</div>
+                                                    <div class="order-status" th:if=" ${item.state} == 0">审核中</div>
+                                                    <div class="order-status" th:if=" ${item.state} == -1">审核不通过</div>
+                                                    <div class="order-status" th:if=" ${item.state} == 1">审核通过</div>
+                                                    <div class="order-status" th:if=" ${item.state} == 10">进行中</div>
+                                                    <div class="order-status" th:if=" ${item.state} == 11">已完成</div>
                                                     <!--<button class="button-i" style=""><i class="fa fa-trash" style="font-size: x-large"></i></button>-->
                                                 </div>
                                                 <table class="order-detail-table">
