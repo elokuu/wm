@@ -1046,11 +1046,22 @@
                     <div class="portal-main clearfix">
                         <div class="user-card">
                             <h2 class="username" th:text="${session.user.name}"></h2>
-                            <p class="tip">Hello～</p>
-                            <a class="link" type="file" th:href="@{#}" onclick="editImg();">修改头像&gt;</a>
-                            <img class="avatar" src="ncassets/img/user.jpg" width="150" th:src="@{${session.user.icon}}"
-                                 height="150" alt="Max丶">
-                        </div>
+                            <p class="tip"></p>
+                            <form action="">
+                                <div class="form-group">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <label class="input-group-btn">
+                                                <input type="button" id="i-check" value="上传头像" class="btn btn-primary" onclick="$('#i-file').click();">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <input type="file" name="file" id='i-file'  accept=".xls, .xlsx" onchange="$('#location').val($('#i-file').val());" style="display: none">
+                                </div>
+                                <img class="avatar" src="ncassets/img/user.jpg" width="150" th:src="@{${session.user.icon}}"
+                                     height="150" alt="Max丶">
+                            </div>
+                        </form>
                         <div class="user-actions">
                             <ul class="action-list">
                                 <li>认证学号：<span class="tel" th:text="${session.user.id}"></span></li>

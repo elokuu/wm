@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost_3306
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 50723
+ Source Server Version : 50726
  Source Host           : localhost:3306
- Source Schema         : ca
+ Source Schema         : demo
 
  Target Server Type    : MySQL
- Target Server Version : 50723
+ Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 16/10/2019 22:46:56
+ Date: 17/10/2019 18:48:04
 */
 
 SET NAMES utf8mb4;
@@ -336,24 +336,26 @@ CREATE TABLE `t_user`  (
   `authority` tinyint(1) NULL DEFAULT 1 COMMENT '权限',
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '注册邮箱',
   `state` tinyint(1) NULL DEFAULT NULL COMMENT '状态',
+  `validate` tinyint(4) NULL DEFAULT NULL COMMENT '验证状态',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (1, '/mainassets/img/pic1.jpg', '工具人1号', '12345678', 1, '33333333333', 1);
-INSERT INTO `t_user` VALUES (2, '/mainassets/img/pic1.jpg', 'wujinhui', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (3, '/mainassets/img/pic1.jpg', '工具人3号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (4, '/mainassets/img/pic1.jpg', '工具人4号', '12345678', 1, '1213341', 1);
-INSERT INTO `t_user` VALUES (5, '/mainassets/img/pic1.jpg', '工具人5号', '12345678', 1, '1231', 1);
-INSERT INTO `t_user` VALUES (6, '/mainassets/img/pic1.jpg', 'lzj', '12345678', 1, '123122', 1);
-INSERT INTO `t_user` VALUES (7, '/mainassets/img/pic1.jpg', '工具人7号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com', 1);
-INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', '123', 1, '22@333', 1);
-INSERT INTO `t_user` VALUES (15, '/mainassets/img/pic1.jpg', 'admin', '123', 2, '33@22', 1);
+INSERT INTO `t_user` VALUES (1, '/mainassets/img/pic1.jpg', '工具人1号', '12345678', 1, '33333333333', 1, 0);
+INSERT INTO `t_user` VALUES (2, '/mainassets/img/pic1.jpg', 'wujinhui', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
+INSERT INTO `t_user` VALUES (3, '/mainassets/img/pic1.jpg', '工具人3号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
+INSERT INTO `t_user` VALUES (4, '/mainassets/img/pic1.jpg', '工具人4号', '12345678', 1, '1213341', 1, 0);
+INSERT INTO `t_user` VALUES (5, '/mainassets/img/pic1.jpg', '工具人5号', '12345678', 1, '1231', 1, 0);
+INSERT INTO `t_user` VALUES (6, '/mainassets/img/pic1.jpg', 'lzj', '12345678', 1, '123122', 1, 0);
+INSERT INTO `t_user` VALUES (7, '/mainassets/img/pic1.jpg', '工具人7号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
+INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
+INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
+INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
+INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
+INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@333', 1, 1);
+INSERT INTO `t_user` VALUES (15, '/mainassets/img/pic1.jpg', 'admin', '123', 2, '33@22', 1, 0);
+INSERT INTO `t_user` VALUES (16, '/mainassets/img/pic1.jpg', 'daishuaibi2', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@33', 1, 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
