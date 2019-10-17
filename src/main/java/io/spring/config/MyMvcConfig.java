@@ -37,10 +37,12 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/per-address.html").setViewName("per-address");
         //账户管理/修改个人信息
         registry.addViewController("/perInfo.html").setViewName("perInfo");
+        //账户管理/修改个人信息
+        registry.addViewController("/per-renzheng.html").setViewName("per-renzheng");
 
         //他的个人中心
         registry.addViewController("/o-p-homepage.html").setViewName("o-p-homepage");
-
+        //订单中心/审核
         registry.addViewController("/per-unaudited.html").setViewName("per-unaudited");
 
         registry.addViewController("/admin/useradd.html").setViewName("admin/useradd");
