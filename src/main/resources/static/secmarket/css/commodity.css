@@ -1,0 +1,56 @@
+.container{
+	width:75%;
+	height: 1000px;
+	margin: auto;
+	margin-top: 60px;
+}
+.container-box{
+	color: #1A1A1A;
+	width: 75%;
+	margin: auto;
+}
+.container-box-base{
+	width: 100%;
+	height: 130px;
+	border: 1px gainsboro solid;
+	border-radius: 2px;
+	margin: auto;
+}
+.container-box span{
+	font-size: 18px;
+	font-weight: 600;
+	color: #1A1A1A;
+	float: left;
+	margin:15px 15px;
+}
+.container-box-base-msg{
+	clear: both;
+	margin: 30px auto;
+	width: 90%;
+	height: auto;
+	margin-top: 30px;
+}
+.container-box p{
+	font-size: 15px;
+	color: #1A1A1A;
+	float: left;
+}
+.container-box-base-msg-text{
+	font-size: 15px;
+	color: #1A1A1A;
+	float: left;
+	clear: left;
+	font-weight: 600;
+}
+.container-box-msg{
+	width: 100%;
+	height: 750px;
+	border: 1px gainsboro solid;
+	border-radius: 2px;
+	margin: auto;
+	margin-top: 60px;
+}
+.container-box-base-msg-text-must{
+	color: firebrick;
+	font-size: 16px;
+}

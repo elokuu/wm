@@ -2,11 +2,13 @@ package io.spring.mapper;
 
 import io.spring.bean.*;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
 
 @Mapper
+@Repository
 public interface UserMapper {
 
     List<User> getAll();
@@ -15,7 +17,7 @@ public interface UserMapper {
 
     User getUser(String name);
 
-    void updateUser(String name, String password, String email);
+    void updateUser(Map map);
 
     int getAllTaskNum(int id_user);
 

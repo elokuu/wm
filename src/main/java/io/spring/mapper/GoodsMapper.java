@@ -4,11 +4,13 @@ import io.spring.bean.BriefGoods;
 import io.spring.bean.Goods;
 import io.spring.bean.SecGoods;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
 
 @Mapper
+@Repository
 public interface GoodsMapper {
     List<BriefGoods> getHomepageGoodsInfo();
     List<SecGoods> getGoodsByType(String type);

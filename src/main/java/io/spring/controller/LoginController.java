@@ -39,7 +39,6 @@ public class LoginController {
                     session.removeAttribute("msg");
                     session.setAttribute("name", name);
                     session.setAttribute("user", item);
-                    item.setPassword(password);
                     model.addAttribute("msg", "success");
                     model.addAttribute("name", name);
                     if (item.getAuthority() == 2){

@@ -16,7 +16,7 @@
         select * from t_user where name=#{name}
     </select>
 
-    <update id="updateUser">
+    <update id="updateUser" parameterType="java.util.Map">
         update t_user set password=#{password},email=#{email} where name=#{name}
     </update>
 

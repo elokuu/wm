@@ -1,6 +1,5 @@
 package io.spring.controller;
 
-import com.sun.xml.internal.ws.resources.HttpserverMessages;
 import io.spring.bean.*;
 import io.spring.mapper.UserMapper;
 import io.spring.tool.MD5;
@@ -29,7 +28,6 @@ public class PersonalController {
         String name = (String) session.getAttribute("name");
         User user = userMapper.getUser(name);
         session.setAttribute("user", user);
-
         Map<String, Integer> NumMap = new HashMap<>();
         NumMap.put("allTaskNum", userMapper.getAllTaskNum(user.getId()));
         NumMap.put("allGoodNum", userMapper.getAllGoodNum(user.getId()));
@@ -44,8 +42,12 @@ public class PersonalController {
     public String update(@RequestParam("password") String password,
                          @RequestParam("email") String email,
                          HttpSession session) {
-        String md5password = MD5.getInstance().getMD5(password);
-        userMapper.updateUser((String) session.getAttribute("name"), md5password, email);
+        password = MD5.getInstance().getMD5(password);
+        Map<String,String> map = new HashMap<>();
+        map.put("name",(String) session.getAttribute("name"));
+        map.put("password",password);
+        map.put("email",email);
+        userMapper.updateUser(map);
         User user = userMapper.getUser((String) session.getAttribute("name"));
 
         session.setAttribute("user", user);
