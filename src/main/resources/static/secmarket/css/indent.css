@@ -1,0 +1,40 @@
+.box{
+	margin: auto;
+	height: 450px;
+	width: 100%;
+	margin-top: 150px;
+}
+.box-msg{
+	width: 75%;
+	height: 280px;
+	margin: auto;
+	border: 1px gainsboro solid;
+	color: #1A1A1A;
+	font-size: 16px;
+}
+.box-msg img{
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin-left: 10%;
+	margin-top: 25px;
+}
+.box-msg-right{
+	float: left;
+	margin-left: 3%;
+	width: 60%;
+	margin-top: 25px;
+	height: 200px;
+	border: 1px soild #00C0A5;
+	letter-spacing: 2px;
+}
+.box-msg-right span{
+	color: #1A1A1A;
+	font-weight: 600;
+	font-size: 24px;
+}
+.box-msg-right p{
+	font-size: 14px;
+	color: #424242;
+	margin-top: 20px;
+}
