@@ -196,4 +196,16 @@ public class PersonalController {
 
         return "redirect:/per-favorite";
     }
+
+    @PostMapping("/per-renzheng")
+    public String perRenzheng(IdentificationMessage iden,
+                              HttpSession session) {
+
+        User user = (User) session.getAttribute("user");
+        iden.setId_user(user.getId());
+        userMapper.insertIdentification(iden);
+        userMapper.updateValidateStatus(user.getId());
+
+        return "per-renzheng";
+    }
 }
