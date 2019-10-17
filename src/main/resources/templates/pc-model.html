@@ -933,8 +933,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="portal-sub">
-                        <ul class="info-list clearfix">
+                    <div class="portal-sub" >
+                        <ul class="info-list clearfix" >
                             <li>
                                 <h3>所有任务：<span class="num" th:text="${NumMap.get('allTaskNum')}">0</span></h3>
                                 <a th:href="@{/per-task}" style="text-decoration-line: none;">查看所有的任务</a>
@@ -1138,14 +1138,15 @@
                         </div>
                         <div class="user-actions">
                             <ul class="action-list">
-                                <li>认证学号：<span class="tel" th:text="${session.user.id}"></span></li>
+                                <li th:if="${not (session.user.validate == 1)}">认证学号：<span class="level level-2">学号/未认证</span></li>
+                                <li th:if="${session.user.validate == 1}">认证学号：<span class="level level-2">学号/已认证</span></li>
                                 <li>信用等级：<span class="tel">良好</span></li>
 
                                 <li>绑定邮箱：<span class="tel" th:text="${session.user.email}"></span></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="portal-sub">
+                    <div class="portal-sub" th:if="${not (session.user.validate == 1)}">
                         <div class="main_r" id="main_r">
                             <h3 style="margin-left: 12px"><i class="fa fa-pencil-square-o" style="font-size: x-large;">认证信息</i></h3>
                             <br>
@@ -1214,6 +1215,12 @@
                                 </div>
                             </form>
                         </div>
+                    </div>
+                    <div th:if="${session.user.validate == 1}">
+                        <br>
+                        <br>
+                        <div class="portal-sub" >
+                            <h1>已认证</h1></div>
                     </div>
                 </div>
             </div>
