@@ -3,6 +3,11 @@ spring:
     active: wjh
   thymeleaf:
     cache: false
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: airyvoices@163.com
+    password: admin001
 
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml

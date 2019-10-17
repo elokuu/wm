@@ -64,11 +64,33 @@
 				<img src="secmarket/img/head-2.png"/>
 				<div class="header-bac-card">
 					<img src="secmarket/img/002.png" />
-					<!-- <p class="header-bac-card_username">如果我是一只猫</p> -->
-					<div class="header-bac-card-button">
-						<button class="header-bac-card-button-login" th:if=" ${ #strings.isEmpty(session.name)}"><a>登陆</a></button>
-						<button class="header-bac-card-button-register" th:if=" ${ #strings.isEmpty(session.name)}">注册</button>
-					</div>
+					<!-- 用户名 -->
+					<p class="header-bac-card_username">如果我是一只猫</p>
+					<!-- 登录注册按钮 -->
+					<!--<div class="header-bac-card-button" style="padding: 0px;">-->
+						<!--<button class="header-bac-card-button-login"><a>登陆</a></button>-->
+						<!--<button class="header-bac-card-button-register">注册</button>-->
+					<!--</div>-->
+					<!-- 状态栏 -->
+					<ul>
+						<li><img src="secmarket/img/rich.png" th:src="@{/secmarket/img/rich.png}"/></li>
+						<li>出售中</li>
+						<li>0</li>
+					</ul>
+					<ul>
+						<li>
+							<img src="secmarket/img/QR.png" th:src="@{/secmarket/img/QR.png}"/>
+						</li>
+						<li>已卖出</li>
+						<li>3</li>
+					</ul>
+					<ul>
+						<li>
+							<img src="secmarket/img/active.png" th:src="@{/secmarket/img/active.png}"/>
+						</li>
+						<li>我的收藏</li>
+						<li>0</li>
+					</ul>
 				</div>
 			</div>
 		</div>
