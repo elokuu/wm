@@ -118,9 +118,14 @@
             <div class="goodinfo">数量&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" min="1" id="num" value="1"/></div> -->
             <div class="goodinfo"><a href="#"><input type="button" value="联系我" class="btngood" id="btnbuy"/></a>&nbsp;&nbsp;&nbsp;&nbsp;<input
                     type="button" value="留言" class="btngood" id="btnadd" />&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="button" value="提交订单" class="btngood" id="tijiaodingdan" onclick=dingdan() />
-                    <div id="liuyan" style="display:none"><form><textarea style="min-height: 80px;width: 253px;"></textarea>
-                    	<br /><button type="submit" class="btngood" >提交</button></form></div>
+                <form action="/api/pay/alipay/page-pay" method="get" style="float: left;">
+                    <input name="id_purchaser" th:value="${session.user.id}" hidden="hidden">
+                    <input name="id_goods" th:value="${goodDetail.id}" hidden>
+                    <input name="name" th:value="${goodDetail.title}" hidden>
+                    <input name="price" th:value="${goodDetail.price}" hidden>
+                    <input name="describe" th:value="${goodDetail.describe}" hidden>
+                    <input type="submit" value="提交订单" class="btngood" id="tijiaodingdan"  />
+                </form>
             </div>
         </div>
 <!--         <div id="recommend">-->
