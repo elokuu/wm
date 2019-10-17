@@ -10,6 +10,8 @@ public class MyGood {
     private int state;
     private Date time_create;
     private String name;
+    private Integer id;
+    private String describe;
 
     public String getTitle() {
         return title;
@@ -65,5 +67,21 @@ public class MyGood {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 }

@@ -7,6 +7,7 @@ public class OtherMessage {
     private String describe;
     private String path;
     private String img_name;
+    private Integer id;
 
     public String getName() {
         return name;
@@ -54,5 +55,13 @@ public class OtherMessage {
 
     public void setImg_name(String img_name) {
         this.img_name = img_name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

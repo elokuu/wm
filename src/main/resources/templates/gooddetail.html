@@ -35,8 +35,8 @@
 <body>
 <div id="header">
     <ul id="leftlist" class="list">
-        <li><a href="mainpage.html" class="link">请登录 / 注册</a></li>
-		<li><a href="#" onclick=history.back() class="link">返回</a></li>
+        <li><a th:href="@{/personal}" class="link" th:text="${session.user.name}">请登录 / 注册</a></li>
+<!--		<li><a href="#" onclick=history.back() class="link">返回</a></li>-->
     </ul>
     <ul id="rightlist" class="list">
 
@@ -48,9 +48,9 @@
 
  <div id="content">
      <div id="shop">
-        <a href="person.html">
+        <a th:href="${ '/o-p-homepage/' + goodDetail.name}">
             <img src="/dyassets/img/bag.png" alt="">
-            <div id="shopname">卖家：fengziyang</div>
+            <div id="shopname" > 卖家：<span th:text="${goodDetail.name}"></span> </div>
         </a>
     </div>
 
@@ -71,38 +71,38 @@
             </div>
             <!--缩略图-->
             <div class="imgsbox">
-                <ul id="imgslist">
-                    <li class="imglist selected">
-                        <!-- 商品小图 -->
-                        <img class="simg" alt="加载中..." src="/dyassets/img/good1.jpg">
-                    </li>
-                    <li class="imglist">
-                        <!-- 商品小图 -->
-                        <img class="simg" alt="加载中..." src="/dyassets/img/good2.jpg">
-                    </li>
-                    <li class="imglist">
-                        <!-- 商品小图 -->
-                        <img class="simg" alt="加载中..." src="/dyassets/img/good3.jpg">
-                    </li>
-                    <li class="imglist">
-                        <!-- 商品小图 -->
-                        <img class="simg" alt="加载中..." src="/dyassets/img/good4.jpg">
-                    </li>
-                    <li class="imglist">
-                        <!-- 商品小图 -->
-                        <img class="simg" alt="加载中..." src="/dyassets/img/good5.jpg">
-                    </li>
-                </ul>
+<!--                <ul id="imgslist">-->
+<!--                    <li class="imglist selected">-->
+<!--                        &lt;!&ndash; 商品小图 &ndash;&gt;-->
+<!--                        <img class="simg" alt="加载中..." src="/dyassets/img/good1.jpg">-->
+<!--                    </li>-->
+<!--                    <li class="imglist">-->
+<!--                        &lt;!&ndash; 商品小图 &ndash;&gt;-->
+<!--                        <img class="simg" alt="加载中..." src="/dyassets/img/good2.jpg">-->
+<!--                    </li>-->
+<!--                    <li class="imglist">-->
+<!--                        &lt;!&ndash; 商品小图 &ndash;&gt;-->
+<!--                        <img class="simg" alt="加载中..." src="/dyassets/img/good3.jpg">-->
+<!--                    </li>-->
+<!--                    <li class="imglist">-->
+<!--                        &lt;!&ndash; 商品小图 &ndash;&gt;-->
+<!--                        <img class="simg" alt="加载中..." src="/dyassets/img/good4.jpg">-->
+<!--                    </li>-->
+<!--                    <li class="imglist">-->
+<!--                        &lt;!&ndash; 商品小图 &ndash;&gt;-->
+<!--                        <img class="simg" alt="加载中..." src="/dyassets/img/good5.jpg">-->
+<!--                    </li>-->
+<!--                </ul>-->
             </div>
         </div>
         <div id="imgtxt">
-            <h2>戴尔DELL灵越燃7000 R1605S 14.0英寸轻薄窄边框笔记本电脑(i5-7200U 8G 256GSSD FHD Win10)</h2>
+            <h2 th:text="${goodDetail.title}">戴尔DELL灵越燃7000 R1605S 14.0英寸轻薄窄边框笔记本电脑(i5-7200U 8G 256GSSD FHD Win10)</h2>
 
-            <div class="goodinfo">【三边全景7mm微边框、77% 超高屏占比、金属材质】七代i5双核CPU、全高清显示屏。尊享2年上门服务！</div>
-            <div class="goodinfo">价格&nbsp;&nbsp;&nbsp;&nbsp;<span class="price" id="jiage">300.00</span></div>
-            <div class="goodinfo">押金&nbsp;&nbsp;&nbsp;&nbsp;<span class="price" id="yajin">5300.00</span></div>
-            <div class="goodinfo">配送&nbsp;&nbsp;&nbsp;&nbsp;<span class="price">大工西门面交</span></div>
-			<div class="goodinfo">能否砍价&nbsp;&nbsp;&nbsp;&nbsp;<span class="price">否</span></div>
+            <div class="goodinfo" th:text="${goodDetail.describe}">【三边全景7mm微边框、77% 超高屏占比、金属材质】七代i5双核CPU、全高清显示屏。尊享2年上门服务！</div>
+            <div class="goodinfo">价格&nbsp;&nbsp;&nbsp;&nbsp;<span class="price" id="jiage" th:text="${goodDetail.price}">300.00</span></div>
+<!--            <div class="goodinfo">押金&nbsp;&nbsp;&nbsp;&nbsp;<span class="price" id="yajin">5300.00</span></div>-->
+<!--            <div class="goodinfo">配送&nbsp;&nbsp;&nbsp;&nbsp;<span class="price">大工西门面交</span></div>-->
+<!--			<div class="goodinfo">能否砍价&nbsp;&nbsp;&nbsp;&nbsp;<span class="price">否</span></div>-->
 			<!-- <div class="goodinfo">留言&nbsp;&nbsp;&nbsp;&nbsp;<span class="price">空</span></div> -->
             <!-- <div class="goodinfo" id="size">尺码&nbsp;&nbsp;&nbsp;&nbsp;
                 <p class="block">S</p>
@@ -116,8 +116,8 @@
 
                 <p class="block">黑色</p></div>
             <div class="goodinfo">数量&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" min="1" id="num" value="1"/></div> -->
-            <div class="goodinfo"><a href="person.html"><input type="button" value="联系我" class="btngood" id="btnbuy"/></a>&nbsp;&nbsp;&nbsp;&nbsp;<input
-                    type="button" value="留言" class="btngood" id="btnadd" onclick=woyaoliuyan() />&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="goodinfo"><a href="#"><input type="button" value="联系我" class="btngood" id="btnbuy"/></a>&nbsp;&nbsp;&nbsp;&nbsp;<input
+                    type="button" value="留言" class="btngood" id="btnadd" />&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="button" value="提交订单" class="btngood" id="tijiaodingdan" onclick=dingdan() />
                     <div id="liuyan" style="display:none"><form><textarea style="min-height: 80px;width: 253px;"></textarea>
                     	<br /><button type="submit" class="btngood" >提交</button></form></div>

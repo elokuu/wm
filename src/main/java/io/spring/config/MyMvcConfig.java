@@ -53,7 +53,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
     }
 
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginHandlerIntercepter()).addPathPatterns("/dymainpage.html");
+        registry.addInterceptor(new LoginHandlerIntercepter()).addPathPatterns("/dymainpage.html", "/MallHomepage.html");
         registry.addInterceptor(new AdminHandlerIntercepter()).addPathPatterns("/admin/*");
     }
 }

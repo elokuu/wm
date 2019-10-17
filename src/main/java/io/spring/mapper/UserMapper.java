@@ -55,5 +55,5 @@ public interface UserMapper {
 
     void updateValidateStatus(int id_user);
 
-    IdentificationMessage getDetail(int id_user);
+    MyGood getGoodDetail(int id_good);
 }

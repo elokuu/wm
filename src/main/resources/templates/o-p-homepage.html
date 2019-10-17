@@ -57,7 +57,7 @@
 
                                             <img th:src="${item.path} + ${item.img_name}" alt="商品图"
                                                  style="width: 50px;height: 50px;float: left">
-                                            <h4 style="float: left;margin-left: 50px"><a href="@{#}" th:text="${item.title}">商品name</a><p style="position: relative;top: -5px;">
+                                            <h4 style="float: left;margin-left: 50px"><a th:href="${ '/gooddetail/' + item.id}" th:text="${item.title}">商品name</a><p style="position: relative;top: -5px;">
                                                 <span>价格: <span th:text="${item.price}"></span></span></p></h4>
 
                                         </div>

@@ -100,7 +100,8 @@
             t_img_goods.path,
             t_img_goods.NAME AS img_name,
             t_goods.state,
-            t_goods.time_create
+            t_goods.time_create,
+            t_goods.id
         FROM
             t_goods,
             t_img_goods
@@ -117,7 +118,8 @@
             t_goods.time_create,
             t_img_goods.path,
             t_img_goods.NAME AS img_name,
-            t_user.name
+            t_user.name,
+            t_goods.id
         FROM
             t_record_transaction,
             t_goods,
@@ -177,7 +179,8 @@
             t_goods.price,
             t_goods.describe,
             t_img_goods.path,
-            t_img_goods.name AS img_name
+            t_img_goods.name AS img_name,
+            t_goods.id
         FROM
             t_user,
             t_goods,
@@ -202,5 +205,24 @@
 
     <select id="getDetail" resultType="io.spring.bean.IdentificationMessage">
         SELECT * FROM t_detail_user WHERE id_user = #{id_user}
+    </select>
+    
+    <select id="getGoodDetail" resultType="io.spring.bean.MyGood">
+        SELECT
+            t_goods.title,
+            t_goods.price,
+            t_goods.describe,
+            t_goods.id_user,
+            t_user.name,
+            t_img_goods.path,
+            t_img_goods.name AS img_name
+        FROM
+            t_goods,
+            t_user,
+            t_img_goods
+        WHERE
+            t_goods.id = #{id_good}
+            AND t_user.id = t_goods.id_user
+            AND t_img_goods.id_goods = t_goods.id
     </select>
 </mapper>
