@@ -43,10 +43,10 @@ public class PersonalController {
                          @RequestParam("email") String email,
                          HttpSession session) {
         password = MD5.getInstance().getMD5(password);
-        Map<String,String> map = new HashMap<>();
-        map.put("name",(String) session.getAttribute("name"));
-        map.put("password",password);
-        map.put("email",email);
+        Map<String, String> map = new HashMap<>();
+        map.put("name", (String) session.getAttribute("name"));
+        map.put("password", password);
+        map.put("email", email);
         userMapper.updateUser(map);
         User user = userMapper.getUser((String) session.getAttribute("name"));
 
@@ -210,5 +210,15 @@ public class PersonalController {
         userMapper.updateValidateStatus(user.getId());
 
         return "per-renzheng";
+    }
+
+    @GetMapping("/gooddetail/{id_good}")
+    public String goodDetail(@PathVariable("id_good") int id_good,
+                             Model model) {
+
+        MyGood goodDetail = userMapper.getGoodDetail(id_good);
+        model.addAttribute("goodDetail", goodDetail);
+
+        return "gooddetail";
     }
 }

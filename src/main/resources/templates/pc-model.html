@@ -16,9 +16,9 @@
             <div class="topbar-nav pull-left">
                 <a class="active" th:href="@{/}">鲸矿</a>
                 <span class="sep">|</span>
-                <a th:href="@{#}">鲸矿网移动版</a>
+                <a th:href="@{/MallHomepage.html}">二手</a>
                 <span class="sep">|</span>
-                <a th:href="@{#}">问题反馈</a>
+                <a th:href="@{/dymainpage.html}">跑腿</a>
                 <span class="sep">|</span>
                 <a th:href="@{#}">Select Region</a>
             </div>
@@ -282,7 +282,7 @@
                                                                     <img src="/ncassets/img/logo16.png"  th:src="${item.path} + ${item.img_name}"
                                                                          width="80" height="80">
                                                                 </div>
-                                                                <p class="name" th:text="${item.title}">商品名字</p>
+                                                                <a th:href="${ '/gooddetail/' + item.id}"><p class="name" th:text="${item.title}">商品名字</p></a>
                                                                 <p class="price">价格: <span th:text="${item.price}"></span></p>
                                                             </li>
                                                         </ul>
@@ -1014,7 +1014,7 @@
                                                                              width="80" height="80">
 
                                                                     </div>
-                                                                    <p th:text="${item.title}">商品名字</p>
+                                                                    <a th:href="${ '/gooddetail/' + item.id}"><p th:text="${item.title}" >商品名字</p></a>
                                                                     <p>价格: <span th:text="${item.price}"></span></p>
                                                                 </li>
                                                             </ul>
