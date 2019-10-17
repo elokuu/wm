@@ -257,7 +257,11 @@
                                         </button>
                                         <div class="order-detail">
                                             <div class="order-summary">
-                                                <div class="order-status">已收货</div>
+                                                <div class="order-status" th:if="${item.state == 0}">审核中</div>
+                                                <div class="order-status" th:if="${item.state == -1}">审核不通过</div>
+                                                <div class="order-status" th:if="${item.state == 1}">审核通过</div>
+                                                <div class="order-status" th:if="${item.state == 10}">进行中</div>
+                                                <div class="order-status" th:if="${item.state == 11}">已完成</div>
                                             </div>
                                             <table class="order-detail-table">
                                                 <thead>
@@ -1047,7 +1051,7 @@
                         <div class="user-card">
                             <h2 class="username" th:text="${session.user.name}"></h2>
                             <p class="tip">Hello～</p>
-                            <a class="link" type="file" th:href="@{#}" onclick="editImg();">修改头像&gt;</a>
+<!--                            <a class="link" type="file" th:href="@{#}" onclick="">修改头像&gt;</a>-->
                             <img class="avatar" src="ncassets/img/user.jpg" width="150" th:src="@{${session.user.icon}}"
                                  height="150" alt="Max丶">
                         </div>

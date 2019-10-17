@@ -113,7 +113,7 @@
         SELECT
             t_goods.title,
             t_goods.price,
-            t_goods.state,
+            t_record_transaction.state,
             t_goods.time_create,
             t_img_goods.path,
             t_img_goods.NAME AS img_name,

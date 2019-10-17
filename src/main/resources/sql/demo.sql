@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 17/10/2019 18:48:04
+ Date: 17/10/2019 19:14:37
 */
 
 SET NAMES utf8mb4;
@@ -30,7 +30,7 @@ CREATE TABLE `t_detail_user`  (
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '地址',
   `telephone` int(16) NULL DEFAULT NULL COMMENT '电话号码',
   `major` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '专业',
-  `class` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '班级',
+  `grade` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '班级',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_detail_user_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -84,7 +84,7 @@ CREATE TABLE `t_goods`  (
 -- Records of t_goods
 -- ----------------------------
 INSERT INTO `t_goods` VALUES (1, 2, '二手电脑', '电子产品', 1, 100.00, '戴尔的', '2019-10-09 15:51:55', 1);
-INSERT INTO `t_goods` VALUES (2, 2, '桌子', '电子产品', 1, 20.00, '新的', '2019-10-23 15:53:46', 1);
+INSERT INTO `t_goods` VALUES (2, 2, '桌子', '电子产品', 1, 20.00, '新的', '2019-10-23 15:53:46', -1);
 INSERT INTO `t_goods` VALUES (3, 1, '椅子', '电子产品', 1, 100.00, '1成新', '2019-10-09 15:54:01', 1);
 INSERT INTO `t_goods` VALUES (4, 3, '锅', '电子产品', 1, 3.50, '9成新', '2019-10-09 15:54:19', 1);
 INSERT INTO `t_goods` VALUES (5, 2, '饮水机', '电子产品', 1, 10.00, '8成新', '2019-10-09 15:54:34', 1);
@@ -95,10 +95,10 @@ INSERT INTO `t_goods` VALUES (9, 2, '塑料', '电子产品', 1, 1000.00, '没�
 INSERT INTO `t_goods` VALUES (10, 14, '二手电脑', '电子产品', 1, 100.00, '戴尔的', '2019-10-09 15:51:55', 1);
 INSERT INTO `t_goods` VALUES (11, 14, '桌子', '电子产品', 1, 20.00, '新的', '2019-10-23 15:53:46', 1);
 INSERT INTO `t_goods` VALUES (12, 14, '椅子', '电子产品', 1, 100.00, '1成新', '2019-10-09 15:54:01', 1);
-INSERT INTO `t_goods` VALUES (13, 14, '锅', '电子产品', 1, 3.50, '9成新', '2019-10-09 15:54:19', 1);
-INSERT INTO `t_goods` VALUES (14, 14, '饮水机', '电子产品', 1, 10.00, '8成新', '2019-10-09 15:54:34', 1);
+INSERT INTO `t_goods` VALUES (13, 14, '锅', '电子产品', 1, 3.50, '9成新', '2019-10-09 15:54:19', -1);
+INSERT INTO `t_goods` VALUES (14, 14, '饮水机', '电子产品', 1, 10.00, '8成新', '2019-10-09 15:54:34', 0);
 INSERT INTO `t_goods` VALUES (15, 14, '华为', '电子产品', 1, 1024.00, '买到赚到', '2019-10-09 15:54:49', 1);
-INSERT INTO `t_goods` VALUES (16, 14, '魅族', '电子产品', 1, 888.00, '便宜卖了', '2019-10-09 15:55:03', 1);
+INSERT INTO `t_goods` VALUES (16, 14, '魅族', '电子产品', 1, 888.00, '便宜卖了', '2019-10-09 15:55:03', -1);
 INSERT INTO `t_goods` VALUES (17, 14, '小米', '电子产品', 1, 998.00, '不要了', '2019-10-10 15:55:17', 1);
 INSERT INTO `t_goods` VALUES (18, 14, '塑料', '电子产品', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
 
@@ -207,7 +207,7 @@ CREATE TABLE `t_record_transaction`  (
 -- ----------------------------
 -- Records of t_record_transaction
 -- ----------------------------
-INSERT INTO `t_record_transaction` VALUES (1, 3, 14, '2019-10-14 10:54:01', '2019-10-14 10:54:04', 1, '2019101622001459221000022738');
+INSERT INTO `t_record_transaction` VALUES (1, 3, 14, '2019-10-14 10:54:01', '2019-10-14 10:54:04', 10, '2019101622001459221000022738');
 INSERT INTO `t_record_transaction` VALUES (2, 1, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
 INSERT INTO `t_record_transaction` VALUES (3, 1, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
 INSERT INTO `t_record_transaction` VALUES (5, 3, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
@@ -219,8 +219,8 @@ INSERT INTO `t_record_transaction` VALUES (10, 2, 1, '2019-10-16 00:00:00', NULL
 INSERT INTO `t_record_transaction` VALUES (11, 2, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
 INSERT INTO `t_record_transaction` VALUES (12, 1, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
 INSERT INTO `t_record_transaction` VALUES (13, 1, 2, '2019-10-16 00:00:00', NULL, 1, '2019101622001459221000022739');
-INSERT INTO `t_record_transaction` VALUES (14, 1, 14, '2019-10-16 00:00:00', NULL, 1, '2019101622001459221000025926');
-INSERT INTO `t_record_transaction` VALUES (15, 2, 14, '2019-10-16 00:00:00', NULL, 1, '2019101622001459221000025927');
+INSERT INTO `t_record_transaction` VALUES (14, 1, 14, '2019-10-16 00:00:00', NULL, 11, '2019101622001459221000025926');
+INSERT INTO `t_record_transaction` VALUES (15, 2, 14, '2019-10-16 00:00:00', NULL, 10, '2019101622001459221000025927');
 
 -- ----------------------------
 -- Table structure for t_review_task
@@ -354,7 +354,7 @@ INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12
 INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
 INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
 INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
-INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@333', 1, 1);
+INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@333', 1, 0);
 INSERT INTO `t_user` VALUES (15, '/mainassets/img/pic1.jpg', 'admin', '123', 2, '33@22', 1, 0);
 INSERT INTO `t_user` VALUES (16, '/mainassets/img/pic1.jpg', 'daishuaibi2', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@33', 1, 0);
 
