@@ -191,4 +191,16 @@
     <delete id="deleteMyfavorgood">
         DELETE FROM t_favorites_goods WHERE id_goods = #{id_goods} AND id_user = #{id_user}
     </delete>
+
+    <insert id="insertIdentification">
+        INSERT INTO t_detail_user(id_user,identification,name,gender,address,telephone,major,grade) VALUES(#{id_user},#{identification},#{name},#{gender},#{address},#{telephone},#{major},#{grade})
+    </insert>
+
+    <select id="updateValidateStatus" resultType="int">
+        UPDATE t_user SET validate = 1 WHERE id = #{id_user}
+    </select>
+
+    <select id="getDetail" resultType="io.spring.bean.IdentificationMessage">
+        SELECT * FROM t_detail_user WHERE id_user = #{id_user}
+    </select>
 </mapper>

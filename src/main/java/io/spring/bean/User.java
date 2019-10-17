@@ -9,6 +9,7 @@ public class User {
     private String email;
     private Integer authority;
     private Integer state;
+    private Integer validate;
 
     public int getId() {
         return id;
@@ -64,5 +65,13 @@ public class User {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Integer getValidate() {
+        return validate;
+    }
+
+    public void setValidate(Integer validate) {
+        this.validate = validate;
     }
 }

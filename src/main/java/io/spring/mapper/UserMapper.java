@@ -50,4 +50,10 @@ public interface UserMapper {
     void updatePassword(Map map);
 
     void deleteMyfavorgood(int id_goods, int id_user);
+
+    void insertIdentification(IdentificationMessage ident);
+
+    void updateValidateStatus(int id_user);
+
+    IdentificationMessage getDetail(int id_user);
 }

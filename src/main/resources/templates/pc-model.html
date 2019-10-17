@@ -926,7 +926,8 @@
                         </div>
                         <div class="user-actions">
                             <ul class="action-list">
-                                <li>认证学号：<span class="level level-2">学号/未认证</span></li>
+                                <li th:if="${not (session.user.validate == 1)}">认证学号：<span class="level level-2">学号/未认证</span></li>
+                                <li th:if="${session.user.validate == 1}">认证学号：<span class="level level-2">学号/已认证</span></li>
                                 <li>信用等级：<span class="tel">良好</span></li>
                                 <li>绑定邮箱：<span class="tel" th:text="${session.user.email}"></span></li>
                             </ul>
@@ -1140,53 +1141,53 @@
                         </div>
 
                         <div class="fdata lblnickname" id="fdata">
-                            <form class="form-horizontal center-block" role="form" action="" method="post" onsubmit="return submit_info();">
+                            <form class="form-horizontal center-block" role="form" th:action="@{/per-renzheng}" method="post" onsubmit="return submit_info();">
                                 <div class="form-group ">
                                     <label class="col-sm-2 control-label">学号或工号：</label>
                                     <div class="col-sm-4 ">
-                                        <input class="form-control input-info" required  type="number" name=""
+                                        <input class="form-control input-info" required  type="number" name="identification"
                                                placeholder="请填写有效的学号和工号"/>
                                     </div>
                                 </div>
                                 <div class="form-group ">
                                     <label class="col-sm-2 control-label">真实姓名：</label>
                                     <div class="col-sm-4 ">
-                                        <input class="form-control input-info" required  type="text" id="" name=""
+                                        <input class="form-control input-info" required  type="text" name="name"
                                                placeholder="请填真实姓名"/>
                                     </div>
                                 </div>
                                 <div class="form-group ">
                                     <label class="col-sm-2 control-label">性别：</label>
                                     <div class="col-sm-4 " style="margin-top: 8px">
-                                        <input type="radio" name="sex" required value="男"/>男
-                                        <input type="radio" name="sex" required value="女"/>女
+                                        <input type="radio" name="gender" required value="男"/>男
+                                        <input type="radio" name="gender" required value="女"/>女
                                     </div>
                                 </div>
                                 <div class="form-group ">
                                     <label class="col-sm-2 control-label">校内地址：</label>
                                     <div class="col-sm-4 ">
-                                        <input class="form-control input-info" required  type="text" id="" name=""
+                                        <input class="form-control input-info" required  type="text"  name="address"
                                                placeholder="请填校内宿舍地址"/>
                                     </div>
                                 </div>
                                 <div class="form-group ">
                                     <label class="col-sm-2 control-label">专业：</label>
                                     <div class="col-sm-4 ">
-                                        <input class="form-control input-info" required  type="text" id="" name=""
+                                        <input class="form-control input-info" required  type="text"  name="major"
                                                placeholder="请填所属专业"/>
                                     </div>
                                 </div>
                                 <div class="form-group ">
                                     <label class="col-sm-2 control-label">班级：</label>
                                     <div class="col-sm-4 ">
-                                        <input class="form-control input-info" required  type="text" id="" name=""
+                                        <input class="form-control input-info" required  type="text"  name="grade"
                                                placeholder="请填所属专业的班级"/>
                                     </div>
                                 </div>
                                 <div class="form-group ">
                                     <label class="col-sm-2 control-label">手机号：</label>
                                     <div class="col-sm-4 ">
-                                        <input class="form-control input-info" required  type="text" id="" name=""
+                                        <input class="form-control input-info" required  type="text" name="telephone"
                                                placeholder="请填手机号码"/>
                                     </div>
                                 </div>
