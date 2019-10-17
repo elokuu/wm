@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh" class="no-js" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" th:href="@{/task/css/reset.css}"> <!-- CSS reset -->
+	<link rel="stylesheet" th:href="@{/task/css/style.css}"> <!-- Resource style -->
+	<script th:src="@{/task/js/modernizr.js}"></script> <!-- Modernizr -->
+</head>
+<body>
+	<header>
+		<h1>Task List</h1>
+	</header>
+	
+	<ul class="cd-items cd-container">
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+
+		<li class="cd-item">
+			<img th:src="@{/task/img/test.jpg}" alt="Item Preview">
+			<a href="#0" class="cd-trigger">Quick View</a>
+		</li> <!-- cd-item -->
+	</ul> <!-- cd-items -->
+
+	<div class="cd-quick-view">
+		<div class="cd-slider-wrapper">
+			<ul class="cd-slider">
+				<li class="selected"><img th:src="@{/task/img/test.jpg}" alt="Product 1"></li>
+				<li><img th:src="@{/task/img/item-2.jpg}" alt="Product 2"></li>
+				<li><img th:src="@{/task/img/item-3.jpg}" alt="Product 3"></li>
+			</ul> <!-- cd-slider -->
+
+			<ul class="cd-slider-navigation">
+				<li><a class="cd-next" href="#0">Prev</a></li>
+				<li><a class="cd-prev" href="#0">Next</a></li>
+			</ul> <!-- cd-slider-navigation -->
+		</div> <!-- cd-slider-wrapper -->
+
+		<div class="cd-item-info">
+			<h2>详情描述</h2>
+			<textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, omnis illo iste ratione. Numquam eveniet quo, ullam itaque expedita impedit. Eveniet, asperiores amet iste repellendus similique reiciendis, maxime laborum praesentium.</textarea>
+
+			<ul class="cd-item-action">
+				<li><button class="add-to-cart" >接受</button></li>
+				<li><button class="add-to-cart" style="background-color: darkslategrey">取消</button></li>
+			</ul> <!-- cd-item-action -->
+		</div> <!-- cd-item-info -->
+		<a href="#0" class="cd-close">Close</a>
+	</div> <!-- cd-quick-view -->
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script th:src="@{/task/js/velocity.min.js}"></script>
+<script th:src="@{/task/js/main.js}"></script> <!-- Resource jQuery -->
+</body>
+</html>
