@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript"  th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <meta charset="UTF-8">
+    <title>我的收藏</title>
+    <script type="text/javascript" src="ncassets/js/index.js" th:src="@{/ncassets/js/index.js}"></script>
+    <script type="text/javascript" src="ncassets/js/bootstrap.js" th:src="@{/ncassets/js/bootstrap.js}"></script>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="ncassets/dist/css/bootstrap.min.css" th:href="@{/ncassets/dist/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="ncassets/css/reset.css" th:href="@{/ncassets/css/reset.css}">
+    <link rel="stylesheet" href="ncassets/css/style.css" th:href="@{/ncassets/css/style.css}">
+    <link rel="stylesheet" type="text/css" href="ncassets/css/user.css" th:href="@{/ncassets/css/user.css}"/>
+    <!--  DataTable  -->
+    <link rel="stylesheet" type="text/css" th:href="@{/ncassets/datatables.net-bs/css/dataTables.bootstrap.min.css}"/>
+    <script type="text/javascript"  th:src="@{/ncassets/datatables.net/js/jquery.dataTables.min.js}"></script>
+    <script type="text/javascript" th:src="@{/ncassets/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:include="pc-model :: site-topbar"></div>
+<div th:include="pc-model :: site-header"></div>
+<div th:include="pc-model :: breadcrumb-renzheng"></div>
+<div class="page-main user-main">
+    <div class="container clearfix">
+        <div class="row">
+            <div th:include="pc-model :: span4"></div>
+            <div th:include="pc-model :: span6-renzheng"></div>
+        </div>
+    </div>
+</div>
+<div th:include="pc-model :: footer"></div>
+</body>
+</html>
