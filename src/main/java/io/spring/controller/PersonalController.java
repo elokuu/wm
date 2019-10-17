@@ -3,6 +3,7 @@ package io.spring.controller;
 import com.sun.xml.internal.ws.resources.HttpserverMessages;
 import io.spring.bean.*;
 import io.spring.mapper.UserMapper;
+import io.spring.tool.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,8 +44,8 @@ public class PersonalController {
     public String update(@RequestParam("password") String password,
                          @RequestParam("email") String email,
                          HttpSession session) {
-
-        userMapper.updateUser((String) session.getAttribute("name"), password, email);
+        String md5password = MD5.getInstance().getMD5(password);
+        userMapper.updateUser((String) session.getAttribute("name"), md5password, email);
         User user = userMapper.getUser((String) session.getAttribute("name"));
 
         session.setAttribute("user", user);

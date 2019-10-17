@@ -119,7 +119,7 @@
 .header-bac-card{
 	float: left;
 	width: 305px;
-	height: 200px;
+	height: 205px;
 	margin-left: 11%;
 	margin-top: 60px;
 	background-color: #FAFAFA;
@@ -132,17 +132,40 @@
 	border-radius: 50%;
 	margin-top:15px;
 	margin-left: 40%;
+	float: left;
 }
-/* .header-bac-card_username{
-	font-size: 14px;
+.header-bac-card_username{
+	font-size: 15px;
 	color: #333333;
-	margin-top: 83px;
-} */
+	margin-top: 80px;
+	font-weight: 600;
+	text-align: center;
+}
+.header-bac-card ul{
+	margin-top:-6px;
+	margin-left: 10%;
+	float: left;
+	width: 60px;
+	height: 100px;
+	text-align: center;
+}
+.header-bac-card li{
+	font-size: 15px;
+	color: #262626;
+	font-weight: 600;
+	margin-top: 4px;
+}
+.header-bac-card li img{
+	margin-left: 37%;
+	margin-bottom: 6px;
+	width: 27px;
+	height: 27px;
+}
 .header-bac-card-button{
-	margin: 30px;
-	margin-top:65px;
 	float: left;
 	font-size: 16px;
+	margin-top: 60px;
+	width: 100%;
 }
 .header-bac-card-button-login{
 	width: 115px;
