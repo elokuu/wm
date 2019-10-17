@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="utf-8">
 		<title>发布商品</title>
 		<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="secmarket/css/index.css" th:href="@{/secmarket/css/index.css}"/>
-		<link rel="stylesheet" href="secmarket/css/public.css" th:href="@{/secmarket/css/public.css}"/>
-		<link rel="stylesheet" href="secmarket/css/indent.css" th:href="@{/secmarket/css/indent.css}">
+		<link rel="stylesheet" href="../static/secmarket/css/index.css" th:href="@{/secmarket/css/index.css}"/>
+		<link rel="stylesheet" href="../static/secmarket/css/public.css" th:href="@{/secmarket/css/public.css}"/>
+		<link rel="stylesheet" href="../static/secmarket/css/indent.css" th:href="@{/secmarket/css/indent.css}">
 		<script src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 		<script src="//cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
@@ -52,16 +52,15 @@
 		<hr style="height: 1px;background-color:#C1C1C1;margin-top: -5px;"/>
 		<div class="box">
 			<div class="box-msg">
-				<img src="secmarket/img/001.jpg" />
+				<img src="../static/secmarket/img/001.jpg" th:src="@{${goods.pic_path}+${goods.pic_name}}" style="border: 4px solid gainsboro;"/>
 				<div class="box-msg-right">
-					<span>测试标题</span>
-					<p style="font-size: 18px;color: #262626;">测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</p>
-					<p>商品类型</p>
-					<p style="margin-top: 2px;">￥100</p>
+					<span th:text="${goods.title}">测试标题</span>
+					<p style="font-size: 18px;color: #262626;" th:text="${goods.describe}">测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</p>
+					<p th:text="${goods.type}">商品类型</p>
+					<p style="margin-top: 2px;" th:text="'￥'+${goods.price}">￥100</p>
 					<p style="margin-top: 2px;">x&nbsp;1</p>
-					
 					<div style="float: right;">
-						<p>共&nbsp;1&nbsp;件商品，合计&nbsp;￥10&nbsp;元</p>
+						<p th:text="'共&nbsp;1&nbsp;件商品，合计&nbsp;￥'+${goods.price}+'&nbsp;元'"></p>
 					</div>
 				</div>
 			</div>
@@ -100,7 +99,7 @@
 				</div>
 				<div class="footer_outer_list">
 					<p style="margin-top: 20px;font-size: 16px;color: #333333;letter-spacing: 1px;font-weight: 600;">关注微信</p>
-					<img src="secmarket/img/007.png" th:src="@{/secmarket/img/007.png}"/>
+					<img src="../static/secmarket/img/007.png" th:src="@{/secmarket/img/007.png}"/>
 				</div>
 			</div>
 		</div>

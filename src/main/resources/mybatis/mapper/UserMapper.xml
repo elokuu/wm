@@ -179,7 +179,8 @@
             t_goods.price,
             t_goods.describe,
             t_img_goods.path,
-            t_img_goods.name AS img_name
+            t_img_goods.name AS img_name,
+            t_goods.id
         FROM
             t_user,
             t_goods,
@@ -214,7 +215,8 @@
             t_goods.id_user,
             t_user.name,
             t_img_goods.path,
-            t_img_goods.name AS img_name
+            t_img_goods.name AS img_name,
+            t_goods.id
         FROM
             t_goods,
             t_user,

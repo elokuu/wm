@@ -19,4 +19,5 @@ public interface GoodsMapper {
     List<Goods> getAllByState(Integer state);
     void createRecord(Map map);
     void updateRecordPaymentStatus(Map map);
+    Map getGoodsById(Integer id);
 }

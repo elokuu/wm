@@ -2,17 +2,20 @@ package io.spring.controller;
 
 import io.spring.bean.BriefGoods;
 import io.spring.bean.BriefTask;
+import io.spring.bean.Goods;
 import io.spring.bean.SecGoods;
 import io.spring.mapper.GoodsMapper;
 import io.spring.mapper.TaskMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -50,6 +53,13 @@ public class HPController {
         request.setAttribute("spec",spec);
 
         return "secmarket";
+    }
+
+    @GetMapping("/order")
+    public String order(Model model,Integer id){
+        Map<String,Object> goods = goodsMapper.getGoodsById(id);
+        model.addAttribute("goods",goods);
+        return "indent";
     }
 
 }
