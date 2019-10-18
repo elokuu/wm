@@ -53,7 +53,7 @@ public interface UserMapper {
 
     void updatePassword(Map map);
 
-    void deleteMyfavorgood(int id_goods, int id_user);
+    void deleteMyfavorgood(Map map);
 
     void insertIdentification(IdentificationMessage ident);
 
@@ -63,5 +63,5 @@ public interface UserMapper {
 
     void updateTransState(int transId);
 
-    void updateUserHead(String imagePath, int id_user);
+    void updateUserHead(Map map);
 }

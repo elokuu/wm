@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 50726
+ Source Server Version : 50723
  Source Host           : localhost:3306
- Source Schema         : demo
+ Source Schema         : ca
 
  Target Server Type    : MySQL
- Target Server Version : 50726
+ Target Server Version : 50723
  File Encoding         : 65001
 
- Date: 18/10/2019 01:45:12
+ Date: 18/10/2019 09:20:49
 */
 
 SET NAMES utf8mb4;
@@ -62,7 +62,6 @@ CREATE TABLE `t_favorites_goods`  (
 -- ----------------------------
 -- Records of t_favorites_goods
 -- ----------------------------
-INSERT INTO `t_favorites_goods` VALUES (6, 5, 14, '2019-10-17');
 INSERT INTO `t_favorites_goods` VALUES (7, 7, 14, '2019-10-17');
 
 -- ----------------------------
@@ -82,7 +81,7 @@ CREATE TABLE `t_goods`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_goods_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_goods
@@ -105,6 +104,14 @@ INSERT INTO `t_goods` VALUES (15, 14, '华为', '电子产品', 1, 1024.00, '买
 INSERT INTO `t_goods` VALUES (16, 14, '魅族', '电子产品', 1, 888.00, '便宜卖了', '2019-10-09 15:55:03', -1);
 INSERT INTO `t_goods` VALUES (17, 14, '小米', '电子产品', 1, 998.00, '不要了', '2019-10-10 15:55:17', 1);
 INSERT INTO `t_goods` VALUES (18, 14, '塑料', '电子产品', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
+INSERT INTO `t_goods` VALUES (19, 14, '塑料', '1', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
+INSERT INTO `t_goods` VALUES (20, 14, '塑料', '1', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
+INSERT INTO `t_goods` VALUES (21, 14, '塑料', '1', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
+INSERT INTO `t_goods` VALUES (22, 14, '塑料', '1', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
+INSERT INTO `t_goods` VALUES (23, 14, '塑料', '1', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
+INSERT INTO `t_goods` VALUES (24, 14, '塑料', '1', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
+INSERT INTO `t_goods` VALUES (25, 14, '塑料', '1', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
+INSERT INTO `t_goods` VALUES (26, 14, '塑料', '1', 1, 1000.00, '没有描述', '2019-10-17 15:55:35', 1);
 
 -- ----------------------------
 -- Table structure for t_img_goods
@@ -121,7 +128,7 @@ CREATE TABLE `t_img_goods`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_goods`(`id_goods`) USING BTREE,
   CONSTRAINT `t_img_goods_ibfk_1` FOREIGN KEY (`id_goods`) REFERENCES `t_goods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_img_goods
@@ -144,6 +151,14 @@ INSERT INTO `t_img_goods` VALUES (15, 'timg.jpg', '/mainassets/img/', 1, '2019-1
 INSERT INTO `t_img_goods` VALUES (16, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 16);
 INSERT INTO `t_img_goods` VALUES (17, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 17);
 INSERT INTO `t_img_goods` VALUES (18, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 18);
+INSERT INTO `t_img_goods` VALUES (19, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 19);
+INSERT INTO `t_img_goods` VALUES (20, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 20);
+INSERT INTO `t_img_goods` VALUES (21, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 21);
+INSERT INTO `t_img_goods` VALUES (22, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 22);
+INSERT INTO `t_img_goods` VALUES (23, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 23);
+INSERT INTO `t_img_goods` VALUES (24, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 24);
+INSERT INTO `t_img_goods` VALUES (25, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 25);
+INSERT INTO `t_img_goods` VALUES (26, 'timg.jpg', '/mainassets/img/', 1, '2019-10-10 09:16:27', '1', 26);
 
 -- ----------------------------
 -- Table structure for t_img_task
@@ -206,7 +221,7 @@ CREATE TABLE `t_record_transaction`  (
   INDEX `id_purchaser`(`id_purchaser`) USING BTREE,
   CONSTRAINT `t_record_transaction_ibfk_1` FOREIGN KEY (`id_goods`) REFERENCES `t_goods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_record_transaction_ibfk_3` FOREIGN KEY (`id_purchaser`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_record_transaction
@@ -233,6 +248,8 @@ INSERT INTO `t_record_transaction` VALUES (20, 8, 14, '2019-10-17 00:00:00', NUL
 INSERT INTO `t_record_transaction` VALUES (21, 11, 14, '2019-10-17 00:00:00', NULL, 10, NULL);
 INSERT INTO `t_record_transaction` VALUES (22, 11, 14, '2019-10-17 00:00:00', NULL, 10, NULL);
 INSERT INTO `t_record_transaction` VALUES (23, 9, 14, '2019-10-17 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (24, 9, 14, '2019-10-18 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (25, 18, 14, '2019-10-18 00:00:00', NULL, 11, '2019101822001459221000028747');
 
 -- ----------------------------
 -- Table structure for t_review_task
@@ -367,7 +384,7 @@ INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12
 INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
 INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
 INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
-INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@333', 1, 1);
+INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic2.jpg', 'daishuaibi', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@333', 1, 1);
 INSERT INTO `t_user` VALUES (15, '/mainassets/img/pic1.jpg', 'admin', '123', 2, '33@22', 1, 0);
 INSERT INTO `t_user` VALUES (16, '/mainassets/img/pic1.jpg', 'daishuaibi2', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@33', 1, 0);
 INSERT INTO `t_user` VALUES (17, '/mainassets/img/pic1.jpg', '123123123', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '810687076@qq.com', NULL, NULL);

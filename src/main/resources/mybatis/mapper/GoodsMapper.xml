@@ -38,7 +38,7 @@
             t_goods,
             t_img_goods
         WHERE
-            t_goods.type = '电子产品'
+            t_goods.type = #{type}
             AND t_goods.id = t_img_goods.id_goods
             AND t_goods.state = 1
             AND t_img_goods.NAME LIKE 'timg%'

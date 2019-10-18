@@ -52,8 +52,8 @@ public class AliPagePayServiceImpl implements AliPagePayService {
                 "\"subject\":\""+servletRequest.getParameter("name")+"\"," +
                 "\"body\":\""+servletRequest.getParameter("describe")+"\"}");
 
-        request.setReturnUrl("http://2nac34.natappfree.cc/order?id="+id_goods);
-        request.setNotifyUrl("http://2nac34.natappfree.cc/api/pay/alipay/page-pay/sync/notify");
+        request.setReturnUrl("http://3fhhvg.natappfree.cc/order?id="+id_goods);
+        request.setNotifyUrl("http://3fhhvg.natappfree.cc/api/pay/alipay/page-pay/sync/notify");
         // 正式调起 支付宝的电脑网站支付API请求
         AlipayTradePagePayResponse pagePayResponse = alipayClient.pageExecute(request);
         // 获取支付宝响应的Form表单

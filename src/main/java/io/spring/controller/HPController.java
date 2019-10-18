@@ -45,9 +45,9 @@ public class HPController {
                             HttpSession session,
                             Model model){
         List<SecGoods> type1 = goodsMapper.getGoodsByType("电子产品");
-        List<SecGoods> type2 = goodsMapper.getGoodsByType("电子产品");
+        List<SecGoods> type2 = goodsMapper.getGoodsByType("1");
         List<SecGoods> type3 = goodsMapper.getGoodsByType("电子产品");
-        List<SecGoods> type4 = goodsMapper.getGoodsByType("电子产品");
+        List<SecGoods> type4 = goodsMapper.getGoodsByType("1");
         List<SecGoods> type5 = goodsMapper.getGoodsByType("电子产品");
         List<SecGoods> spec = goodsMapper.getSpecGoods();
         request.setAttribute("type1",type1);

@@ -199,7 +199,10 @@ public class PersonalController {
                                  @PathVariable("id") int id_goods) {
 
         User user = (User) session.getAttribute("user");
-        userMapper.deleteMyfavorgood(id_goods, user.getId());
+        Map<String,Object> map = new HashMap<>();
+        map.put("id_goods",id_goods);
+        map.put("id_user",user.getId());
+        userMapper.deleteMyfavorgood(map);
 
         return "redirect:/per-favorite";
     }
@@ -247,7 +250,10 @@ public class PersonalController {
         filePath = pathList[0] + "/src/main/resources/static/mainassets/img/";
 
         User user = (User) session.getAttribute("user");
-        userMapper.updateUserHead("/mainassets/img/" + fileName, user.getId());
+        Map<String,Object> map = new HashMap<>();
+        map.put("id_user",user.getId());
+        map.put("imagePath","/mainassets/img/"+fileName);
+        userMapper.updateUserHead(map);
 
         File dest = new File(filePath + fileName);
         try {

@@ -50,6 +50,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
         //dy/任务
         registry.addViewController("/task.html").setViewName("task");
+        registry.addViewController("/commodity.html").setViewName("commodity");
 
         //支付宝api测试
         registry.addViewController("/alipayTest").setViewName("alipayTest");

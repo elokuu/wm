@@ -192,7 +192,7 @@
             AND t_img_goods.id_goods = t_goods.id
     </select>
 
-    <delete id="deleteMyfavorgood">
+    <delete id="deleteMyfavorgood" parameterType="java.util.Map">
         DELETE FROM t_favorites_goods WHERE id_goods = #{id_goods} AND id_user = #{id_user}
     </delete>
 
@@ -240,7 +240,7 @@
         UPDATE t_record_transaction SET state=101 WHERE id = #{transId}
     </update>
 
-    <update id="updateUserHead">
+    <update id="updateUserHead" parameterType="java.util.Map">
         UPDATE t_user SET icon = #{imagePath} WHERE id = #{id_user}
     </update>
 </mapper>
