@@ -25,7 +25,7 @@
 				</div>
 				<ul style="margin-left:65%;">
 					<a href="" th:href="@{/MallHomepage.html}"><li>二手</li></a>
-					<a href="#" th:href="@{/dymainpage.html}"><li>跑腿</li></a>
+					<a href="#" th:href="@{/task.html}"><li>跑腿</li></a>
 					<li class="submenu">
 						<span>收藏夹</span>
 						<ul>
@@ -101,7 +101,7 @@
 				<div id="myscrollbox">
 					<ul>
 						<li th:each="briefTask:${session.briefTasks}">
-							<a href="" th:href="${briefTask.id}">
+							<a href="#">
 								<img src="mainassets/img/3.png" width="260" height="240" th:src="@{'/mainassets/img/'+${briefTask.type}+'.png'}">
 								<span class="intro"  th:switch="${briefTask.type}">
 									<h5  th:case="1">代拿快递</h5>
@@ -145,13 +145,13 @@
 			<div class="change">
 				<div class="task_show_box" th:each="goods:${session.briefGoods1}">
 					<div class="task_show_box_center">
-						<img src="mainassets/img/goods2.jpg" th:src="@{${goods.pic_path}+${goods.pic_name}}"/>
+						<a href="" th:href="${'/gooddetail/' + goods.id}"><img src="mainassets/img/goods2.jpg" th:src="@{${goods.pic_path}+${goods.pic_name}}"/></a>
 						<div class="task_show_box_center_msg">
 							<span th:text="${goods.price}">￥1000</span>
 							<p class="task_show_box_center_msg_p" th:text="${goods.title}">xbox，速出</p>
-							<p class="task_show_box_center_msg_p2" th:text="${goods.name}">如果我是一只猫</p>
+							<a href="" th:href="${'/o-p-homepage/' + goods.name}"><p class="task_show_box_center_msg_p2" th:text="${goods.name}">如果我是一只猫</p></a>
 							<div class="task_show_box_center_btn">
-								<a href="" th:href="${goods.id}"><input type="button" value="联系他"/></a>
+								<a href="#"><input type="button" value="联系他"/></a>
 							</div>
 						</div>
 					</div>
@@ -161,13 +161,13 @@
 			<div class="change" style="display: none;">
 				<div class="task_show_box" th:each="goods:${session.briefGoods2}">
 					<div class="task_show_box_center">
-						<img src="mainassets/img/goods2.jpg" th:src="@{${goods.pic_path}+${goods.pic_name}}"/>
+						<a href="" th:href="${'/gooddetail/' + goods.id}"><img src="mainassets/img/goods2.jpg" th:src="@{${goods.pic_path}+${goods.pic_name}}"/></a>
 						<div class="task_show_box_center_msg">
 							<span th:text="${goods.price}">￥1000</span>
 							<p class="task_show_box_center_msg_p" th:text="${goods.title}">xbox，速出</p>
-							<p class="task_show_box_center_msg_p2" th:text="${goods.name}">如果我是一只猫</p>
+							<a href="" th:href="${'/o-p-homepage/' + goods.name}"><p class="task_show_box_center_msg_p2" th:text="${goods.name}">如果我是一只猫</p></a>
 							<div class="task_show_box_center_btn">
-								<a href="" th:href="${goods.id}"><input type="button" value="联系他"/></a>
+								<a href="#"><input type="button" value="联系他"/></a>
 							</div>
 						</div>
 					</div>

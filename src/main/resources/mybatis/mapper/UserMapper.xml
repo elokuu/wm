@@ -119,7 +119,8 @@
             t_img_goods.path,
             t_img_goods.NAME AS img_name,
             t_user.name,
-            t_goods.id
+            t_goods.id,
+	        t_record_transaction.id AS transId
         FROM
             t_record_transaction,
             t_goods,
@@ -226,4 +227,20 @@
             AND t_user.id = t_goods.id_user
             AND t_img_goods.id_goods = t_goods.id
     </select>
+
+    <select id="getMyGoodNum" resultType="int">
+        SELECT COUNT(*) FROM t_goods WHERE id_user = #{id_user}
+    </select>
+
+    <select id="getOtherGoodNum" resultType="int">
+        SELECT COUNT(*) FROM t_record_transaction WHERE id_purchaser = #{id_user}
+    </select>
+
+    <update id="updateTransState">
+        UPDATE t_record_transaction SET state=101 WHERE id = #{transId}
+    </update>
+
+    <update id="updateUserHead">
+        UPDATE t_user SET icon = #{imagePath} WHERE id = #{id_user}
+    </update>
 </mapper>

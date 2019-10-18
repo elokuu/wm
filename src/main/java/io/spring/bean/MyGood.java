@@ -12,6 +12,7 @@ public class MyGood {
     private String name;
     private Integer id;
     private String describe;
+    private Integer transId;
 
     public String getTitle() {
         return title;
@@ -83,5 +84,13 @@ public class MyGood {
 
     public void setDescribe(String describe) {
         this.describe = describe;
+    }
+
+    public Integer getTransId() {
+        return transId;
+    }
+
+    public void setTransId(Integer transId) {
+        this.transId = transId;
     }
 }

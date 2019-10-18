@@ -6,12 +6,16 @@ import io.spring.tool.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -209,7 +213,7 @@ public class PersonalController {
         userMapper.insertIdentification(iden);
         userMapper.updateValidateStatus(user.getId());
 
-        return "per-renzheng";
+        return "redirect:/personal";
     }
 
     @GetMapping("/gooddetail/{id_good}")
@@ -220,5 +224,38 @@ public class PersonalController {
         model.addAttribute("goodDetail", goodDetail);
 
         return "gooddetail";
+    }
+
+    @GetMapping("/goodValidate/{transId}")
+    public String goodValidate(@PathVariable("transId") Integer transId) {
+
+        userMapper.updateTransState(transId);
+
+        return "redirect:/other-per-foods";
+    }
+
+    @PostMapping("/upload")
+    public String upload(@RequestParam("file") MultipartFile file,
+                         HttpSession session) throws IOException {
+        if (file.isEmpty()) {
+            return "error/4xx";
+        }
+
+        String fileName = file.getOriginalFilename();
+        String filePath = ClassUtils.getDefaultClassLoader().getResource("").getPath();
+        String[] pathList = filePath.split("/target/");
+        filePath = pathList[0] + "/src/main/resources/static/mainassets/img/";
+
+        User user = (User) session.getAttribute("user");
+        userMapper.updateUserHead("/mainassets/img/" + fileName, user.getId());
+
+        File dest = new File(filePath + fileName);
+        try {
+            file.transferTo(dest);
+            return "redirect:/personal";
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "error/4xx";
     }
 }

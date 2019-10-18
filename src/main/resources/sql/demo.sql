@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 17/10/2019 19:14:37
+ Date: 18/10/2019 01:45:12
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,14 @@ CREATE TABLE `t_detail_user`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_detail_user_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_detail_user
+-- ----------------------------
+INSERT INTO `t_detail_user` VALUES (2, 14, 131, '321', '女', '123', 13, '123', '132');
+INSERT INTO `t_detail_user` VALUES (3, 14, 123, '132', '男', '12', 123, '3', '132');
+INSERT INTO `t_detail_user` VALUES (4, 14, 3, '3', '男', '123', 13, '123', '132');
 
 -- ----------------------------
 -- Table structure for t_favorites_goods
@@ -50,16 +57,13 @@ CREATE TABLE `t_favorites_goods`  (
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_favorites_goods_ibfk_1` FOREIGN KEY (`id_goods`) REFERENCES `t_goods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_favorites_goods_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_favorites_goods
 -- ----------------------------
-INSERT INTO `t_favorites_goods` VALUES (1, 4, 14, '2019-10-14');
-INSERT INTO `t_favorites_goods` VALUES (2, 6, 14, '2019-10-14');
-INSERT INTO `t_favorites_goods` VALUES (3, 1, 14, '2019-10-14');
-INSERT INTO `t_favorites_goods` VALUES (4, 9, 14, '2019-10-14');
-INSERT INTO `t_favorites_goods` VALUES (5, 4, 14, '2019-10-14');
+INSERT INTO `t_favorites_goods` VALUES (6, 5, 14, '2019-10-17');
+INSERT INTO `t_favorites_goods` VALUES (7, 7, 14, '2019-10-17');
 
 -- ----------------------------
 -- Table structure for t_goods
@@ -179,11 +183,11 @@ CREATE TABLE `t_record_task`  (
 -- ----------------------------
 -- Records of t_record_task
 -- ----------------------------
-INSERT INTO `t_record_task` VALUES (1, 7, 14, '2019-10-14 14:42:10', '2019-10-14 14:42:14', 2);
-INSERT INTO `t_record_task` VALUES (2, 5, 14, '2019-10-14 15:44:59', '2019-10-14 16:05:50', 2);
-INSERT INTO `t_record_task` VALUES (3, 4, 14, '2019-10-14 16:06:12', NULL, 1);
-INSERT INTO `t_record_task` VALUES (4, 22, 5, '2019-10-15 21:26:20', NULL, 1);
-INSERT INTO `t_record_task` VALUES (5, 18, 3, '2019-10-15 22:16:38', NULL, 1);
+INSERT INTO `t_record_task` VALUES (1, 7, 14, '2019-10-14 14:42:10', '2019-10-14 14:42:14', 11);
+INSERT INTO `t_record_task` VALUES (2, 5, 14, '2019-10-14 15:44:59', '2019-10-14 16:05:50', 10);
+INSERT INTO `t_record_task` VALUES (3, 4, 14, '2019-10-14 16:06:12', NULL, 10);
+INSERT INTO `t_record_task` VALUES (4, 22, 5, '2019-10-15 21:26:20', NULL, 10);
+INSERT INTO `t_record_task` VALUES (5, 18, 3, '2019-10-15 22:16:38', NULL, 10);
 
 -- ----------------------------
 -- Table structure for t_record_transaction
@@ -195,32 +199,40 @@ CREATE TABLE `t_record_transaction`  (
   `id_purchaser` int(16) NULL DEFAULT NULL COMMENT '商品购买者id',
   `time_create` datetime(0) NULL DEFAULT NULL COMMENT '订单创建时间',
   `time_completion` datetime(0) NULL DEFAULT NULL COMMENT '订单完成时间',
-  `state` tinyint(1) NOT NULL DEFAULT -1 COMMENT '订单状态',
+  `state` tinyint(1) NOT NULL DEFAULT 10 COMMENT '订单状态',
   `trade_no` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '支付宝订单号',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_goods`(`id_goods`) USING BTREE,
   INDEX `id_purchaser`(`id_purchaser`) USING BTREE,
   CONSTRAINT `t_record_transaction_ibfk_1` FOREIGN KEY (`id_goods`) REFERENCES `t_goods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `t_record_transaction_ibfk_3` FOREIGN KEY (`id_purchaser`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_record_transaction
 -- ----------------------------
-INSERT INTO `t_record_transaction` VALUES (1, 3, 14, '2019-10-14 10:54:01', '2019-10-14 10:54:04', 10, '2019101622001459221000022738');
-INSERT INTO `t_record_transaction` VALUES (2, 1, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
-INSERT INTO `t_record_transaction` VALUES (3, 1, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
-INSERT INTO `t_record_transaction` VALUES (5, 3, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
-INSERT INTO `t_record_transaction` VALUES (6, 6, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
-INSERT INTO `t_record_transaction` VALUES (7, 1, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
-INSERT INTO `t_record_transaction` VALUES (8, 2, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
-INSERT INTO `t_record_transaction` VALUES (9, 2, 1, '2019-10-16 00:00:00', NULL, -1, NULL);
-INSERT INTO `t_record_transaction` VALUES (10, 2, 1, '2019-10-16 00:00:00', NULL, 0, NULL);
-INSERT INTO `t_record_transaction` VALUES (11, 2, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
-INSERT INTO `t_record_transaction` VALUES (12, 1, 2, '2019-10-16 00:00:00', NULL, -1, NULL);
-INSERT INTO `t_record_transaction` VALUES (13, 1, 2, '2019-10-16 00:00:00', NULL, 1, '2019101622001459221000022739');
-INSERT INTO `t_record_transaction` VALUES (14, 1, 14, '2019-10-16 00:00:00', NULL, 11, '2019101622001459221000025926');
-INSERT INTO `t_record_transaction` VALUES (15, 2, 14, '2019-10-16 00:00:00', NULL, 10, '2019101622001459221000025927');
+INSERT INTO `t_record_transaction` VALUES (1, 3, 14, '2019-10-14 10:54:01', '2019-10-14 10:54:04', 101, '2019101622001459221000022738');
+INSERT INTO `t_record_transaction` VALUES (2, 1, 1, '2019-10-16 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (3, 1, 1, '2019-10-16 00:00:00', NULL, 11, NULL);
+INSERT INTO `t_record_transaction` VALUES (5, 3, 2, '2019-10-16 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (6, 6, 2, '2019-10-16 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (7, 1, 1, '2019-10-16 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (8, 2, 1, '2019-10-16 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (9, 2, 1, '2019-10-16 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (10, 2, 1, '2019-10-16 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (11, 2, 2, '2019-10-16 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (12, 1, 2, '2019-10-16 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (13, 1, 2, '2019-10-16 00:00:00', NULL, 10, '2019101622001459221000022739');
+INSERT INTO `t_record_transaction` VALUES (14, 1, 14, '2019-10-16 00:00:00', NULL, 101, '2019101622001459221000025926');
+INSERT INTO `t_record_transaction` VALUES (15, 2, 14, '2019-10-16 00:00:00', NULL, 11, '2019101622001459221000025927');
+INSERT INTO `t_record_transaction` VALUES (16, 18, 14, '2019-10-17 00:00:00', NULL, 11, NULL);
+INSERT INTO `t_record_transaction` VALUES (17, 18, 14, '2019-10-17 00:00:00', NULL, 11, NULL);
+INSERT INTO `t_record_transaction` VALUES (18, 10, 14, '2019-10-17 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (19, 9, 14, '2019-10-17 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (20, 8, 14, '2019-10-17 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (21, 11, 14, '2019-10-17 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (22, 11, 14, '2019-10-17 00:00:00', NULL, 10, NULL);
+INSERT INTO `t_record_transaction` VALUES (23, 9, 14, '2019-10-17 00:00:00', NULL, 10, NULL);
 
 -- ----------------------------
 -- Table structure for t_review_task
@@ -290,7 +302,7 @@ CREATE TABLE `t_task`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_user`(`id_user`) USING BTREE,
   CONSTRAINT `t_task_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `t_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_task
@@ -323,6 +335,7 @@ INSERT INTO `t_task` VALUES (25, 14, '文件打印', 4, 1, 'gkd', '10010', '2019
 INSERT INTO `t_task` VALUES (26, 14, '赚钱了赚钱了', 3, 3, '来来来 我们要发财了', '10010', '2019-10-15 22:44:42', 0, 1.00);
 INSERT INTO `t_task` VALUES (30, 14, '123', 5, 1, '123', '123', '2019-10-15 22:44:43', 0, 2.00);
 INSERT INTO `t_task` VALUES (31, 14, '123', 4, 1, '333', '3333', '2019-10-15 22:44:45', 0, 2.00);
+INSERT INTO `t_task` VALUES (32, 14, '2', 3, 1, '22222', '11111', '2019-10-17 00:00:00', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for t_user
@@ -338,7 +351,7 @@ CREATE TABLE `t_user`  (
   `state` tinyint(1) NULL DEFAULT NULL COMMENT '状态',
   `validate` tinyint(4) NULL DEFAULT NULL COMMENT '验证状态',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user
@@ -354,8 +367,9 @@ INSERT INTO `t_user` VALUES (8, '/mainassets/img/pic1.jpg', '工具人8号', '12
 INSERT INTO `t_user` VALUES (9, '/mainassets/img/pic1.jpg', '工具人9号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
 INSERT INTO `t_user` VALUES (10, '/mainassets/img/pic1.jpg', '工具人10号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
 INSERT INTO `t_user` VALUES (11, '/mainassets/img/pic1.jpg', '工具人11号', '12345678', 1, 'scarletflandre@foxmail.com', 1, 0);
-INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@333', 1, 0);
+INSERT INTO `t_user` VALUES (14, '/mainassets/img/pic1.jpg', 'daishuaibi', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@333', 1, 1);
 INSERT INTO `t_user` VALUES (15, '/mainassets/img/pic1.jpg', 'admin', '123', 2, '33@22', 1, 0);
 INSERT INTO `t_user` VALUES (16, '/mainassets/img/pic1.jpg', 'daishuaibi2', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '22@33', 1, 0);
+INSERT INTO `t_user` VALUES (17, '/mainassets/img/pic1.jpg', '123123123', 'f5bb0c8de146c67b44babbf4e6584cc0', 1, '810687076@qq.com', NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

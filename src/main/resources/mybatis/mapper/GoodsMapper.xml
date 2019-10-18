@@ -80,7 +80,7 @@
         INSERT INTO t_record_transaction(id_goods,id_purchaser,time_create) VALUES(#{id_goods},#{id_purchaser},#{time_create})
     </insert>
     <update id="updateRecordPaymentStatus" parameterType="java.util.Map">
-        UPDATE t_record_transaction SET state = 1,trade_no=#{trade_no} WHERE id=#{id}
+        UPDATE t_record_transaction SET state = 11,trade_no=#{trade_no} WHERE id=#{id}
     </update>
     <select id="getGoodsById" parameterType="int" resultType="java.util.Map">
         SELECT t_goods.*,t_img_goods.name pic_name,t_img_goods.path pic_path FROM t_goods,t_img_goods WHERE t_goods.id = #{id} AND t_goods.id = t_img_goods.id_goods

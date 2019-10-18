@@ -23,6 +23,10 @@ public interface UserMapper {
 
     int getAllGoodNum(int id_user);
 
+    int getMyGoodNum(int id_user);
+
+    int getOtherGoodNum(int id_user);
+
     int getAllReviewNum(int id_user);
 
     int getFavorGoodNum(int id_user);
@@ -56,4 +60,8 @@ public interface UserMapper {
     void updateValidateStatus(int id_user);
 
     MyGood getGoodDetail(int id_good);
+
+    void updateTransState(int transId);
+
+    void updateUserHead(String imagePath, int id_user);
 }

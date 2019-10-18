@@ -1,11 +1,10 @@
 package io.spring.controller;
 
-import io.spring.bean.BriefGoods;
-import io.spring.bean.BriefTask;
-import io.spring.bean.Goods;
-import io.spring.bean.SecGoods;
+import com.sun.xml.internal.ws.resources.HttpserverMessages;
+import io.spring.bean.*;
 import io.spring.mapper.GoodsMapper;
 import io.spring.mapper.TaskMapper;
+import io.spring.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +24,9 @@ public class HPController {
     TaskMapper taskMapper;
     @Autowired
     GoodsMapper goodsMapper;
+
+    @Autowired
+    UserMapper userMapper;
 
     @GetMapping("/homepage")
     public String homepage(HttpSession session){
@@ -38,7 +41,9 @@ public class HPController {
     }
 
     @GetMapping("/MallHomepage.html")
-    public String secmarket(HttpServletRequest request){
+    public String secmarket(HttpServletRequest request,
+                            HttpSession session,
+                            Model model){
         List<SecGoods> type1 = goodsMapper.getGoodsByType("电子产品");
         List<SecGoods> type2 = goodsMapper.getGoodsByType("电子产品");
         List<SecGoods> type3 = goodsMapper.getGoodsByType("电子产品");
@@ -51,6 +56,13 @@ public class HPController {
         request.setAttribute("type4",type4);
         request.setAttribute("type5",type5);
         request.setAttribute("spec",spec);
+
+        User user = (User) session.getAttribute("user");
+        Map<String, Integer> map = new HashMap<>();
+        map.put("favorGoodNum", userMapper.getFavorGoodNum(user.getId()));
+        map.put("myGoodNum", userMapper.getMyGoodNum(user.getId()));
+        map.put("otherGoodNum", userMapper.getOtherGoodNum(user.getId()));
+        model.addAttribute("map", map);
 
         return "secmarket";
     }

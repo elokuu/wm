@@ -258,10 +258,11 @@
                                         <div class="order-detail">
                                             <div class="order-summary">
                                                 <div class="order-status" th:if="${item.state == 0}">审核中</div>
-                                                <div class="order-status" th:if="${item.state == -1}">审核不通过</div>
-                                                <div class="order-status" th:if="${item.state == 1}">审核通过</div>
-                                                <div class="order-status" th:if="${item.state == 10}">进行中</div>
-                                                <div class="order-status" th:if="${item.state == 11}">已完成</div>
+                                                <div class="order-status" th:if="${item.state == -1}">审核未通过</div>
+                                                <div class="order-status" th:if="${item.state == 1}">审核已通过</div>
+                                                <div class="order-status" th:if="${item.state == 10}">未支付</div>
+                                                <div class="order-status" th:if="${item.state == 11}">已支付</div>
+                                                <div class="order-status" th:if="${item.state == 101}">已完成</div>
                                             </div>
                                             <table class="order-detail-table">
                                                 <thead>
@@ -282,14 +283,16 @@
                                                                     <img src="/ncassets/img/logo16.png"  th:src="${item.path} + ${item.img_name}"
                                                                          width="80" height="80">
                                                                 </div>
-                                                                <a th:href="${ '/gooddetail/' + item.id}"><p class="name" th:text="${item.title}">商品名字</p></a>
+                                                                <p class="name" th:text="${item.title}">商品名字</p>
                                                                 <p class="price">价格: <span th:text="${item.price}"></span></p>
                                                             </li>
                                                         </ul>
                                                     </td>
                                                     <td class="order-actions">
-                                                        <a class="btn btn-small btn-line-gray">商品详情</a>
-                                                        <a class="btn btn-small btn-line-gray">联系店家</a>
+                                                        <a class="btn btn-small btn-line-gray" th:href="${ '/gooddetail/' + item.id}">商品详情</a>
+<!--                                                        <a class="btn btn-small btn-line-gray">联系店家</a>-->
+                                                        <a class="btn btn-small btn-line-gray" th:href="${'/goodValidate/' + item.transId}" th:if="${item.state == 11}">确认收货</a>
+                                                        <a class="btn btn-small btn-line-gray" th:if="${item.state == 101}">已收货</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -927,7 +930,7 @@
                             <h2 class="username" th:text="${session.user.name}"></h2>
                             <p class="tip">Hello～</p>
                             <a class="link" th:href="@{/perInfo.html}">修改个人信息&gt;</a>
-                            <img class="avatar" src="ncassets/img/user.jpg" th:src="@{${session.user.icon}}" width="150"
+                            <img class="avatar" src="ncassets/img/user.jpg" th:src="${session.user.icon}" width="150"
                                  height="150" alt="Max丶">
                         </div>
                         <div class="user-actions">
@@ -1014,14 +1017,14 @@
                                                                              width="80" height="80">
 
                                                                     </div>
-                                                                    <a th:href="${ '/gooddetail/' + item.id}"><p th:text="${item.title}" >商品名字</p></a>
+                                                                    <p th:text="${item.title}" >商品名字</p>
                                                                     <p>价格: <span th:text="${item.price}"></span></p>
                                                                 </li>
                                                             </ul>
                                                         </td>
                                                         <td></td>
                                                         <td class="order-actions">
-                                                            <a class="btn btn-small btn-line-gray">商品详情</a>
+                                                            <a class="btn btn-small btn-line-gray" th:href="${ '/gooddetail/' + item.id}">商品详情</a>
                                                             <a class="btn btn-small btn-line-gray">联系卖家</a>
                                                         </td>
                                                     </tr>
@@ -1054,13 +1057,18 @@
                         <div class="user-card">
                             <h2 class="username" th:text="${session.user.name}"></h2>
                             <p class="tip">Hello～</p>
-<!--                            <a class="link" type="file" th:href="@{#}" onclick="">修改头像&gt;</a>-->
+                            <button class="layui-btn" onclick="uploadImg();">点击上传图片</button>
+                            <form method="post" action="/upload" enctype="multipart/form-data" hidden id="uploadImg" style="position: relative; top: -63px;left: 130px" >
+                                <input type="file" name="file" class="layui-upload">
+                                <input class="layui-btn" type="submit">
+                            </form>
                             <img class="avatar" src="ncassets/img/user.jpg" width="150" th:src="@{${session.user.icon}}"
                                  height="150" alt="Max丶">
                         </div>
                         <div class="user-actions">
                             <ul class="action-list">
-                                <li>认证学号：<span class="tel" th:text="${session.user.id}"></span></li>
+                                <li th:if="${not (session.user.validate == 1)}">认证学号：<span class="level level-2">学号/未认证</span></li>
+                                <li th:if="${session.user.validate == 1}">认证学号：<span class="level level-2">学号/已认证</span></li>
                                 <li>信用等级：<span class="tel">良好</span></li>
 
                                 <li>绑定邮箱：<span class="tel" th:text="${session.user.email}"></span></li>
